@@ -1,0 +1,68 @@
+{
+    "data": [
+        {
+            "invoiceNumber" : "#INV-0001",
+            "patient" : "Andrea Lalema",
+            "paymentType" : "Credit Card",
+            "paidDate" : "01.10.2022",
+            "paidAmount" : "$2450",
+            "status" : "Paid",
+            "img" : "assets/img/profiles/avatar-01.jpg"
+        },
+        {
+            "invoiceNumber" : "#INV-0002",
+            "patient" : "Smith Bruklin",
+            "paymentType" : "Debit Card",
+            "paidDate" : "02.10.2022",
+            "paidAmount" : "$1505",
+            "status" : "Un Paid",
+            "img" : "assets/img/profiles/avatar-02.jpg"
+        },
+        {
+            "invoiceNumber" : "#INV-0003",
+            "patient" : "Bernardo James",
+            "paymentType" : "Pay Pal",
+            "paidDate" : "01.10.2022",
+            "paidAmount" : "$2000",
+            "status" : "Paid",
+            "img" : "assets/img/profiles/avatar-03.jpg"
+        },
+        {
+            "invoiceNumber" : "#INV-0004",
+            "patient" : "Mark Hay Smith",
+            "paymentType" : "Credit Card",
+            "paidDate" : "05.10.2022",
+            "paidAmount" : "$1000",
+            "status" : "Partially Paid",
+            "img" : "assets/img/profiles/avatar-04.jpg"
+        },
+        {
+            "invoiceNumber" : "#INV-0005",
+            "patient" : "Galaviz Lalema",
+            "paymentType" : "Debit Card",
+            "paidDate" : "01.10.2022",
+            "paidAmount" : "$2300",
+            "status" : "Paid",
+            "img" : "assets/img/profiles/avatar-05.jpg"
+        },
+        {
+            "invoiceNumber" : "#INV-0006",
+            "patient" : "Andrea Lalema",
+            "paymentType" : "Pay Pal",
+            "paidDate" : "05.10.2022",
+            "paidAmount" : "$4000",
+            "status" : "Partially Paid",
+            "img" : "assets/img/profiles/avatar-06.jpg"
+        },
+        {
+            "invoiceNumber" : "#INV-0007",
+            "patient" : "William Stephin",
+            "paymentType" : "Pay Pal",
+            "paidDate" : "10.10.2022",
+            "paidAmount" : "$3000",
+            "status" : "Un Paid",
+            "img" : "assets/img/profiles/avatar-07.jpg"
+        }
+    ],
+    "totalData":7
+}

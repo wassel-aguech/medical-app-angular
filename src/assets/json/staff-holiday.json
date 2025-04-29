@@ -1,0 +1,53 @@
+{
+    "data" : [
+        {
+            "title" : "New Year",
+            "holidayDate" : "01.01.2022",
+            "day" : "Sunday",
+            "description" : "Common Holiday"
+        },
+        {
+            "title" : "Pongal",
+            "holidayDate" : "14.01.2022",
+            "day" : "Monday",
+            "description" : "Religious Holiday"
+        },
+        {
+            "title" : "Pongal Holiday",
+            "holidayDate" : "15.01.2022",
+            "day" : "Monday",
+            "description" : "Religious Holiday"
+        },
+        {
+            "title" : "Tamil New Year",
+            "holidayDate" : "14.04.2022",
+            "day" : "Tuesday",
+            "description" : "Religious Holiday"
+        },
+        {
+            "title" : "Good Friday",
+            "holidayDate" : "05.01.2022",
+            "day" : "Friday",
+            "description" : "Religious Holiday"
+        },
+        {
+            "title" : "May Day",
+            "holidayDate" : "15.01.2022",
+            "day" : "Wednesday",
+            "description" : "Common Holiday"
+        },
+        {
+            "title" : "Ramzan",
+            "holidayDate" : "10.08.2022",
+            "day" : "Monday",
+            "description" : "Religious Holiday"
+        },
+        {
+            "title" : "Independence day",
+            "holidayDate" : "26.01.2022",
+            "day" : "Friday",
+            "description" : "Common Holiday"
+        }
+    ],
+    "totalData":8
+}

@@ -1,0 +1,205 @@
+<div class="page-wrapper">
+    <div class="content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.adminDashboard">Dashboard </a></li>
+                        <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+                        <li class="breadcrumb-item active">Edit Profile</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+        <form>
+            <div class="card-box">
+                <h3 class="card-title">Basic Informations</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="profile-img-wrap">
+                            <img class="inline-block" src="assets/img/user.jpg" alt="user">
+                            <div class="fileupload btn">
+                                <span class="btn-text">edit</span>
+                                <input class="upload" type="file">
+                            </div>
+                        </div>
+                        <div class="profile-basic">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group local-forms">
+                                        <label for="name" class="focus-label">First Name</label>
+                                        <input type="text" class="form-control floating" value="John">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group local-forms">
+                                        <label for="last" class="focus-label">Last Name</label>
+                                        <input type="text" class="form-control floating" value="Doe">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group local-forms ">
+                                        <label for="birth" class="focus-label">Birth Date</label>
+                                        <div>
+                                            <input class="form-control floating datetimepicker" type="text" [formControl]="date" matInput matInput [matDatepicker]="picker1">
+                                            <mat-datepicker #picker1></mat-datepicker>
+                                            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group local-forms">
+                                        <label for="Gendar" class="focus-label">Gendar</label>
+                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="Select  Gendar">
+                                            <mat-option *ngFor="let data of selectedList" [value]="data.value">
+                                            {{data.value}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-box">
+                <h3 class="card-title">Contact Informations</h3>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group local-forms">
+                            <label for="address" class="focus-label">Address</label>
+                            <input type="text" class="form-control floating" value="4487 Snowbird Lane">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="state" class="focus-label">State</label>
+                            <input type="text" class="form-control floating" value="New York">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="country" class="focus-label">Country</label>
+                            <input type="text" class="form-control floating" value="United States">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="pincode" class="focus-label">Pin Code</label>
+                            <input type="text" class="form-control floating" value="10523">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="phone" class="focus-label">Phone Number</label>
+                            <input type="text" class="form-control floating" value="631-889-3206">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-box">
+                <h3 class="card-title">Education Informations</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="Institution" class="focus-label">Institution</label>
+                            <input type="text" class="form-control floating" value="Oxford University">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="Subject" class="focus-label">Subject</label>
+                            <input type="text" class="form-control floating" value="Computer Science">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="Starting" class="focus-label">Starting Date</label>
+                            <div>
+                                <input type="text" class="form-control floating datetimepicker" [formControl]="date" matInput [matDatepicker]="picker2">
+                                <mat-datepicker #picker2></mat-datepicker>
+                                <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="Complete" class="focus-label">Complete Date</label>
+                            <div>
+                                <input type="text" class="form-control floating datetimepicker" [formControl]="date" matInput [matDatepicker]="picker3">
+                                <mat-datepicker #picker3></mat-datepicker>
+                                <mat-datepicker-toggle matIconSuffix [for]="picker3"></mat-datepicker-toggle>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="Degree" class="focus-label">Degree</label>
+                            <input type="text" class="form-control floating" value="BE Computer Science">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="Grade" class="focus-label">Grade</label>
+                            <input type="text" class="form-control floating" value="Grade A">
+                        </div>
+                    </div>
+                </div>
+                <div class="add-more">
+                    <a href="javascript:void(0);" class="btn btn-primary"><i class="fa fa-plus"></i> Add More Institute</a>
+                </div>
+            </div>
+            <div class="card-box">
+                <h3 class="card-title">Experience Informations</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="Company" class="focus-label">Company Name</label>
+                            <input type="text" class="form-control floating" value="Digital Devlopment Inc">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="Location" class="focus-label">Location</label>
+                            <input type="text" class="form-control floating" value="United States">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="Job" class="focus-label">Job Position</label>
+                            <input type="text" class="form-control floating" value="Web Developer">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="Period" class="focus-label">Period From</label>
+                            <div>
+                                <input type="text" class="form-control floating datetimepicker" [formControl]="date" matInput [matDatepicker]="picker4">
+                                <mat-datepicker #picker4></mat-datepicker>
+                                <mat-datepicker-toggle matIconSuffix [for]="picker4"></mat-datepicker-toggle>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group local-forms">
+                            <label for="Period" class="focus-label">Period To</label>
+                            <div>
+                                <input type="text" class="form-control floating datetimepicker" [formControl]="date" matInput [matDatepicker]="picker5">
+                                <mat-datepicker #picker5></mat-datepicker>
+                                <mat-datepicker-toggle matIconSuffix [for]="picker5"></mat-datepicker-toggle>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="add-more">
+                    <a href="javascript:void(0);" class="btn btn-primary"><i class="fa fa-plus"></i> Add More Experience</a>
+                </div>
+            </div>
+            <div class="text-center m-t-20">
+                <button class="btn btn-primary submit-btn" type="button">Save</button>
+            </div>
+        </form>
+    </div>
+</div>

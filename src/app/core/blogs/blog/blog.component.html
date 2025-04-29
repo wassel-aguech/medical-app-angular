@@ -1,0 +1,48 @@
+<div class="page-wrapper">
+    <div class="content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.blog">Blog </a></li>
+                        <li class="breadcrumb-item"><i class="feather icon icon-chevron-right"></i></li>
+                        <li class="breadcrumb-item active">Blogs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+        <div class="row">
+            <div class="col-sm-6 col-md-6 col-xl-4" *ngFor="let data of blogs">
+                <div class="blog grid-blog">
+                    <div class="blog-image">
+                        <a [routerLink]="routes.blogDetails"><img class="img-fluid" [src]="data.img1" alt=""></a>
+                        <div class="blog-views">
+                            <h5>{{data.heading5}}</h5>
+                        </div>
+                        <ul class="nav view-blog-list blog-views">
+                            <li><i class="feather icon-message-square me-1"></i>{{data.count1}}</li>
+                            <li><i class="feather icon-eye me-1"></i>{{data.count2}}</li>
+                        </ul>
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-grp-blk">
+                            <div class="blog-img-blk">
+                                <a [routerLink]="routes.profile"><img class="img-fluid" [src]="data.img2" alt=""></a>
+                                <div class="content-blk-blog ms-2">
+                                    <h4><a [routerLink]="routes.profile">{{data.heading4}}</a></h4>
+                                    <h5>{{data.name}}</h5>
+                                </div>
+                            </div>
+                            <span><i class="feather icon-calendar me-1"></i>{{data.date}}</span>
+                        </div>
+                        <h3 class="blog-title"><a [routerLink]="routes.blogDetails">{{data.heading3}}</a></h3>
+                        <p>{{data.paragraph}}</p>
+                        <a [routerLink]="routes.blogDetails" class="read-more d-flex"> {{data.msg}}<i class="fa fa-long-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

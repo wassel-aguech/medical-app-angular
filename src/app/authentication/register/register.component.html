@@ -1,0 +1,167 @@
+<!-- Main Wrapper -->
+<div class="main-wrapper login-body">
+  <div class="container-fluid px-0">
+    <div class="row">
+      <!-- Login logo -->
+      <div class="col-lg-6 login-wrap">
+        <div class="login-sec">
+          <div class="log-img">
+            <img class="img-fluid" src="assets/img/login-02.png" alt="Logo" />
+          </div>
+        </div>
+      </div>
+      <!-- /Login logo -->
+
+      <!-- Login Content -->
+      <div class="col-lg-6 login-wrap-bg">
+        <div class="login-wrapper">
+          <div class="loginbox">
+            <div class="login-right">
+              <div class="login-right-wrap">
+                <div class="account-logo">
+                  <a [routerLink]="routes.adminDashboard"><img src="assets/img/login-logo.png" alt="" /></a>
+                </div>
+                <h2>Getting Started</h2>
+                <!-- Form -->
+                <form [formGroup]="patientForm" >
+
+              <div class="row">
+                 <div class="form-group col-6">
+                    <label for="Full">First Name <span class="login-danger">*</span></label>
+                    <input class="form-control" type="text" formControlName="firstName" />
+                  </div>
+
+                  <div class="form-group col-6">
+                    <label for="Full">Last Name <span class="login-danger">*</span></label>
+                    <input class="form-control" type="text" formControlName="lastName" />
+                  </div>
+              </div>
+
+
+              <div class="row">
+
+                  <div class="form-group col-6">
+                    <label for="email">Email <span class="login-danger">*</span></label>
+                    <input class="form-control" type="email" formControlName="email">
+                  </div>
+
+
+                  <div class="form-group col-6">
+                    <label for="email">Phone <span class="login-danger">*</span></label>
+                    <input class="form-control" type="number" formControlName="phone">
+                  </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="form-group col-12">
+                  <label for="email">Address <span class="login-danger">*</span></label>
+                  <input class="form-control" type="text" formControlName="adress">
+                </div>
+
+              </div>
+
+
+            <div class="row">
+
+                  <div class="form-group col-6">
+                    <label for="Password">Password <span class="login-danger">*</span></label>
+                    <input class="form-control pass-input" type="password"
+                      formControlName="password">
+                  </div>
+
+                  <div class="form-group col-6">
+                    <label for="Confirm">Confirm Password <span class="login-danger">*</span></label>
+                    <input class="form-control pass-input-confirm" type="password"
+                      formControlName="confirmPassword">
+                  </div>
+            </div>
+
+
+
+            <div class="row">
+
+
+              <label for="Sexe" class="bb-3">Gendre : </label>
+
+              <div class="form-group col-6 mt-2">
+
+                  <input type="radio" name="sexe" formControlName="sexe" value="male" class=""> Male
+
+                  <input type="radio" name="sexe" formControlName="sexe" value="female" class=""> Female
+
+              </div>
+
+
+
+
+
+
+            <div class="col-6">
+              <div class="form-group mb-1">
+                  <label for="">Patient Image</label>
+              </div>
+              <div class="form-uploads mb-4">
+                  <div class="form-uploads-path">
+
+                      <button (click)="fileInput.click()" style="background-color: transparent; border: none;">
+                          <img (error)="changeSourceimage($event)" [src]="imgUrl" class="rounded-circle" width="100px" height="100px" />
+                          <input hidden type="file" #fileInput (change)="onFileInputImage(fileInput.files)" formControlName="image" name="image">
+                      </button>
+
+                  </div>
+              </div>
+          </div>
+
+
+
+            </div>
+
+
+
+
+
+                  <div class="forgotpass">
+                    <div class="remember-me">
+                      <label class="custom_check mr-2 mb-0 d-inline-flex remember-me">
+                        I agree to the
+                        <a href="javascript:;">&nbsp; terms of service </a>&nbsp; and
+                        <a href="javascript:;">&nbsp; privacy policy </a>
+                        <input type="checkbox" name="radio" />
+                        <span class="checkmark"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-group login-btn">
+                    <button (click)="register()" class="btn btn-primary btn-block" type="submit">
+                      Sign up
+                    </button>
+                  </div>
+                </form>
+                <!-- /Form -->
+
+                <div class="next-sign">
+                  <p class="account-subtitle">
+                    Already have account?
+                    <a [routerLink]="routes.login">Login</a>
+                  </p>
+
+                  <!-- Social Login -->
+                  <div class="social-login">
+                    <a href="javascript:;"><img src="assets/img/icons/login-icon-01.svg" alt="" /></a>
+                    <a href="javascript:;"><img src="assets/img/icons/login-icon-02.svg" alt="" /></a>
+                    <a href="javascript:;"><img src="assets/img/icons/login-icon-03.svg" alt="" /></a>
+                  </div>
+                  <!-- /Social Login -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- /Login Content -->
+    </div>
+  </div>
+</div>
+<!-- /Main Wrapper -->

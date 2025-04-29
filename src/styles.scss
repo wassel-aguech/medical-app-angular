@@ -1,0 +1,230 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+@import 'ngx-toastr/toastr';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.elevation-classes();
+@include mat.app-background();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$preclinic-angular-primary: mat.m2-define-palette(mat.$m2-indigo-palette);
+$preclinic-angular-accent: mat.m2-define-palette(
+  mat.$m2-pink-palette,
+  A200,
+  A100,
+  A400
+);
+
+// The warn palette is optional (defaults to red).
+$preclinic-angular-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$preclinic-angular-theme: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: $preclinic-angular-primary,
+      accent: $preclinic-angular-accent,
+      warn: $preclinic-angular-warn,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($preclinic-angular-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lightgallery.css");
+@import url("https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lg-zoom.css");
+@import url("https://cdn.jsdelivr.net/npm/lightgallery@2.0.0-beta.4/css/lg-thumbnail.css");
+
+@import "src/assets/style.scss";
+
+.full-cal {
+  .fc .fc-button .fc-icon {
+    color: #797979;
+  }
+  .fc-header-toolbar.fc-toolbar .fc-button,.fc-header-toolbar.fc-toolbar .fc-button:active {
+    background-color: #f1f1f1;
+    border: 0 none;
+    color: #797979;
+    text-transform: capitalize;
+  }
+  .fc-header-toolbar.fc-toolbar .fc-button.fc-button-active {
+    background-color: #00d3c7;
+    color: #fff;
+    text-shadow: none;
+  }
+  .fc-header-toolbar.fc-toolbar .fc-button:not(:disabled).fc-button-active:focus,.fc-header-toolbar.fc-toolbar .fc-button:not(:disabled):active:focus,
+  .fc-header-toolbar.fc-toolbar .fc-button:focus
+  {
+    box-shadow: 0 0 0;
+  }
+  .fc-button-group.fc .fc-button-primary:not(:disabled).fc-button-active {
+    background-color: #00d3c7;
+    border-color: #00d3c7;
+    color: #fff;
+    text-transform: capitalize;
+  }
+  .fc .fc-button-primary:disabled {
+    background-color: #00d3c7;
+    border-color: #00d3c7;
+    color: #fff;
+    text-transform: capitalize;
+  }
+  .fc .fc-button-primary:hover {
+    background: #f3f3f3;
+    border-color: #f3f3f3;
+    color: #797979;
+    text-transform: capitalize;
+  }
+  .fc .fc-button-primary:disabled:hover {
+    background: #00d3c7;
+    border-color: #00d3c7;
+    color: #fff;
+    text-transform: capitalize;
+  }
+  .fc-button {
+    background: #f1f1f1;
+    border: none;
+    color: $color_55;
+    text-transform: capitalize;
+    box-shadow: none;
+    border-radius: 3px !important;
+    margin: 0 3px !important;
+    padding: 6px 12px;
+    height: auto;
+  }
+  full-calendar {
+    font-size: 14px;
+  }
+  .fc .fc-toolbar {
+    align-items: center;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+}
+}
+.table_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 1.5rem;
+
+  .dataTables_length {
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-left: -24px;
+    }
+
+    select {
+      width: auto;
+      display: inline-block;
+      margin: 0px 3px;
+    }
+  }
+}
+.table_footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  .pagination_section {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+}
+.mat-mdc-option:hover:not(.mdc-list-item--disabled),
+.mat-mdc-option:focus:not(.mdc-list-item--disabled),
+.mat-mdc-option.mat-mdc-option-active,
+.mat-mdc-option.mdc-list-item--selected:not(.mat-mdc-option-multiple):not(
+    .mdc-list-item--disabled
+  ) {
+  background-color: $background-color_11 !important;
+}
+.mat-mdc-option-active .mdc-list-item__primary-text,
+.mat-mdc-option:hover .mdc-list-item__primary-text {
+  color: $color_16;
+}
+.mat-mdc-option {
+  min-height: 35px !important;
+}
+.cdk-overlay-container {
+  z-index: 10000000;
+}
+.mat-datepicker-toggle {
+  pointer-events: auto;
+  position: absolute;
+  top: -1px;
+  right: 0px;
+}
+.toggle-date-picker {
+  right: -15px;
+  top: -3px;
+}
+.date-picker-toggle {
+  top: 54px;
+  left: 32%;
+}
+.date-picker-icon {
+  right: 15px;
+  top: 50%;
+}
+.date-picker-toggle-icon {
+  top: 54px;
+  right: 19px;
+}
+.mat-datepicker-content {
+  font-size: 13px;
+}
+.feather.icon-settings,
+.feather.icon-list,
+.feather.icon-grid,
+.feather-circle {
+  font-size: 18px;
+}
+.NgxEditor {
+  box-shadow: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  min-height: 45px;
+  border: 2px solid rgba(46, 55, 164, 0.1) !important;
+  border-radius: 10px !important;
+  height: 250px;
+}
+.mini-sidebar {
+  .sidebar-menu ul ul {
+    display: none;
+  }
+  &.expand-menu {
+    .sidebar-menu ul ul {
+      display: block;
+    }
+  }
+}
+ngx-material-timepicker-content {
+  margin-top: 70px;
+}
+.slick-slider {
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+	.table_footer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+	}
+  .mat-pseudo-checkbox{
+    display: none;
+  }

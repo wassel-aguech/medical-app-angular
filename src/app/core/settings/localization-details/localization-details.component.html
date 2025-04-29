@@ -1,0 +1,108 @@
+<div class="page-wrapper">
+    <!-- Page Content -->
+    <div class="content container-fluid">
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.adminDashboard">Dashboard </a></li>
+                        <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+                        <li class="breadcrumb-item active">Settings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+
+        <div class="settings-menu-links">
+            <ul class="nav nav-tabs menu-tabs">
+                <li class="nav-item ">
+                    <a class="nav-link" [routerLink]="routes.settings">General Settings</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="routes.localizationDetails">Localization</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.paymentSettings">Payment Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.emailSettings">Email Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.socialSettings">Social Media Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.socialLinks">Social Links</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.seoSettings">SEO Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.themeSettings">Theme Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.changePassword">Change Password</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.othersSettings">Others</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Localization Details</h5>
+                    </div>
+                    <div class="card-body pt-0">
+                        <form>
+                            <div class="settings-form">
+                                <div class="form-group">
+                                    <label for="time">Time Zone</label>
+                                    <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="(UTC +5:30) Antarctica/Palmer">
+                                        <mat-option *ngFor="let data of selectedList1" [value]="data.value">
+                                        {{data.value}}
+                                        </mat-option>
+                                    </mat-select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Date">Date Format</label>
+                                    <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="15 May 2016">
+                                        <mat-option *ngFor="let data of selectedList2" [value]="data.value">
+                                        {{data.value}}
+                                        </mat-option>
+                                    </mat-select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="Time">Time Format</label>
+                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="12 Hours">
+                                            <mat-option *ngFor="let data of selectedList3" [value]="data.value">
+                                            {{data.value}}
+                                            </mat-option>
+                                        </mat-select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="symbol">Currency Symbol</label>
+                                    <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="$">
+                                        <mat-option *ngFor="let data of selectedList4" [value]="data.value">
+                                        {{data.value}}
+                                        </mat-option>
+                                    </mat-select>
+                                </div>
+                                <div class="form-group mb-0">
+                                    <div class="settings-btns">
+                                        <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Content -->
+</div>

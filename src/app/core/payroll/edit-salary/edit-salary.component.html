@@ -1,0 +1,120 @@
+<div class="page-wrapper">
+    <div class="content">
+    
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.salary">Payroll </a></li>
+                        <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+                        <li class="breadcrumb-item active">Edit Employee Salary</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+        <div class="row">
+            <div class="col-sm-12">
+            
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-heading">
+                                        <h4>Edit Employee Salary</h4>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">
+                                    <div class="form-group local-forms">
+                                        <label for="Select">Select Staff </label>
+                                        
+                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="Select Staff">
+                                            <mat-option *ngFor="let data of selectedList" [value]="data.value">
+                                            {{data.value}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">  
+                                    <div class="form-group local-forms">
+                                        <label for="Select">Net Salary </label>
+                                        <input class="form-control" type="text" value="$1000">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-xl-6">  
+                                    <div class="pay-head-roll">
+                                        <h5>Earnings</h5>
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Select">Basic Salary </label>
+                                        <input class="form-control" type="text" value="$1000" >
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Select">DA (40%) </label>
+                                        <input class="form-control" type="text" value="$800">
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Select">HRA (15%) </label>
+                                        <input class="form-control" type="text" value="$600">
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Select">Conveyance </label>
+                                        <input class="form-control" type="text" value="$50">
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Select">Medical Allowance </label>
+                                        <input class="form-control" type="text" value="$40" >
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Select">Others</label>
+                                        <input class="form-control" type="text" value="$20">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">
+                                    <div class="pay-head-roll">
+                                        <h5>Deductions</h5>
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Select">TDS </label>
+                                        <input class="form-control" type="text" value="$600">
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Select">ESI </label>
+                                        <input class="form-control" type="text" value="$500">
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Select">PF </label>
+                                        <input class="form-control" type="text" value="$60">
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Select">Prof.Tax </label>
+                                        <input class="form-control" type="text" value="$40">
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Select">Labour Welfare </label>
+                                        <input class="form-control" type="text" value="$30">
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Select">Others</label>
+                                        <input class="form-control" type="text" value="$10">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="doctor-submit text-end">
+                                        <button type="submit" class="btn btn-primary submit-form me-2">Submit</button>
+                                        <button type="submit" class="btn btn-primary cancel-form">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>							
+            </div>					
+        </div>
+    </div>
+</div>
+ 

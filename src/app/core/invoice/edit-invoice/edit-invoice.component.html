@@ -1,0 +1,215 @@
+<div class="page-wrapper">
+    <div class="content">
+    
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.invoices">Accounts </a></li>
+                        <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+                        <li class="breadcrumb-item active">Edit Invoice</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+        
+        <div class="row">
+            <div class="col-sm-12">
+            
+                <div class="card ">
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-heading">
+                                        <h4>Edit Invoice</h4>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">  
+                                    <div class="form-group local-forms">
+                                        <label for="Patient ">Patient Name <span class="login-danger">*</span></label>
+                                        <input class="form-control" type="text" value="Bernardo James" >
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">
+                                    <div class="form-group local-forms">
+                                        <label for="email" >Email <span class="login-danger">*</span></label>
+                                        <input class="form-control" type="email"  value="example@gmail.com" >
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">
+                                    <div class="form-group local-forms">
+                                         <label  for="department">Department <span class="login-danger">*</span></label>
+                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="Select  Department">
+                                            <mat-option *ngFor="let data of selectedList1" [value]="data.value">
+                                            {{data.value}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">
+                                    <div class="form-group local-forms">
+                                        <label for="tax">Tax <span class="login-danger">*</span></label>
+                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="Select  Tax">
+                                            <mat-option *ngFor="let data of selectedList2" [value]="data.value">
+                                            {{data.value}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">
+                                    <div class="form-group local-forms">
+                                        <label for="Invoice">Invoice Date  <span class="login-danger">*</span></label>
+                                        <input class="form-control datetimepicker" type="text" [formControl]="date" matInput [matDatepicker]="picker1">
+                                        <mat-datepicker #picker1></mat-datepicker>
+                                        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">
+                                    <div class="form-group local-forms">
+                                        <label for="Due">Due Date <span class="login-danger">*</span></label>
+                                        <input class="form-control datetimepicker" type="text" value="04.05.2020" matInput [matDatepicker]="picker2">
+                                        <mat-datepicker #picker2></mat-datepicker>
+                                        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">
+                                    <div class="form-group local-forms">
+                                        <label for="Patient">Patient Address  <span class="login-danger">*</span></label>
+                                        <textarea class="form-control" rows="3" cols="30">5754 Airport Rd, Coosada, AL, 36020</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">
+                                    <div class="form-group local-forms">
+                                        <label for="Billing">Billing  Address  <span class="login-danger">*</span></label>
+                                        <textarea class="form-control" rows="3" cols="30">5754 Airport Rd, Coosada, AL, 36020</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">
+                                    <div class="form-group local-forms">
+                                        <label for="Payment">Payment Method <span class="login-danger">*</span></label>
+                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="Select Payment Method">
+                                            <mat-option *ngFor="let data of selectedList3" [value]="data.value">
+                                            {{data.value}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">
+                                    <div class="form-group local-forms">
+                                        <label for="Select">Select Payment Status <span class="login-danger">*</span></label>
+                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="Select  Tax">
+                                            <mat-option *ngFor="let data of selectedList4" [value]="data.value">
+                                            {{data.value}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-12">
+                                    <div class="table-responsive">
+                                        <table class="table border-0 custom-table invoices-table">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 20px">#</th>
+                                                    <th class="col-sm-2">Item</th>
+                                                    <th class="col-md-6">Description</th>
+                                                    <th style="width:100px;">Unit Cost</th>
+                                                    <th style="width:80px;">Qty</th>
+                                                    <th>Amount</th>
+                                                    <th> </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>
+                                                        <input class="form-control" type="text" style="min-width:150px" value="Full body checkup">
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" style="min-width:150px" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" style="width:100px" type="text" value="150">
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" style="width:80px" type="text" value="1">
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control "  style="width:120px" type="text" value="150">
+                                                    </td>
+                                                    <td><a href="javascript:void(0)" class="text-success font-18 add-table-invoice" title="Add"><i class="fa fa-plus"></i></a></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>
+                                                        <input class="form-control" type="text" style="min-width:150px" value="Blood Test">
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" type="text" style="min-width:150px" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" style="width:100px" type="text" value="12">
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control" style="width:80px" type="text" value="1">
+                                                    </td>
+                                                    <td>
+                                                        <input class="form-control "  style="width:120px" type="text" value="120">
+                                                    </td>
+                                                    <td><a href="javascript:void(0)" class="text-success font-18 add-table-invoice" title="Add"><i class="fa fa-plus"></i></a></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="table-responsive custom-table invoices-table">
+                                        <table class="table border-0 grand-totals">
+                                            <tbody>
+                                                <tr>
+                                                    <td  class="text-end">Total</td>
+                                                    <td >
+                                                        <input class="form-control text-end" type="text" value="220">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td  class="text-end ">Tax</td>
+                                                    <td >
+                                                        <input class="form-control text-end" type="text" value="0">
+                                                    </td>
+                                                </tr>
+                                                <tr class="bold-total">
+                                                    <td  class="text-end">
+                                                        Grand Total
+                                                    </td>
+                                                    <td >
+                                                        <input class="form-control text-end" type="text" value="$320">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group local-forms">
+                                        <label for="other">Other Information  <span class="login-danger">*</span></label>
+                                        <textarea class="form-control" rows="3" cols="30"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="doctor-submit text-end">
+                                        <button type="submit" class="btn btn-primary submit-form me-2">Submit</button>
+                                        <button type="submit" class="btn btn-primary cancel-form">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>							
+            </div>					
+        </div>
+    </div>
+</div>
+ 

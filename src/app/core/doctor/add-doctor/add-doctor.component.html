@@ -1,0 +1,144 @@
+<div class="page-wrapper">
+  <div class="content">
+
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="row">
+        <div class="col-sm-12">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="routes.doctorsList">Doctors </a></li>
+            <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+            <li class="breadcrumb-item active">Add Doctor</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /Page Header -->
+    <div class="row">
+      <div class="col-sm-12">
+
+        <div class="card">
+          <div class="card-body">
+            <form [formGroup]="medecinForm" >
+              <div class="row">
+                <div class="col-12">
+                  <div class="form-heading">
+                    <h4>Doctor Details</h4>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6">
+                  <div class="form-group local-forms">
+                    <label for="first">First Name <span class="login-danger">*</span></label>
+                    <input class="form-control" formControlName="firstName" type="text" placeholder="">
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6">
+                  <div class="form-group local-forms">
+                    <label for="lastname">Last Name <span class="login-danger">*</span></label>
+                    <input class="form-control" formControlName="lastName" type="text" placeholder="">
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-xl-6">
+                  <div class="form-group local-forms">
+                    <label for="mobile">Mobile <span class="login-danger">*</span></label>
+                    <input class="form-control" formControlName="phone" type="text" placeholder="">
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6">
+                  <div class="form-group local-forms">
+                    <label for="email">Email <span class="login-danger">*</span></label>
+                    <input class="form-control" formControlName="email" type="email" placeholder="">
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6">
+                  <div class="form-group local-forms">
+                    <label for="Password">Password <span class="login-danger">*</span></label>
+                    <input class="form-control" formControlName="password" type="password" placeholder="">
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6">
+                  <div class="form-group local-forms">
+                    <label for="confirmpassword">Confirm Password <span class="login-danger">*</span></label>
+                    <input class="form-control" formControlName="confirmPassword" type="password" placeholder="">
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-xl-6">
+                  <div class="form-group local-forms">
+                    <label for="designation">Adresse <span class="login-danger">*</span></label>
+                    <input class="form-control" formControlName="address" type="text" placeholder="">
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-6">
+                  <div class="form-group local-forms">
+                    <label for="designation">Specialite <span class="login-danger">*</span></label>
+                    <input class="form-control" formControlName="specialite" type="text" placeholder="">
+                  </div>
+                </div>
+
+
+
+
+
+                <div class="col-4 ms-5">
+                  <div class="form-group select-gender">
+                    <label for="Avatar" class="gen-label">Status <span class="login-danger">*</span></label>
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" name="gender" formControlName="status" class="form-check-input">Active
+                      </label>
+                    </div>
+                    <div class="form-check-inline">
+                      <label class="form-check-label">
+                        <input type="radio" name="gender" formControlName="status" class="form-check-input">In Active
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+
+                                 <div class="col-6">
+                                   <div class="form-group mb-1">
+                                     <label for="">Doctor Image</label>
+                                   </div>
+                                   <div class="form-uploads mb-4">
+                                     <div class="form-uploads-path">
+
+                                       <button (click)="fileInput.click()" style="background-color: transparent; border: none;">
+                                         <img (error)="changeSourceimage($event)" [src]="imgUrl" class="rounded-circle" width="100px"
+                                           height="100px" />
+                                         <input hidden type="file" #fileInput (change)="onFileInputImage(fileInput.files)"
+                                           formControlName="image" name="image">
+                                       </button>
+
+                                     </div>
+                                   </div>
+                                 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="col-12">
+                  <div class="doctor-submit text-end">
+                    <button class="btn btn-primary submit-form me-2"  (click)="addMedecin()" >Submit</button>
+                    <button type="submit" class="btn btn-primary cancel-form">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,120 @@
+<div class="page-wrapper">
+    <div class="content">
+    
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.salary">Payroll </a></li>
+                        <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+                        <li class="breadcrumb-item active">Add Employee Salary</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+        <div class="row">
+            <div class="col-sm-12">
+            
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-heading">
+                                        <h4>Add Employee Salary</h4>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">
+                                    <div class="form-group local-forms">
+                                        <label for="Select">Select Staff </label>
+                                        
+                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="Select Staff">
+                                            <mat-option *ngFor="let data of selectedList" [value]="data.value">
+                                            {{data.value}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">  
+                                    <div class="form-group local-forms">
+                                        <label for="Net">Net Salary </label>
+                                        <input class="form-control" type="text" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-xl-6">  
+                                    <div class="pay-head-roll">
+                                        <h5>Earnings</h5>
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Basic">Basic Salary </label>
+                                        <input class="form-control" type="text" >
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="DA">DA (40%) </label>
+                                        <input class="form-control" type="text" >
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="HRA">HRA (15%) </label>
+                                        <input class="form-control" type="text" >
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Conveyance">Conveyance </label>
+                                        <input class="form-control" type="text" >
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Medical">Medical Allowance </label>
+                                        <input class="form-control" type="text" >
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Others">Others</label>
+                                        <input class="form-control" type="text" >
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-6">
+                                    <div class="pay-head-roll">
+                                        <h5>Deductions</h5>
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="TDS">TDS </label>
+                                        <input class="form-control" type="text" >
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="ESI">ESI </label>
+                                        <input class="form-control" type="text" >
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="PF">PF </label>
+                                        <input class="form-control" type="text" >
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="ProfTax">Prof.Tax </label>
+                                        <input class="form-control" type="text" >
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Labour">Labour Welfare </label>
+                                        <input class="form-control" type="text" >
+                                    </div>
+                                    <div class="form-group local-forms">
+                                        <label for="Others">Others</label>
+                                        <input class="form-control" type="text" >
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="doctor-submit text-end">
+                                        <button type="submit" class="btn btn-primary submit-form me-2">Submit</button>
+                                        <button type="submit" class="btn btn-primary cancel-form">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>							
+            </div>					
+        </div>
+    </div>
+</div>
+ 

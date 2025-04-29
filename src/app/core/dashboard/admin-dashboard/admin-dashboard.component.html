@@ -1,0 +1,309 @@
+<div class="page-wrapper">
+    <div class="content">
+    
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.adminDashboard">Dashboard </a></li>
+                        <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+                        <li class="breadcrumb-item active">Admin Dashboard</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+        
+        <div class="good-morning-blk">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="morning-user">
+                        <h2>Good Morning, <span>Daniel Bruk</span></h2>
+                        <p>Have a nice day at work</p>
+                    </div>
+                </div>
+                <div class="col-md-6 position-blk">
+                    <div class="morning-img">
+                        <img src="assets/img/morning-img-01.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                <div class="dash-widget">
+                    <div class="dash-boxs comman-flex-center">
+                        <img src="assets/img/icons/calendar.svg" alt="">
+                    </div>
+                    <div class="dash-content dash-count">
+                        <h4>Appointments</h4>
+                        <h2><span class="counter-up" [countUp]="250" [options]="{duration: 10}">250</span></h2>
+                        <p><span class="passive-view"><i class="feather icon-arrow-up-right me-1"></i>40%</span> vs last month</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                <div class="dash-widget">
+                    <div class="dash-boxs comman-flex-center">
+                        <img src="assets/img/icons/profile-add.svg" alt="">
+                    </div>
+                    <div class="dash-content dash-count">
+                        <h4>New Patients</h4>
+                        <h2><span class="counter-up" [countUp]="140" [options]="{duration: 10}">140</span></h2>
+                        <p><span class="passive-view"><i class="feather icon-arrow-up-right me-1"></i>20%</span> vs last month</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                <div class="dash-widget">
+                    <div class="dash-boxs comman-flex-center">
+                        <img src="assets/img/icons/scissor.svg" alt="">
+                    </div>
+                    <div class="dash-content dash-count">
+                        <h4>Operations</h4>
+                        <h2><span class="counter-up" [countUp]="56" [options]="{duration: 10}">56</span></h2>
+                        <p><span class="negative-view"><i class="feather icon-arrow-down-right me-1"></i>15%</span> vs last month</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
+                <div class="dash-widget">
+                    <div class="dash-boxs comman-flex-center">
+                        <img src="assets/img/icons/empty-wallet.svg" alt="">
+                    </div>
+                    <div class="dash-content dash-count">
+                        <h4>Earnings</h4>
+                        <h2>$<span class="counter-up" [countUp]="20250" [options]="{duration: 10}"> 20,250</span></h2>
+                        <p><span class="passive-view"><i class="feather icon-arrow-up-right me-1"></i>30%</span> vs last month</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-6 col-xl-9">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="chart-title patient-visit">
+                            <h4>Patient Visit by Gender</h4>
+                            <div >
+                                <ul class="nav chat-user-total">
+                                    <li><i class="fa fa-circle current-users" aria-hidden="true"></i>Male 75%</li>
+                                    <li><i class="fa fa-circle old-users" aria-hidden="true"></i> Female 25%</li>
+                                </ul>
+                            </div>
+                            <div class="form-group mb-0">
+                                <mat-select [(ngModel)]="selectedValue" class="form-control select"  placeholder="2022">
+                                        <mat-option *ngFor="let data of selecedList" [value]="data.value">
+                                          {{data.value}}
+                                        </mat-option>
+                                </mat-select>
+                            </div>
+                        </div>	
+                        <div id="patient-chart">  
+                            <apx-chart
+                            [series]="chartOptionsOne.series"
+                            [chart]="chartOptionsOne.chart"
+                            [dataLabels]="chartOptionsOne.dataLabels"
+                            [plotOptions]="chartOptionsOne.plotOptions"
+                            [responsive]="chartOptionsOne.responsive"
+                            [xaxis]="chartOptionsOne.xaxis"
+                            [legend]="chartOptionsOne.legend"
+                            [fill]="chartOptionsOne.fill"
+                            [grid]="chartOptionsOne.grid"
+                            [xaxis]="chartOptionsOne.xaxis"
+                          ></apx-chart></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-12 col-lg-6 col-xl-3 d-flex">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="chart-title">
+                            <h4>Patient by Department</h4>
+                        </div>	
+                        <div id="donut-chart-dash" class="chart-user-icon">
+                            <apx-chart class="donut-chart-custom"
+                            [series]="chartOptionsTwo.series"
+                            [chart]="chartOptionsTwo.chart"
+                            [labels]="chartOptionsTwo.labels"
+                            [responsive]="chartOptionsTwo.responsive"
+                            [dataLabels]="chartOptionsTwo.dataLabels"
+                            [legend]="chartOptionsTwo.legend"></apx-chart>
+                            <img src="assets/img/icons/user-icon.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-12  col-xl-4">
+                <div class="card top-departments">
+                    <div class="card-header">
+                        <h4 class="card-title mb-0">Top Departments</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="activity-top">
+                            <div class="activity-boxs comman-flex-center">
+                                <img src="assets/img/icons/dep-icon-01.svg" alt="">
+                            </div>
+                            <div class="departments-list">
+                                <h4>General Physician</h4>
+                                <p>35%</p>
+                            </div>
+                        </div>
+                        <div class="activity-top">
+                            <div class="activity-boxs comman-flex-center">
+                                <img src="assets/img/icons/dep-icon-02.svg" alt="">
+                            </div>
+                            <div class="departments-list">
+                                <h4>Dentist</h4>
+                                <p>24%</p>
+                            </div>
+                        </div>
+                        <div class="activity-top">
+                            <div class="activity-boxs comman-flex-center">
+                                <img src="assets/img/icons/dep-icon-03.svg" alt="">
+                            </div>
+                            <div class="departments-list">
+                                <h4>ENT</h4>
+                                <p>10%</p>
+                            </div>
+                        </div>
+                        <div class="activity-top">
+                            <div class="activity-boxs comman-flex-center">
+                                <img src="assets/img/icons/dep-icon-04.svg" alt="">
+                            </div>
+                            <div class="departments-list">
+                                <h4>Cardiologist</h4>
+                                <p>15%</p>
+                            </div>
+                        </div>
+                        <div class="activity-top mb-0">
+                            <div class="activity-boxs comman-flex-center">
+                                <img src="assets/img/icons/dep-icon-05.svg" alt="">
+                            </div>
+                            <div class="departments-list">
+                                <h4>Opthomology</h4>
+                                <p>20%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-12  col-xl-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title d-inline-block">Upcoming Appointments</h4> <a [routerLink]="routes.appointmentList" class="patient-views float-end">Show all</a>
+                    </div>
+                    <div class="card-body p-0 table-dash">
+                        <div class="table-responsive">
+                            <table matSort (matSortChange)="sortData($event)" class="table mb-0 border-0 datatable custom-table">
+                                <thead>
+                                    <tr>
+                                        <th mat-sort-header="checkbox">
+                                            <div class="form-check check-tables">
+                                                <input class="form-check-input" type="checkbox" value="something">
+                                            </div>
+                                        </th>
+                                        <th mat-sort-header="no">No</th>
+                                        <th mat-sort-header="patientName">Patient name</th>
+                                        <th mat-sort-header="doctor">Doctor</th>
+                                        <th mat-sort-header="time">Time</th>
+                                        <th mat-sort-header="disease">Disease</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of upcomingAppointments">
+                                        <td>
+                                            <div class="form-check check-tables">
+                                                <input class="form-check-input" type="checkbox" value="something">
+                                            </div>
+                                        </td>
+                                        <td>{{data.no}}</td>
+                                        <td>{{data.patientName}}</td>
+                                        <td class="table-image appoint-doctor">
+                                            <img width="28" height="28" class="rounded-circle" [src]="data.img" alt=""> 
+                                            <h2>{{data.doctor}}</h2>
+                                        </td>
+                                        <td class="appoint-time"><span>{{data.date}} </span>{{data.time}}</td>
+                                        <td><button class="custom-badge status-green ">{{data.disease}}</button></td>
+                                        <td class="text-end">
+                                            <div class="dropdown dropdown-action">
+                                                <a href="javascript:void(0);" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item" [routerLink]="routes.editAppointment"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+                                                    <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_appointment"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-xl-12">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <h4 class="card-title d-inline-block">Recent Patients </h4> <a [routerLink]="routes.patientsList" class="float-end patient-views">show all</a>
+                    </div>
+                    <div class="card-block table-dash">
+                        <div class="table-responsive">
+                            <table matSort (matSortChange)="sortData($event)" class="table mb-0 border-0 datatable custom-table">
+                                <thead>
+                                    <tr>
+                                        <th mat-sort-header="checkbox">
+                                            <div class="form-check check-tables">
+                                                <input class="form-check-input" type="checkbox" value="something">
+                                            </div>
+                                        </th>
+                                        <th mat-sort-header="no">No</th>
+                                        <th mat-sort-header="patientName">Patient name</th>
+                                        <th mat-sort-header="age">Age</th>
+                                        <th mat-sort-header="dateOfBirth">Date of Birth</th>
+                                        <th mat-sort-header="diagnosis">Diagnosis</th>
+                                        <th mat-sort-header="triage">Triage</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of recentPatients">
+                                        <td>
+                                            <div class="form-check check-tables">
+                                                <input class="form-check-input" type="checkbox" value="something">
+                                            </div>
+                                        </td>
+                                        <td>{{data.no}}</td>
+                                        <td class="table-image">
+                                            <img width="28" height="28" class="rounded-circle" [src]="data.img" alt=""> 
+                                            <h2>{{data.patientName}}</h2>
+                                        </td>
+                                        <td>{{data.age}}</td>
+                                        <td>{{data.dateOfBirth}}</td>
+                                        <td>{{data.diagnosis}}</td>
+                                        <td><button [ngClass]="{'status-green': data.triage === 'Non Urgent', 'status-pink' : data.triage === 'Emergency','status-gray' : data.triage === 'Out Patient','status-orange' : data.triage === 'Urgent' }" class="custom-badge">{{data.triage}}</button></td>
+                                        <td class="text-end">
+                                            <div class="dropdown dropdown-action">
+                                                <a href="javascript:void(0);" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item" [routerLink]="routes.editPatient"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+                                                    <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_appointment"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

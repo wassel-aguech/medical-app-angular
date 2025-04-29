@@ -1,0 +1,232 @@
+<div class="page-wrapper">
+    <div class="content">
+    
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.inbox">App </a></li>
+                        <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+                        <li class="breadcrumb-item active">Inbox</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+        <div class="row">
+            <div class="col-xl-4 d-flex">
+                <div class="card chat-box">
+                    <div class="chat-widgets">
+                        <div class="chat-user-group d-flex align-items-center">
+                            <div class="img-users call-user">
+                                <img src="assets/img/profiles/avatar-01.jpg" alt="img">
+                            </div>
+                            <div class="chat-users user-main">
+                                <div class="user-titles user-head-compse">
+                                    <h5> William Stephin	</h5>
+                                    <div class="chat-user-time">
+                                        <p>10:22 AM</p>
+                                    </div>
+                                </div>
+                                <div class="drop-item chat-menu user-dot-list">
+                                    <a href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false" class="">
+                                        <i class="feather icon-more-vertical"></i>
+                                    </a>
+                                    <div class="dropdown-menu" style="">
+                                        <a class="dropdown-item" href="javascript:;"><i class="feather icon-user me-2 text-primary"></i> Profile</a>
+                                        <a class="dropdown-item" href="javascript:;"><i class="feather icon-plus-circle me-2 text-success"></i> Archive</a>
+                                        <a class="dropdown-item" href="javascript:;"><i class="feather icon-trash-2 me-2 text-danger"></i> Delete</a>
+                                        <a class="dropdown-item " href="javascript:;"><i class="feather icon-slash me-2 text-secondary"></i> Block</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="compose-mail">
+                            <a [routerLink]="routes.compose" class="btn btn-primary"><img src="assets/img/icons/edit-2.svg" class="me-2" alt="img">Compose Mail</a>
+                        </div>
+                        <div class="email-menu-blk">
+                            <ul >
+                                <li class="active"><a href="javascript:;"><img src="assets/img/icons/inbox.svg" class="me-2" alt="img">Inbox<span class="comman-flex">50</span></a></li>
+                                <li><a href="javascript:;"><img src="assets/img/icons/sent.svg" class="me-2" alt="img">Sent <span class="comman-flex">120</span></a></li>
+                                <li><a href="javascript:;"><img src="assets/img/icons/draft.svg" class="me-2" alt="img">Draft <span class="comman-flex">20</span></a></li>
+                                <li><a href="javascript:;"><img src="assets/img/icons/star.svg" class="me-2" alt="img">Starred <span class="comman-flex">05</span></a></li>
+                                <li><a href="javascript:;"><img src="assets/img/icons/trash.svg" class="me-2" alt="img">Trash <span class="comman-flex">12</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="label-blk comman-space-flex">
+                            <h4>Labels</h4>
+                            <ul class="nav label-add-list">
+                                <li><a href="javascript:;" class="add-list-btn me-2"><i class="feather icon-plus "></i></a></li>
+                                <li>
+                                    <a href="javascript:;" data-bs-toggle="dropdown" aria-expanded="false" class="add-list-btn">
+                                        <i class="feather icon-more-vertical"></i>
+                                    </a>
+                                    <div class="dropdown-menu" style="">
+                                        <a class="dropdown-item" href="javascript:;"><i class="feather icon-user me-2 text-primary"></i> Profile</a>
+                                        <a class="dropdown-item" href="javascript:;"><i class="feather icon-plus-circle me-2 text-success"></i> Archive</a>
+                                        <a class="dropdown-item" href="javascript:;"><i class="feather icon-trash-2 me-2 text-danger"></i> Delete</a>
+                                        <a class="dropdown-item " href="javascript:;"><i class="feather icon-slash me-2 text-secondary"></i> Block</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="email-menu-blk">
+                            <ul >
+                                <li ><a href="javascript:;"><img src="assets/img/icons/tag-icon-01.svg" class="me-2" alt="img">Work<span class="comman-flex">50</span></a></li>
+                                <li><a href="javascript:;"><img src="assets/img/icons/tag-icon-02.svg" class="me-2" alt="img">Personal <span class="comman-flex">120</span></a></li>
+                                <li><a href="javascript:;"><img src="assets/img/icons/tag-icon-03.svg" class="me-2" alt="img">Read Later <span class="comman-flex">20</span></a></li>
+                            </ul>
+                        </div>
+                        <div class="label-blk comman-space-flex">
+                            <h4>Folders</h4>
+                            <ul class="nav label-add-list ">
+                                <li><a href="javascript:;" class="add-list-btn me-2"><i class="feather icon-plus "></i></a></li>
+                                <li>
+                                    <a href="javascript:;" data-bs-toggle="dropdown" aria-expanded="false" class="add-list-btn">
+                                        <i class="feather icon-more-vertical"></i>
+                                    </a>
+                                    <div class="dropdown-menu" style="">
+                                        <a class="dropdown-item" href="javascript:;"><i class="feather icon-user me-2 text-primary"></i> Profile</a>
+                                        <a class="dropdown-item" href="javascript:;"><i class="feather icon-plus-circle me-2 text-success"></i> Archive</a>
+                                        <a class="dropdown-item" href="javascript:;"><i class="feather icon-trash-2 me-2 text-danger"></i> Delete</a>
+                                        <a class="dropdown-item " href="javascript:;"><i class="feather icon-slash me-2 text-secondary"></i> Block</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="email-menu-blk">
+                            <ul class="mb-0">
+                                <li ><a href="javascript:;"><img src="assets/img/icons/folder-icon-01.svg" class="me-2" alt="img">Personal<span class="comman-flex">50</span></a></li>
+                                <li><a href="javascript:;"><img src="assets/img/icons/folder-icon-02.svg" class="me-2" alt="img">Office <span class="comman-flex">120</span></a></li>
+                                <li><a href="javascript:;"><img src="assets/img/icons/folder-icon-03.svg" class="me-2" alt="img">Bills <span class="comman-flex">20</span></a></li>
+                                <li><a href="javascript:;"><img src="assets/img/icons/folder-icon-04.svg" class="me-2" alt="img">Medical <span class="comman-flex">20</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8 ">
+                <div class="card chat-box ">
+                    <div class="mailview-content view-content-bottom">
+                        <div class="mail-view-list">
+                            <ul class="nav">
+                                <li><a href="javascript:;"><img  alt="" src="assets/img/icons/warning.svg" ></a></li>
+                                <li><a href="javascript:;"><img  alt="" src="assets/img/icons/tag-icon-04.svg" ></a></li>
+                                <li><a href="javascript:;"><img  alt="" src="assets/img/icons/inbox.svg" ></a></li>
+                                <li><a href="javascript:;"><img  alt="" src="assets/img/icons/folder-icon-05.svg" ></a></li>
+                            </ul>
+                        </div>
+                        <div class="mailview-header comman-space-flex">
+                            <div class="sender-info comman-flex">
+                                <div class="sender-img">
+                                    <img  alt="" src="assets/img/profiles/avatar-01.jpg" class="rounded-circle me-2">
+                                </div>
+                                <div class="send-user send-user-name">
+                                    <h4>Bernardo James <span class="email-market">Marketting</span></h4>
+                                    <p><span>From:</span> Markhaysmith&#64;example.com</p>
+                                </div>
+                            </div>
+                            <div class="mail-reports">
+                                <ul class="nav">
+                                    <li><a href="javascript:;" class="ford-angle star-bg"><i class="fas fa-star starred"></i></a></li>
+                                    <li><a href="javascript:;" class="ford-angle"><img  alt="" src="assets/img/icons/forward-icon-01.svg" ></a></li>
+                                    <li><a href="javascript:;" class="ford-angle"><img  alt="" src="assets/img/icons/forward-icon-02.svg" ></a></li>
+                                    <li><a href="javascript:;" class="ford-angle"><img  alt="" src="assets/img/icons/forward-icon-03.svg" ></a></li>
+                                    <li>
+                                        <a href="javascript:;" data-bs-toggle="dropdown" aria-expanded="false" class="add-list-btn ford-angle">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <div class="dropdown-menu" style="">
+                                            <a class="dropdown-item" href="javascript:;"><i class="feather icon-user me-2 text-primary"></i> Profile</a>
+                                            <a class="dropdown-item" href="javascript:;"><i class="feather icon-plus-circle me-2 text-success"></i> Archive</a>
+                                            <a class="dropdown-item" href="javascript:;"><i class="feather icon-trash-2 me-2 text-danger"></i> Delete</a>
+                                            <a class="dropdown-item " href="javascript:;"><i class="feather icon-slash me-2 text-secondary"></i> Block</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mailview-inner">
+                            <p>Hola, thanks for reaching me out.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <p>Scelerisque purus semper eget duis at. Feugiat in fermentum posuere urna net.</p>
+                            <p>Leo in vitae turpis massa sed element ?</p>
+                        </div>
+                        <div class="thank-mail">
+                            <h5>Thanks</h5>
+                            <h4>Mark hay smith</h4>
+                        </div>
+                        <div class="mail-attach">
+                            <h2>Attachments<a href="javascript:;">Download All</a></h2>
+                            <ul class="msg-sub-list nav">
+                                <li><img src="assets/img/icons/document-icon.svg" alt="" class="me-1">Expense.txt <span class="ms-1">30.0 MB</span><img src="assets/img/icons/chat-icon-07.svg" alt="" class="ms-2 "><i class="feather icon-x ms-2 mt-2"></i></li>
+                                <li><img src="assets/img/icons/gallery-icon.svg" alt="" class="me-1">Expense.img <span class="ms-1">4.0 MB</span><img src="assets/img/icons/chat-icon-07.svg" alt="" class="ms-2 "><i class="feather icon-x ms-2 mt-2"></i></li>
+                            </ul>
+                        </div>
+                        <div class="forward-send">
+                            <a  href="javascript:;" class="btn btn-primary replay-btn me-2"><img src="assets/img/icons/replay.svg" class="me-2" alt="img">Reply</a>
+                            <a href="javascript:;" class="btn btn-primary forwrd-btn"><img src="assets/img/icons/replay-01.svg" class="me-2" alt="img">Forward</a>
+                            <a href="javascript:;" ><img src="assets/img/icons/printer.svg" class="ms-2 me-2" alt="img"></a>
+                            <a href="javascript:;" ><img src="assets/img/icons/trash.svg" class="me-2" alt="img"></a>
+                        </div>
+                    </div>
+                    <div class="mailview-content">
+                        <div class="mail-view-list">
+                            <ul class="nav">
+                                <li><a href="javascript:;"><img  alt="" src="assets/img/icons/warning.svg" ></a></li>
+                                <li><a href="javascript:;"><img  alt="" src="assets/img/icons/tag-icon-04.svg" ></a></li>
+                                <li><a href="javascript:;"><img  alt="" src="assets/img/icons/inbox.svg" ></a></li>
+                                <li><a href="javascript:;"><img  alt="" src="assets/img/icons/folder-icon-05.svg" ></a></li>
+                            </ul>
+                        </div>
+                        <div class="mailview-header comman-space-flex">
+                            <div class="sender-info comman-flex">
+                                <div class="sender-img">
+                                    <img  alt="" src="assets/img/profiles/avatar-01.jpg" class="rounded-circle me-2">
+                                </div>
+                                <div class="send-user send-user-name">
+                                    <h4>Bernardo James <span class="email-market">Marketting</span></h4>
+                                    <p><span>From:</span> Markhaysmith&#64;example.com</p>
+                                </div>
+                            </div>
+                            <div class="mail-reports">
+                                <ul class="nav">
+                                    <li><a href="javascript:;" class="ford-angle star-bg"><i class="fas fa-star starred"></i></a></li>
+                                    <li><a href="javascript:;" class="ford-angle"><img  alt="" src="assets/img/icons/forward-icon-01.svg" ></a></li>
+                                    <li><a href="javascript:;" class="ford-angle"><img  alt="" src="assets/img/icons/forward-icon-02.svg" ></a></li>
+                                    <li><a href="javascript:;" class="ford-angle"><img  alt="" src="assets/img/icons/forward-icon-03.svg" ></a></li>
+                                    <li>
+                                        <a href="javascript:;" data-bs-toggle="dropdown" aria-expanded="false" class="add-list-btn ford-angle">
+                                            <i class="feather icon-more-vertical"></i>
+                                        </a>
+                                        <div class="dropdown-menu" style="">
+                                            <a class="dropdown-item" href="javascript:;"><i class="feather icon-user me-2 text-primary"></i> Profile</a>
+                                            <a class="dropdown-item" href="javascript:;"><i class="feather icon-plus-circle me-2 text-success"></i> Archive</a>
+                                            <a class="dropdown-item" href="javascript:;"><i class="feather icon-trash-2 me-2 text-danger"></i> Delete</a>
+                                            <a class="dropdown-item " href="javascript:;"><i class="feather icon-slash me-2 text-secondary"></i> Block</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mailview-inner">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p>
+                        </div>
+                        <div class="thank-mail">
+                            <h5>Thanks</h5>
+                            <h4>Mark hay smith</h4>
+                        </div>
+                        <div class="forward-send">
+                            <a  href="javascript:;" class="btn btn-primary replay-btn me-2"><img src="assets/img/icons/replay.svg" class="me-2" alt="img">Reply</a>
+                            <a href="javascript:;" class="btn btn-primary forwrd-btn"><img src="assets/img/icons/replay-01.svg" class="me-2" alt="img">Forward</a>
+                            <a href="javascript:;" ><img src="assets/img/icons/printer.svg" class="ms-2 me-2" alt="img"></a>
+                            <a href="javascript:;" ><img src="assets/img/icons/trash.svg" class="me-2" alt="img"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

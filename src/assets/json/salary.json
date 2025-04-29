@@ -1,0 +1,86 @@
+{
+    "data": [
+      {
+        "employeeId": "EID-001",
+        "employeeName": "Andrea Lalema",
+        "email": "example@gmail.com",
+        "joiningDate": "01.05.2020",
+        "role": "Nurse",
+        "salary" : "$1000",
+        "status" : "General Slip",
+        "img" : "assets/img/profiles/avatar-01.jpg"
+      },
+      {
+        "employeeId": "EID-002",
+        "employeeName": "William Stephin",
+        "email": "example@gmail.com",
+        "joiningDate": "03.05.2020",
+        "role": "Accountant",
+        "salary" : "$2000",
+        "status" : "General Slip",
+        "img" : "assets/img/profiles/avatar-03.jpg"
+      },
+      {
+        "employeeId": "EID-003",
+        "employeeName": "Smith Bruklin",
+        "email": "example@gmail.com",
+        "joiningDate": "04.05.2020",
+        "role": "Pharmacist",
+        "salary" : "$1500",
+        "status" : "General Slip",
+        "img" : "assets/img/profiles/avatar-02.jpg"
+      },
+      {
+        "employeeId": "EID-004",
+        "employeeName": "Bernardo James",
+        "email": "example@gmail.com",
+        "joiningDate": "06.06.2020",
+        "role": "Nurse",
+        "salary" : "$3000",
+        "status" : "General Slip",
+        "img" : "assets/img/profiles/avatar-04.jpg"
+      },
+      {
+        "employeeId": "EID-005",
+        "employeeName": "Cristina Groves",
+        "email": "example@gmail.com",
+        "joiningDate": "13.05.2020",
+        "role": "Accountant",
+        "salary" : "$5000",
+        "status" : "General Slip",
+        "img" : "assets/img/profiles/avatar-06.jpg"
+      },
+      {
+        "employeeId": "EID-006",
+        "employeeName": "Mark Hay Smith",
+        "email": "example@gmail.com",
+        "joiningDate": "11.12.2020",
+        "role": "Pharmacist",
+        "salary" : "$2000",
+        "status" : "General Slip",
+        "img" : "assets/img/profiles/avatar-05.jpg"
+      },
+      {
+        "employeeId": "EID-007",
+        "employeeName": " Andrea Lalema",
+        "email": "example@gmail.com",
+        "joiningDate": "01.05.2020",
+        "role": "Accountant",
+        "salary" : "$1000",
+        "status" : "General Slip",
+        "img" : "assets/img/profiles/avatar-01.jpg"
+      },
+      {
+        "employeeId": "EID-008",
+        "employeeName": "Smith Bruklin",
+        "email": "example@gmail.com",
+        "joiningDate": "01.05.2020",
+        "role": "Nurse",
+        "salary" : "$2000",
+        "status" : "General Slip",
+        "img" : "assets/img/profiles/avatar-02.jpg"
+      }
+    ],
+    "totalData": 8
+  }
+  

@@ -1,0 +1,86 @@
+{
+    "data": [
+      {
+        "employeeName": "Andrea Lalema",
+        "leaveType" : "Casual Leave",
+        "from" : "02.10.2022",
+        "to" : "04.10.2022",
+        "noOfDays" : "2 Days",
+        "reason" : "Not Feeling well",
+        "status" : "Approved",
+        "img" : "assets/img/profiles/avatar-01.jpg"
+      },
+      {
+        "employeeName": "William Stephin",
+        "leaveType" : "Casual Leave",
+        "from" : "04.10.2022",
+        "to" : "06.10.2022",
+        "noOfDays" : "2 Days",
+        "reason" : "Going to Vacation",
+        "status" : "Pending",
+        "img" : "assets/img/profiles/avatar-02.jpg"
+      },
+      {
+        "employeeName": "Smith Bruklin",
+        "leaveType" : "Casual Leave",
+        "from" : "02.10.2022",
+        "to" : "04.10.2022",
+        "noOfDays" : "2 Days",
+        "reason" : "Family Function",
+        "status" : "Declined",
+        "img" : "assets/img/profiles/avatar-03.jpg"
+      },
+      {
+        "employeeName": "Bernardo James",
+        "leaveType" : "Casual Leave",
+        "from" : "08.10.2022",
+        "to" : "10.10.2022",
+        "noOfDays" : "2 Days",
+        "reason" : "Going to Vacation",
+        "status" : "New",
+        "img" : "assets/img/profiles/avatar-04.jpg"
+      },
+      {
+        "employeeName": "Cristina Groves",
+        "leaveType" : "Medical Leave",
+        "from" : "02.10.2022",
+        "to" : "04.10.2022",
+        "noOfDays" : "2 Days",
+        "reason" : "Family Function",
+        "status" : "Approved",
+        "img" : "assets/img/profiles/avatar-06.jpg"
+      },
+      {
+        "employeeName": "Mark Hay Smith",
+        "leaveType" : "Medical Leave",
+        "from" : "02.10.2022",
+        "to" : "04.10.2022",
+        "noOfDays" : "2 Days",
+        "reason" : "Not Feeling well",
+        "status" : "Approved",
+        "img" : "assets/img/profiles/avatar-05.jpg"
+      },
+      {
+        "employeeName": " Andrea Lalema",
+        "leaveType" : "Medical Leave",
+        "from" : "02.10.2022",
+        "to" : "04.10.2022",
+        "noOfDays" : "2 Days",
+        "reason" : "Family Function",
+        "status" : "Approved",
+        "img" : "assets/img/profiles/avatar-01.jpg"
+      },
+      {
+        "employeeName": "Smith Bruklin",
+        "leaveType" : "Medical Leave",
+        "from" : "02.10.2022",
+        "to" : "04.10.2022",
+        "noOfDays" : "2 Days",
+        "reason" : "Not Feeling well",
+        "status" : "Approved",
+        "img" : "assets/img/profiles/avatar-02.jpg"
+      }
+    ],
+    "totalData": 8
+  }
+  

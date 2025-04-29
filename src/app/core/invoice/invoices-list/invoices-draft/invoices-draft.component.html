@@ -1,0 +1,502 @@
+<div class="page-wrapper">
+    <div class="content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.allInvoice">Invoice </a></li>
+                        <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+                        <li class="breadcrumb-item active">Invoice Draft</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+        <div class="row ">
+            <div class="col-lg-12">
+                <div class="py-3 d-flex justify-content-end">
+                    <a [routerLink]="routes.allInvoice" class="invoices-links active">
+                        <i class="feather icon-list"></i>
+                    </a>
+                    <a [routerLink]="routes.invoicesGrid" class="invoices-links">
+                        <i class="feather icon-grid"></i>
+                    </a>
+                </div>
+            </div>                    
+        </div>
+        <!-- Report Filter -->
+        <div class="card report-card">
+            <div class="card-body pb-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="app-listing">
+                            <li>
+                                <div class="multipleSelection">
+                                     <div class="selectBox" (click)="openCheckBoxes('User')"(keyup.enter)="openCheckBoxes('User')" tabindex="0">
+                                        <p class="mb-0"><i class="feather icon-user-plus me-1 select-icon"></i> Select User</p>
+                                        <span class="down-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                    </div>						  
+                                    <div id="checkBoxes" [ngClass]="
+                                    checkboxes[0] === 'User'
+                                      ? 'd-block'
+                                      : 'd-none'">
+                                        <form action="#">
+                                            <p class="checkbox-title">Customer Search</p>
+                                            <div class="form-custom">
+                                                <input type="text" class="form-control bg-grey" placeholder="Enter Customer Name">
+                                            </div>
+                                            <div class="selectBox-cont">
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="username">
+                                                    <span class="checkmark"></span>  Brian Johnson
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="username">
+                                                    <span class="checkmark"></span>  Russell Copeland
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="username">
+                                                    <span class="checkmark"></span>  Greg Lynch
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="username">
+                                                    <span class="checkmark"></span> John Blair
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="username">
+                                                    <span class="checkmark"></span> Barbara Moore
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="username">
+                                                    <span class="checkmark"></span> Hendry Evan
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="username">
+                                                    <span class="checkmark"></span> Richard Miles
+                                                </label>
+                                            </div>
+                                            <button type="submit" class="btn w-100 btn-primary">Apply</button>
+                                            <button type="reset" class="btn w-100 btn-grey">Reset</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="multipleSelection">
+                                     <div class="selectBox" (click)="openCheckBoxes('Date')"(keyup.enter)="openCheckBoxes('User')" tabindex="0">
+                                        <p class="mb-0"><i class="feather icon-calendar me-1 select-icon"></i> Select Date</p>
+                                        <span class="down-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                    </div>						  
+                                    <div id="checkBoxes" [ngClass]="
+                                    checkboxes[0] === 'Date'
+                                      ? 'd-block'
+                                      : 'd-none'">
+                                        <form action="#">
+                                            <p class="checkbox-title">Date Filter</p>
+                                            <div class="selectBox-cont selectBox-cont-one h-auto">
+                                                <div class="date-picker">
+                                                    <div class="form-custom">
+                                                        <input class="form-control datetimepicker" type="text"
+                                                            placeholder="From" matInput [matDatepicker]="picker1" />
+                                                        <mat-datepicker #picker1></mat-datepicker>
+                                                        <mat-datepicker-toggle class="date-picker-toggle" matIconSuffix
+                                                            [for]="picker1"></mat-datepicker-toggle>
+                                                    </div>
+                                                </div>
+                                                <div class="date-picker pe-0">
+                                                    <div class="form-custom">
+                                                        <input class="form-control datetimepicker" type="text"
+                                                            placeholder="To" matInput [matDatepicker]="picker2" />
+                                                        <mat-datepicker #picker2></mat-datepicker>
+                                                        <mat-datepicker-toggle matIconSuffix class="date-picker-toggle-icon"
+                                                            [for]="picker2"></mat-datepicker-toggle>
+                                                    </div>
+                                                </div>
+                                                <div class="date-list">
+                                                    <ul>
+                                                        <li><a href="javascript:void(0);" class="btn date-btn">Today</a></li>
+                                                        <li><a href="javascript:void(0);" class="btn date-btn">Yesterday</a></li>
+                                                        <li><a href="javascript:void(0);" class="btn date-btn">Last 7 days</a></li>
+                                                        <li><a href="javascript:void(0);" class="btn date-btn">This month</a></li>
+                                                        <li><a href="javascript:void(0);" class="btn date-btn">Last month</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="multipleSelection">
+                                    <div class="selectBox" (click)="openCheckBoxes('Status')"(keyup.enter)="openCheckBoxes('Status')" tabindex="0">
+                                        <p class="mb-0"><i class="feather icon-book-open me-1 select-icon"></i> Select Status</p>
+                                        <span class="down-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                    </div>						  
+                                    <div id="checkBoxes" [ngClass]="
+                                    checkboxes[0] === 'Status'
+                                      ? 'd-block'
+                                      : 'd-none'">
+                                        <form action="#">
+                                            <p class="checkbox-title">By Status</p>
+                                            <div class="selectBox-cont">
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="name" checked>
+                                                    <span class="checkmark"></span> All Invoices
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="name">
+                                                    <span class="checkmark"></span> Paid
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="name">
+                                                    <span class="checkmark"></span> Overdue
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="name">
+                                                    <span class="checkmark"></span> Draft
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="name">
+                                                    <span class="checkmark"></span> Recurring
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="name">
+                                                    <span class="checkmark"></span> Cancelled
+                                                </label>
+                                            </div>
+                                            <button type="submit" class="btn w-100 btn-primary">Apply</button>
+                                            <button type="reset" class="btn w-100 btn-grey">Reset</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="multipleSelection">
+                                    <div class="selectBox" (click)="openCheckBoxes('Category')"  (keyup.enter)="openCheckBoxes('Category')" tabindex="0">
+                                        <p class="mb-0"><i class="feather icon-bookmark me-1 select-icon"></i> By Category</p>
+                                        <span class="down-icon"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                                    </div>						  
+                                    <div id="checkBoxes" [ngClass]="
+                                    checkboxes[0] === 'Category'
+                                      ? 'd-block'
+                                      : 'd-none'">
+                                        <form action="#">
+                                            <p class="checkbox-title">Category</p>
+                                            <div class="form-custom">
+                                                <input type="text" class="form-control bg-grey" placeholder="Enter Category Name">
+                                            </div>
+                                            <div class="selectBox-cont">
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="category">
+                                                    <span class="checkmark"></span> Advertising
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="category">
+                                                    <span class="checkmark"></span> Food
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="category">
+                                                    <span class="checkmark"></span> Marketing
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="category">
+                                                    <span class="checkmark"></span> Repairs
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="category">
+                                                    <span class="checkmark"></span> Software
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="category">
+                                                    <span class="checkmark"></span> Stationary
+                                                </label>
+                                                <label class="custom_check w-100">
+                                                    <input type="checkbox" name="category">
+                                                    <span class="checkmark"></span> Travel
+                                                </label>
+                                            </div>
+                                            <button type="submit" class="btn w-100 btn-primary">Apply</button>
+                                            <button type="reset" class="btn w-100 btn-grey">Reset</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="report-btn">
+                                    <a href="javascript:void(0);" class="btn">
+                                        <img src="assets/img/invoices-icon5.png" alt="" class="me-2">
+                                        Generate report
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>    					
+        <div class="card invoices-tabs-card">
+            <div class="card-body card-body pt-0 pb-0">
+                <div class="invoices-main-tabs">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-8">
+                            <div class="invoices-tabs">
+                                <ul>
+                                    <li><a [routerLink]="routes.allInvoice">All Invoice</a></li>
+                                    <li><a [routerLink]="routes.invoicesPaid" >Paid</a></li>	
+                                    <li><a [routerLink]="routes.invoicesOverdue">Overdue</a></li>		
+                                    <li><a [routerLink]="routes.invoicesDraft" class="active">Draft</a></li>	
+                                    <li><a [routerLink]="routes.invoicesRecurring">Recurring</a></li>
+                                    <li><a [routerLink]="routes.invoicesCancelled">Cancelled</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="invoices-settings-btn">
+                                <a [routerLink]="routes.invoicesSettings" class="invoices-settings-icon">
+                                    <i class="feather icon-settings"></i>
+                                </a>
+                                <a [routerLink]="routes.addInvoice" class="btn">
+                                    <i class="feather icon-plus-circle feather-circle me-2"></i> New Invoice
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>	
+        <div class="row">
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card inovices-card">
+                    <div class="card-body">
+                        <div class="inovices-widget-header">
+                            <span class="inovices-widget-icon">
+                                <img src="assets/img/invoices-icon1.svg" alt="">
+                            </span>
+                            <div class="inovices-dash-count">
+                                <div class="inovices-amount">$8,78,797</div>
+                            </div>
+                        </div>
+                        <p class="inovices-all">All Invoices <span>50</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card inovices-card">
+                    <div class="card-body">
+                        <div class="inovices-widget-header">
+                            <span class="inovices-widget-icon">
+                                <img src="assets/img/invoices-icon2.svg" alt="">
+                            </span>
+                            <div class="inovices-dash-count">
+                                <div class="inovices-amount">$4,5884</div>
+                            </div>
+                        </div>
+                        <p class="inovices-all">Paid Invoices <span>60</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card inovices-card">
+                    <div class="card-body">
+                        <div class="inovices-widget-header">
+                            <span class="inovices-widget-icon">
+                                <img src="assets/img/invoices-icon3.svg" alt="">
+                            </span>
+                            <div class="inovices-dash-count">
+                                <div class="inovices-amount">$2,05,545</div>
+                            </div>
+                        </div>
+                        <p class="inovices-all">Unpaid Invoices <span>70</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-12">
+                <div class="card inovices-card">
+                    <div class="card-body">
+                        <div class="inovices-widget-header">
+                            <span class="inovices-widget-icon">
+                                <img src="assets/img/invoices-icon4.svg" alt="">
+                            </span>
+                            <div class="inovices-dash-count">
+                                <div class="inovices-amount">$8,8,797</div>
+                            </div>
+                        </div>
+                        <p class="inovices-all">Cancelled Invoices <span>80</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table"> 
+                    <div class="card-body p-4">
+                        <div class="table-responsive">
+                            <div class="table_header">
+                                <div class="row">
+                                  <div class="col-sm-12 col-md-6">
+                                    <div class="dataTables_length">
+                                      <label>
+                                        Show
+                                        <select
+                                          [(ngModel)]="pageSize"
+                                          (ngModelChange)="PageSize()"
+                                          class="form-control form-control-sm"
+                                        >
+                                          <option value="10">10</option>
+                                          <option value="25">25</option>
+                                          <option value="50">50</option>
+                                          <option value="100">100</option>
+                                        </select>
+                                        entries
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            <table matSort (matSortChange)="sortData($event)" class="table custom-table comman-table mb-0 datatable">
+                                <thead class="thead-light">
+                                    <tr>
+                                       <th mat-sort-header="invoiceTo">Invoice to</th>
+                                       <th mat-sort-header="amount">Amount</th>
+                                       <th mat-sort-header="createdOn">Created on</th>
+                                       <th  class="text-end">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of invoicesDraft">
+                                        <td>
+                                            <label class="custom_check">
+                                                <input type="checkbox" name="invoice">
+                                                <span class="checkmark"></span> 
+                                            </label>
+                                            <h2 class="table-avatar">
+                                                <a [routerLink]="routes.profile"><img class="avatar avatar-sm me-2 avatar-img rounded-circle" [src]="data.img" alt="User Image"> {{data.invoiceTo}}</a>
+                                            </h2>
+                                        </td>
+                                        <td class="text-primary">{{data.amount}}</td>
+                                        <td>{{data.createdOn}}</td>
+                                        <td class="text-end">
+                                            <a [routerLink]="routes.editInvoices" class="btn btn-sm btn-white text-success me-2"><i class="far fa-edit me-1"></i> Edit</a> 
+                                            <a class="btn btn-sm btn-white text-danger" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_paid"><i class="far fa-trash-alt me-1"></i>Delete</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="table_footer">
+                                <div class="col-sm-12 col-md-5">
+                                  <div class="dataTables_info">
+                                    Showing {{ serialNumberArray[0] }} to
+                                    {{ serialNumberArray[serialNumberArray.length - 1] }} of
+                                    {{ totalData }} entries
+                                  </div>
+                                </div>
+                
+                                <div class="col-sm-12 col-md-7">
+                                  <div class="pagination_section">
+                                    <ul class="pagination">
+                                      <li
+                                        class="page-item"
+                                        [ngClass]="{
+                                          disabled: currentPage === 1
+                                        }"
+                                      >
+                                        <a
+                                          (click)="getMoreData('previous')"
+                                          class="page-link"
+                                          href="javascript:void(0);"
+                                          tabindex="-1"
+                                          >Previous</a
+                                        >
+                                      </li>
+                
+                                      <ng-container
+                                        *ngFor="let item of pageNumberArray; let i = index"
+                                      >
+                                        <li
+                                          class="page-item"
+                                          [class.active]="item === currentPage"
+                                          [ngClass]="
+                                            (pageNumberArray[currentPage - 2] > item &&
+                                              item !== 1 &&
+                                              pageNumberArray.length > 6) ||
+                                            (pageNumberArray[currentPage] < item &&
+                                              item !== 1 &&
+                                              pageNumberArray.length > 6 &&
+                                              pageNumberArray.length !== item)
+                                              ? 'hide-page-no'
+                                              : 'show-page-no'
+                                          "
+                                        >
+                                          <a
+                                            (click)="moveToPage(item)"
+                                            class="page-link"
+                                            href="javascript:void(0);"
+                                          >
+                                            {{ item }}
+                                          </a>
+                                        </li>
+                                        <li
+                                          class="page-item"
+                                          *ngIf="
+                                            i === 0 &&
+                                            pageNumberArray.length > 6 &&
+                                            currentPage > 2
+                                          "
+                                          [hidden]="currentPage === 1"
+                                          (click)="moveToPage(currentPage - 2)"
+                                      (keyup.enter)="moveToPage(currentPage - 2)"  
+                                      tabindex="0"
+                                        >
+                                          <a class="page-link" href="javascript:void(0);">
+                                            ...
+                                          </a>
+                                        </li>
+                                        <li
+                                          *ngIf="
+                                            i === pageNumberArray.length - 2 &&
+                                            pageNumberArray.length > 6
+                                          "
+                                          [hidden]="
+                                            currentPage >=
+                                              pageNumberArray[pageNumberArray.length - 2] ||
+                                            totalData <
+                                              serialNumberArray[serialNumberArray.length - 1]
+                                          "
+                                          class="page-item"
+                                          (click)="moveToPage(currentPage + 2)"(keyup.enter)="moveToPage(currentPage + 2)"  
+                                          tabindex="0"
+                                        >
+                                          <a class="page-link" href="javascript:void(0);">
+                                            ...
+                                          </a>
+                                        </li>
+                                      </ng-container>
+                
+                                      <li
+                                        class="page-item"
+                                        [ngClass]="{
+                                          disabled:
+                                            currentPage ===
+                                              pageNumberArray[pageNumberArray.length - 1] ||
+                                              invoicesDraft.length === 0
+                                        }"
+                                      >
+                                        <a
+                                          (click)="getMoreData('next')"
+                                          class="page-link"
+                                          href="javascript:void(0);"
+                                          >Next
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>			
+    </div>
+</div>

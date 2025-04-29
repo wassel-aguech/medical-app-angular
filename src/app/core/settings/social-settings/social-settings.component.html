@@ -1,0 +1,148 @@
+<div class="page-wrapper">
+    <!-- Page Content -->
+    <div class="content container-fluid">
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.adminDashboard">Dashboard </a></li>
+                        <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+                        <li class="breadcrumb-item active">Settings</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+
+        <div class="settings-menu-links">
+            <ul class="nav nav-tabs menu-tabs">
+                <li class="nav-item ">
+                    <a class="nav-link" [routerLink]="routes.settings">General Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.localizationDetails">Localization</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.paymentSettings">Payment Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.emailSettings">Email Settings</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" [routerLink]="routes.socialSettings">Social Media Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.socialLinks">Social Links</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" [routerLink]="routes.seoSettings">SEO Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.themeSettings">Theme Settings</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.changePassword">Change Password</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="routes.othersSettings">Others</a>
+                </li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title">Google Login Credential</h5>
+                        <div class="status-toggle d-flex justify-content-between align-items-center">
+                            <input type="checkbox" id="status_1" class="check" checked="">
+                            <label for="status_1" class="checktoggle">checkbox</label>
+                        </div>
+                    </div>	
+                    <div class="card-body pt-0">
+                        
+                        <form>
+                            <div class="settings-form">
+                                <div class="form-group form-placeholder">
+                                    <label for="clientid">Client ID <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group form-placeholder">
+                                    <label for="clientservice">Client Secret <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group mb-0">
+                                    <div class="settings-btns">
+                                        <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title">Facebook</h5>
+                        <div class="status-toggle d-flex justify-content-between align-items-center">
+                            <input type="checkbox" id="status_2" class="check" checked="">
+                            <label for="status_2" class="checktoggle">checkbox</label>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <form>
+                            <div class="settings-form">
+                                <div class="form-group form-placeholder">
+                                    <label for="id">App ID <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group form-placeholder">
+                                    <label for="App">App Secret <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group mb-0">
+                                    <div class="settings-btns">
+                                        <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="card-title">Twiter Login Credential</h5>
+                        <div class="status-toggle d-flex justify-content-between align-items-center">
+                            <input type="checkbox" id="status_3" class="check">
+                            <label for="status_3" class="checktoggle">checkbox</label>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <form>
+                            <div class="settings-form">
+                                <div class="form-group form-placeholder">
+                                    <label for="Client">Client ID <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group form-placeholder">
+                                    <label for="Client">Client Secret <span class="star-red">*</span></label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group mb-0">
+                                    <div class="settings-btns">
+                                        <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Page Content -->
+</div>

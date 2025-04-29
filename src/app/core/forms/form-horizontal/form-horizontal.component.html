@@ -1,0 +1,332 @@
+<div class="page-wrapper">
+    <div class="content">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.adminDashboard">Dashboard </a></li>
+                        <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+                        <li class="breadcrumb-item active">Horizontal Form</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card-box">
+                    <h4 class="card-title">Basic Form</h4>
+                    <form action="#">
+                        <div class="form-group row">
+                            <label for="name" class="col-md-3 col-form-label">First Name</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="last" class="col-md-3 col-form-label">Last Name</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-md-3 col-form-label">Email Address</label>
+                            <div class="col-md-9">
+                                <input type="email" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="user" class="col-md-3 col-form-label">Username</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password" class="col-md-3 col-form-label">Password</label>
+                            <div class="col-md-9">
+                                <input type="password" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label  for="repeatpassword" class="col-md-3 col-form-label">Repeat Password</label>
+                            <div class="col-md-9">
+                                <input type="password" class="form-control">
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card-box">
+                    <h4 class="card-title">Address Form</h4>
+                    <form action="#">
+                        <div class="form-group row">
+                            <label for="address" class="col-md-3 col-form-label">Address Line 1</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="line2" class="col-md-3 col-form-label">Address Line 2</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="city" class="col-md-3 col-form-label">City</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="state" class="col-md-3 col-form-label">State</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="country" class="col-md-3 col-form-label">Country</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="postal" class="col-md-3 col-form-label">Postal Code</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card-box">
+                    <h4 class="card-title">Two Column Horizontal Form</h4>
+                    <h4 class="card-title">Personal Information</h4>
+                    <form action="#">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="name" class="col-md-3 col-form-label">First Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="name" class="col-md-3 col-form-label">Last Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="gender" class="col-md-3 col-form-label">Gender</label>
+                                    <div class="col-md-9">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="gender_male" value="option1" checked>
+                                            <label class="form-check-label" for="gender_male">
+                                            Male
+                                            </label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="gender_female" value="option2">
+                                            <label class="form-check-label" for="gender_female">
+                                            Female
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="Blood" class="col-md-3 col-form-label">Blood Group</label>
+                                    <div class="col-md-9">
+                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="Select">
+                                            <mat-option *ngFor="let data of selectedList1" [value]="data.value">
+                                            {{data.value}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="user" class="col-md-3 col-form-label">Username</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-md-3 col-form-label">Email</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="Password" class="col-md-3 col-form-label">Password</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="Password" class="col-md-3 col-form-label">Repeat Password</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h4 class="card-title">Address</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="Address" class="col-md-3 col-form-label">Address Line 1</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="Address" class="col-md-3 col-form-label">Address Line 2</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="State" class="col-md-3 col-form-label">State</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group row">
+                                    <label for="City" class="col-md-3 col-form-label">City</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="City" class="col-md-3 col-form-label">Country</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="Postal" class="col-md-3 col-form-label">Postal Code</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <form action="#">
+                    <div class="card-box">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4 class="card-title">Personal Details</h4>
+                                <div class="form-group row">
+                                    <label for="Name" class="col-lg-3 col-form-label">Name:</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="Password" class="col-lg-3 col-form-label">Password:</label>
+                                    <div class="col-lg-9">
+                                        <input type="password" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="State" class="col-lg-3 col-form-label">State:</label>
+                                    <div class="col-lg-9">
+                                        
+                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="Select State">
+                                            <mat-option *ngFor="let data of selectedList2" [value]="data.value">
+                                            {{data.value}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="About" class="col-lg-3 col-form-label">About:</label>
+                                    <div class="col-lg-9">
+                                        <textarea rows="5" cols="5" class="form-control" placeholder="Enter message"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <h4 class="card-title">Personal details</h4>
+                                <div class="form-group row">
+                                    <label for="Name" class="col-lg-3 col-form-label">Name:</label>
+                                    <div class="col-lg-9">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <input type="text" placeholder="First name" class="form-control">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" placeholder="Last name" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="Email" class="col-lg-3 col-form-label">Email:</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="Phone" class="col-lg-3 col-form-label">Phone:</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="Address" class="col-lg-3 col-form-label">Address:</label>
+                                    <div class="col-lg-9">
+                                        <input type="text" class="form-control m-b-20">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class=" m-b-20">
+                                                    
+                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="Select Country">
+                                            <mat-option *ngFor="let data of selectedList3" [value]="data.value">
+                                            {{data.value}}
+                                            </mat-option>
+                                        </mat-select>
+                                                </div>
+                                                <input type="text" placeholder="ZIP code" class="form-control">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" placeholder="State/Province" class="form-control m-b-20">
+                                                <input type="text" placeholder="City" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

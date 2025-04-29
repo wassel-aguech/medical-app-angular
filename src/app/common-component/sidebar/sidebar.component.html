@@ -1,0 +1,81 @@
+<div class="sidebar" id="sidebar" (mouseover)="miniSideBarMouseHover('over')" (mouseout)="miniSideBarMouseHover('out')"(focus)="miniSideBarMouseHover('over')"  (blur)="miniSideBarMouseHover('out')" tabindex="0">
+  <ng-scrollbar>
+    <div id="sidebar-menu" class="sidebar-menu">
+      <ul>
+        <ng-container *ngFor="let mainTittle of sidebarData">
+          <li class="menu-title">
+            <span>{{ mainTittle.tittle | titlecase }}</span>
+          </li>
+          <ng-container *ngFor="let menu of mainTittle.menu">
+            <li *ngIf="menu.hasSubRoute === false">
+              <a [class.active]="base === menu.base" [routerLink]="menu.route"><span class="menu-side"><i class="fa"
+                    [class]="menu.icon" *ngIf="menu.faIcon === true"></i><img [src]="menu.img" alt="" /></span>
+                <span>{{ menu.menuValue | titlecase }}</span></a>
+            </li>
+            <li class="submenu" *ngIf="menu.hasSubRoute === true">
+              <a [class.active]="base === menu.base  " (click)="expandSubMenus(menu)"
+                href="javascript:void(0)" [ngClass]="{ subdrop: menu.showSubRoute === true }"><span class="menu-side"><i
+                    class="fa" [class]="menu.icon" *ngIf="menu.faIcon === true"></i><img [src]="menu.img"
+                    alt="" /></span>
+                <span> {{ menu.menuValue | titlecase }}</span>
+                <span class="menu-arrow"></span></a>
+              <ul>
+                <ng-container *ngFor="let subMenus of menu.subMenus">
+                  <li [ngClass]="
+                        menu.showSubRoute === true
+                          ? 'd-block'
+                          : 'd-none'
+                      ">
+                    <a [routerLink]="subMenus.route" [class.active]="currentUrl === subMenus.base">
+                      {{ subMenus.menuValue | titlecase }}
+                    </a>
+                  </li>
+                </ng-container>
+
+              </ul>
+            </li>
+          </ng-container>
+        </ng-container>
+        <li class="submenu">
+          <a [ngClass]="{ subdrop: multilevel[0] }" (click)="multilevel[0] = !multilevel[0]" href="javascript:void(0);"><i class="fa fa-share-alt"></i> <span>Multi Level</span> <span
+              class="menu-arrow"></span></a>
+          <ul [ngClass]="
+          multilevel[0] === true
+          ? 'd-block'
+          : 'd-none'
+      ">
+            <li class="submenu">
+              <a [ngClass]="{ subdrop: multilevel[1] }" (click)="multilevel[1] = !multilevel[1]" href="javascript:void(0);"><span>Level 1</span> <span class="menu-arrow"></span></a>
+              <ul [ngClass]="
+              multilevel[1] === true
+              ? 'd-block'
+              : 'd-none'
+          ">
+                <li><a href="javascript:void(0);"><span>Level 2</span></a></li>
+                <li class="submenu">
+                  <a [ngClass]="{ subdrop: multilevel[2] }" (click)="multilevel[2] = !multilevel[2]" href="javascript:void(0);"> <span> Level 2</span> <span class="menu-arrow"></span></a>
+                  <ul [ngClass]="
+                  multilevel[2] === true
+                  ? 'd-block'
+                  : 'd-none'
+              ">
+                    <li><a href="javascript:void(0);">Level 3</a></li>
+                    <li><a href="javascript:void(0);">Level 3</a></li>
+                  </ul>
+                </li>
+                <li><a href="javascript:void(0);"><span>Level 2</span></a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="javascript:void(0);"><span>Level 1</span></a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <div class="logout-btn">
+        <a [routerLink]="routes.login"><span class="menu-side"><img src="assets/img/icons/logout.svg" alt="" /></span>
+          <span>Logout</span></a>
+      </div>
+    </div>
+  </ng-scrollbar>
+</div>

@@ -1,0 +1,65 @@
+{
+    "data": [
+        {
+            "invoiceNumber" : "IN093439#@09",
+            "category" : "Advertising",
+            "createdOn" : "16 Mar 2022",
+            "invoiceTo" : "Barbara Moore",
+            "amount" : "$1,54,220",
+            "lastInvoice" : "23 Mar 2022",
+            "nextInvoice" : "28 Mar 2022",
+            "frequency" : "14 Months",
+            "status" : "Active",
+            "img" : "assets/img/profiles/avatar-04.jpg"
+        },
+        {
+            "invoiceNumber" : "IN093439#@10",
+            "category" : "Food",
+            "createdOn" : "18 Mar 2022",
+            "invoiceTo" : " Karlene Chaidez",
+            "amount" : "$1,222",
+            "lastInvoice" : "23 Mar 2022",
+            "nextInvoice" : "20 Mar 2022",
+            "frequency" : "12 Months",
+            "status" : "Expired",
+            "img" : "assets/img/profiles/avatar-06.jpg"
+        },
+        {
+            "invoiceNumber" : "IN093439#@11",
+            "category" : "Marketing",
+            "createdOn" : "7 Mar 2022",
+            "invoiceTo" : "Russell Copeland",
+            "amount" : "$3,470",
+            "lastInvoice" : "10 Mar 2022",
+            "nextInvoice" : "18 Mar 2022",
+            "frequency" : "08 Months",
+            "status" : "Active",
+            "img" : "assets/img/profiles/avatar-08.jpg"
+        },
+        {
+            "invoiceNumber" : "IN093439#@12",
+            "category" : "Repairs",
+            "createdOn" : "24 Mar 2022",
+            "invoiceTo" : " Joseph Collins",
+            "amount" : "$8,265",
+            "lastInvoice" : "30 Mar 2022",
+            "nextInvoice" : "22 Mar 2022",
+            "frequency" : "10 Months",
+            "status" : "Expired",
+            "img" : "assets/img/profiles/avatar-10.jpg"
+        },
+        {
+            "invoiceNumber" : "IN093439#@13",
+            "category" : "Software",
+            "createdOn" : "17 Mar 2022",
+            "invoiceTo" : "Jennifer Floyd",
+            "amount" : "$5,200",
+            "lastInvoice" : "20 Mar 2022",
+            "nextInvoice" : "31 Mar 2022",
+            "frequency" : "03 Months",
+            "status" : "Active",
+            "img" : "assets/img/profiles/avatar-11.jpg"
+        }
+    ],
+    "totalData":5
+}

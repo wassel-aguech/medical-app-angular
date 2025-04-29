@@ -1,0 +1,26 @@
+{
+    "data": [
+        {
+            "doctorName" : "Dr.William Stephin",
+            "diagnosis" : "Dermotology",
+            "date" : "12.05.2022",
+            "img" : "assets/img/profiles/avatar-05.jpg",
+            "status" : "Reschedule"
+        },
+        {
+            "doctorName" : "Dr.Jenny Smith",
+            "diagnosis" : "Dermotology",
+            "date" : "12.05.2022",
+            "img" : "assets/img/profiles/avatar-02.jpg",
+            "status" : "Reschedule"
+        },
+        {
+            "doctorName" : "Andrea Lalema",
+            "diagnosis" : "Dermotology",
+            "date" : "10.05.2022",
+            "img" : "assets/img/profiles/avatar-04.jpg",
+            "status" : "Reschedule"
+        }
+    ],
+    "totalData":3
+}

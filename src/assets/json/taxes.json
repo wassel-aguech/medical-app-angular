@@ -1,0 +1,23 @@
+{
+    "data": [
+        {
+            "taxName" : "VAT",
+            "taxPercentage" : "14%",
+            "status" : "Active",
+            "sno" : "1"
+        },
+        {
+            "taxName" : "GST",
+            "taxPercentage" : "30%",
+            "status" : "In Active",
+            "sno" : "2"
+        },
+        {
+            "taxName" : "CGST",
+            "taxPercentage" : "40%",
+            "status" : "Active",
+            "sno" : "3"
+        }
+    ],
+    "totalData":3
+}

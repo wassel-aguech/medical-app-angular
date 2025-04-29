@@ -1,0 +1,69 @@
+{
+    "data": [
+        {
+            "department" : "Cardiology",
+            "departmentHead" : "Dr.Andrea Lalema",
+            "description" : "Investigates and treats proble...",
+            "date" : "01.10.2022",
+            "status" : "Active",
+            "img" : "assets/img/profiles/avatar-01.jpg"
+        },
+        {
+            "department" : "Urology",
+            "departmentHead" : "Dr.Smith Bruklin",
+            "description" : "Investigates and treats proble...",
+            "date" : "01.10.2022",
+            "status" : "Active",
+            "img" : "assets/img/profiles/avatar-02.jpg"
+        },
+        {
+            "department" : "Radiology",
+            "departmentHead" : "Dr.William Stephin",
+            "description" : "Investigates and treats proble...",
+            "date" : "01.10.2022",
+            "status" : "Active",
+            "img" : "assets/img/profiles/avatar-03.jpg"
+        },
+        {
+            "department" : "Dentist",
+            "departmentHead" : " Dr.Bernardo James",
+            "description" : "Investigates and treats proble...",
+            "date" : "01.10.2022",
+            "status" : "In Active",
+            "img" : "assets/img/profiles/avatar-04.jpg"
+        },
+        {
+            "department" : "Gynocolgy",
+            "departmentHead" : "Dr.Cristina Groves",
+            "description" : "Investigates and treats proble...",
+            "date" : "01.10.2022",
+            "status" : "In Active",
+            "img" : "assets/img/profiles/avatar-05.jpg"
+        },
+        {
+            "department" : "Gynocolgy",
+            "departmentHead" : "Mark Hay Smith",
+            "description" : "Investigates and treats proble...",
+            "date" : "01.10.2022",
+            "status" : "Active",
+            "img" : "assets/img/profiles/avatar-06.jpg"
+        },
+        {
+            "department" : "Otolaryngology",
+            "departmentHead" : "Dr.Andrea Lalema",
+            "description" : "Investigates and treats proble...",
+            "date" : "01.10.2022",
+            "status" : "Active",
+            "img" : "assets/img/profiles/avatar-07.jpg"
+        },
+        {
+            "department" : "Urology",
+            "departmentHead" : "Dr.Smith Bruklin",
+            "description" : "Investigates and treats proble...",
+            "date" : "01.10.2022",
+            "status" : "In Active",
+            "img" : "assets/img/profiles/avatar-08.jpg"
+        }
+    ],
+    "totalData":8
+}

@@ -1,0 +1,77 @@
+{
+    "data": [
+        {
+            "name" : "Andrea Lalema",
+            "designation" : "Doctor",
+            "providentFundType" : "Basic Salary",
+            "employeeShare" : "10%",
+            "organizationShare" : "5%",
+            "status" : "Approved",
+            "img" : "assets/img/profiles/avatar-01.jpg"
+        },
+        {
+            "name" : "William Stephin",
+            "designation" : "Doctor",
+            "providentFundType" : "Basic Salary",
+            "employeeShare" : "15%",
+            "organizationShare" : "20%",
+            "status" : "Pending",
+            "img" : "assets/img/profiles/avatar-02.jpg"
+        },
+        {
+            "name" : "Smith Bruklin",
+            "designation" : "Nurse",
+            "providentFundType" : "Basic Salary",
+            "employeeShare" : "10%",
+            "organizationShare" : "12%",
+            "status" : "Approved",
+            "img" : "assets/img/profiles/avatar-03.jpg"
+        },
+        {
+            "name" : " Bernardo James",
+            "designation" : "Specialist",
+            "providentFundType" : "Basic Salary",
+            "employeeShare" : "12%",
+            "organizationShare" : "15%",
+            "status" : "Approved",
+            "img" : "assets/img/profiles/avatar-04.jpg"
+        },
+        {
+            "name" : "Cristina Groves",
+            "designation" : "Doctor",
+            "providentFundType" : "Basic Salary",
+            "employeeShare" : "10%",
+            "organizationShare" : "5%",
+            "status" : "Approved",
+            "img" : "assets/img/profiles/avatar-05.jpg"
+        },
+        {
+            "name" : " Mark Hay Smith",
+            "designation" : "Nurse",
+            "providentFundType" : "Basic Salary",
+            "employeeShare" : "10%",
+            "organizationShare" : "15%",
+            "status" : "Approved",
+            "img" : "assets/img/profiles/avatar-06.jpg"
+        },
+        {
+            "name" : "Andrea Lalema",
+            "designation" : "Doctor",
+            "providentFundType" : "Basic Salary",
+            "employeeShare" : "10%",
+            "organizationShare" : "5%",
+            "status" : "Pending",
+            "img" : "assets/img/profiles/avatar-07.jpg"
+        },
+        {
+            "name" : "Smith Bruklin",
+            "designation" : "Nurse",
+            "providentFundType" : "Basic Salary",
+            "employeeShare" : "15%",
+            "organizationShare" : "15%",
+            "status" : "Approved",
+            "img" : "assets/img/profiles/avatar-08.jpg"
+        }
+    ],
+    "totalData":8
+}

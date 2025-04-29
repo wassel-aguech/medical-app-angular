@@ -1,0 +1,95 @@
+{
+    "data": [
+        {
+            "name" : "Andrea Lalema",
+            "department" : "Otolaryngology",
+            "specialization" : "Infertility",
+            "degree" : "MBBS, MS",
+            "mobile" : "+1 23 456890",
+            "email" : "example@email.com",
+            "joiningDate" : "01.10.2022",
+            "img" : "assets/img/profiles/avatar-01.jpg"
+        },
+        {
+            "name" : "Dr.Smith Bruklin",
+            "department" : "Urology",
+            "specialization" : "Prostate",
+            "degree" : "MBBS, MS",
+            "mobile" : "+1 23 456890",
+            "email" : "example@email.com",
+            "joiningDate" : "01.10.2022",
+            "img" : "assets/img/profiles/avatar-02.jpg"
+        },
+        {
+            "name" : "Andrea Lalema",
+            "department" : "Otolaryngology",
+            "specialization" : "Infertility",
+            "degree" : "MBBS, MS",
+            "mobile" : "+1 23 456890",
+            "email" : "example@email.com",
+            "joiningDate" : "01.10.2022",
+            "img" : "assets/img/profiles/avatar-03.jpg"
+        },
+        {
+            "name" : "Dr.William Stephin",
+            "department" : "Radiology",
+            "specialization" : "Cancer",
+            "degree" : "MBBS, MS",
+            "mobile" : "+1 23 456890",
+            "email" : "example@email.com",
+            "joiningDate" : "01.10.2022",
+            "img" : "assets/img/profiles/avatar-04.jpg"
+        },
+        {
+            "name" : "Bernardo James",
+            "department" : "Dentist",
+            "specialization" : "Prostate",
+            "degree" : "MBBS, MS",
+            "mobile" : "+1 23 456890",
+            "email" : "example@email.com",
+            "joiningDate" : "01.10.2022",
+            "img" : "assets/img/profiles/avatar-05.jpg"
+        },
+        {
+            "name" : "Cristina Groves",
+            "department" : "Gynocolgy",
+            "specialization" : "Prostate",
+            "degree" : "MBBS, MS",
+            "mobile" : "+1 23 456890",
+            "email" : "example@email.com",
+            "joiningDate" : "01.10.2022",
+            "img" : "assets/img/profiles/avatar-06.jpg"
+        },
+        {
+            "name" : "Mark Hay Smith",
+            "department" : "Gynocolgy",
+            "specialization" : "Prostate",
+            "degree" : "MBBS, MS",
+            "mobile" : "+1 23 456890",
+            "email" : "example@email.com",
+            "joiningDate" : "01.10.2022",
+            "img" : "assets/img/profiles/avatar-07.jpg"
+        },
+        {
+            "name" : "Andrea Lalema",
+            "department" : "Otolaryngology",
+            "specialization" : "Infertility",
+            "degree" : "MBBS, MS",
+            "mobile" : "+1 23 456890",
+            "email" : "example@email.com",
+            "joiningDate" : "01.10.2022",
+            "img" : "assets/img/profiles/avatar-08.jpg"
+        },
+        {
+            "name" : " Dr.Smith Bruklin",
+            "department" : "Urology",
+            "specialization" : "Prostate",
+            "degree" : "MBBS, MS",
+            "mobile" : "+1 23 456890",
+            "email" : "example@email.com",
+            "joiningDate" : "01.10.2022",
+            "img" : "assets/img/profiles/avatar-09.jpg"
+        }
+    ],
+    "totalData":9
+}

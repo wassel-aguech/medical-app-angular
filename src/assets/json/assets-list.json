@@ -1,0 +1,16 @@
+{
+    "data": [
+        {
+            "assetId" : "#AST-0001",
+            "assetUser" : "Andrea Lalema",
+            "assetName" : "Anaesthetic machine",
+            "purchaseDate" : "01.05.2020",
+            "warrenty" : "4 Years",
+            "warrentyEnd" : "04.08.2024",
+            "amount" : "$62480",
+            "status" : "Pending",
+            "img" : "assets/img/profiles/avatar-01.jpg"
+        }
+    ],
+    "totalData":1
+}

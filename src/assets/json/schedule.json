@@ -1,0 +1,69 @@
+{
+  "data": [
+    {
+      "doctorName": "Andrea Lalema",
+      "department": "Cardiology",
+      "availableDays": "Mon - Sun",
+      "availableTime": "09:00 AM - 06:00 PM",
+      "status": "Active",
+      "img" : "assets/img/profiles/avatar-01.jpg"
+    },
+    {
+      "doctorName": "Dr.Smith Bruklin",
+      "department": "Urology",
+      "availableDays": "Mon,Tue,Sat,Sun",
+      "availableTime": "09:00 AM - 04:00 PM",
+      "status": "Active",
+      "img" : "assets/img/profiles/avatar-02.jpg"
+    },
+    {
+      "doctorName": "Andrea Lalema",
+      "department": "Otolaryngology",
+      "availableDays": "Mon,Fri",
+      "availableTime": "09:00 AM - 06:00 PM",
+      "status": "Active",
+      "img" : "assets/img/profiles/avatar-03.jpg"
+    },
+    {
+      "doctorName": "Dr.William Stephin",
+      "department": "Radiology",
+      "availableDays": "Mon,Fri",
+      "availableTime": "10:00 AM - 05:00 PM",
+      "status": "In Active",
+      "img" : "assets/img/profiles/avatar-04.jpg"
+    },
+    {
+      "doctorName": "Bernardo James",
+      "department": "Dentist",
+      "availableDays": "Mon - Sun",
+      "availableTime": "09:00 AM - 06:00 PM",
+      "status": "In Active",
+      "img" : "assets/img/profiles/avatar-06.jpg"
+    },
+    {
+      "doctorName": "Cristina Groves",
+      "department": "Gynocolgy",
+      "availableDays": "Sat, Sun",
+      "availableTime": "09:00 AM - 12:00 PM",
+      "status": "Active",
+      "img" : "assets/img/profiles/avatar-05.jpg"
+    },
+    {
+      "doctorName": "Mark Hay Smith",
+      "department": "Gynocolgy",
+      "availableDays": "Mon - Sun",
+      "availableTime": "09:00 AM - 06:00 PM",
+      "status": "Active",
+      "img" : "assets/img/profiles/avatar-01.jpg"
+    },
+    {
+      "doctorName": "Andrea Lalema",
+      "department": "Otolaryngology",
+      "availableDays": "Mon - wed",
+      "availableTime": "11:00 AM - 09:00 PM",
+      "status": "In Active",
+      "img" : "assets/img/profiles/avatar-02.jpg"
+    }
+  ],
+  "totalData": 8
+}

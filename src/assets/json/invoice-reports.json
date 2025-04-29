@@ -1,0 +1,14 @@
+{
+    "data": [
+        {
+            "invoiceNumber" : "#INV-0001",
+            "client" : "Andrea Lalema",
+            "createdDate" : "04.10.2022",
+            "dueDate" : "04.10.2022",
+            "amount" : "$1000",
+            "status" : "Paid",
+            "img" : "assets/img/profiles/avatar-01.jpg"
+        }
+    ],
+    "totalData":1
+}

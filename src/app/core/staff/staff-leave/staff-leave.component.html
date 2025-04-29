@@ -1,0 +1,287 @@
+<div class="page-wrapper">
+    <div class="content">
+    
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="routes.staffList">Staffs </a></li>
+                        <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+                        <li class="breadcrumb-item active">Leave Request</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Header -->
+        
+        <div class="row">
+            <div class="col-sm-12">
+            
+                <div class="card card-table show-entire">
+                    <div class="card-body">
+                    
+                        <!-- Table Header -->
+                        <div class="page-table-header mb-2">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <div class="doctor-table-blk">
+                                        <h3>Leave Request</h3>
+                                        <div class="doctor-search-blk">
+                                            <div class="top-nav-search table-search-blk">
+                                              
+                                                    <input type="text" class="form-control" placeholder="Search here" [(ngModel)]="searchDataValue"
+                                                    (ngModelChange)="searchData(searchDataValue)">
+                                                    <a class="btn"><img src="assets/img/icons/search-normal.svg" alt=""></a>
+                                                
+                                            </div>
+                                            <div class="add-group">
+                                                <a [routerLink]="routes.addLeave" class="btn btn-primary add-pluss ms-2"><img src="assets/img/icons/plus.svg" alt=""></a>
+                                                <a href="javascript:;" class="btn btn-primary doctor-refresh ms-2"><img src="assets/img/icons/re-fresh.svg" alt=""></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto text-end float-end ms-auto download-grp">
+                                    <a href="javascript:;" class=" me-2"><img src="assets/img/icons/pdf-icon-01.svg" alt=""></a>
+                                    <a href="javascript:;" class=" me-2"><img src="assets/img/icons/pdf-icon-02.svg" alt=""></a>
+                                    <a href="javascript:;" class=" me-2"><img src="assets/img/icons/pdf-icon-03.svg" alt=""></a>
+                                    <a href="javascript:;" ><img src="assets/img/icons/pdf-icon-04.svg" alt=""></a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Table Header -->
+                        <div class="staff-search-table">
+                            <form>
+                                <div class="row">
+                                    <div class="col-12 col-md-6 col-xl-4">  
+                                        <div class="form-group local-forms">
+                                            <label for="employee">Employee Name </label>
+                                            <input class="form-control" type="text"  >
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-xl-4">
+                                        <div class="form-group local-forms">
+                                            <label for="type">Leave Type </label>
+                                            
+                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="Select Leave Type">
+                                          <mat-option *ngFor="let data of selectedList1" [value]="data.value">
+                                          {{data.value}}
+                                          </mat-option>
+                                      </mat-select>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-xl-4">
+                                        <div class="form-group local-forms">
+                                            <label for="leave">Leave Status </label>
+                                            
+                                        <mat-select [(ngModel)]="selectedValue" [ngModelOptions]="{standalone: true}" class="form-control select"  placeholder="Leave Status">
+                                          <mat-option *ngFor="let data of selectedList2" [value]="data.value">
+                                          {{data.value}}
+                                          </mat-option>
+                                      </mat-select>
+                                            
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-xl-4">
+                                        <div class="form-group local-forms">
+                                            <label for="from">From </label>
+                                            <input class="form-control datetimepicker" type="text" matInput [matDatepicker]="picker1"  >
+                                            <mat-datepicker #picker1></mat-datepicker>
+                                            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-xl-4">
+                                        <div class="form-group local-forms">
+                                            <label for="to">To </label>
+                                            <input class="form-control datetimepicker" type="text" matInput [matDatepicker]="picker2"  >
+                                            <mat-datepicker #picker2></mat-datepicker>
+                                            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-md-6 col-xl-4">
+                                        <div class="doctor-submit">
+                                            <button type="submit" class="btn btn-primary submit-list-form me-2">Search</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table matSort (matSortChange)="sortData($event)" class="table border-0 custom-table comman-table datatable mb-0">
+                                <thead>
+                                    <tr>
+                                        <th mat-sort-header="checkbox">
+                                            <div class="form-check check-tables">
+                                                <input class="form-check-input" type="checkbox" value="something">
+                                            </div>
+                                        </th>
+                                        <th mat-sort-header="employeeName">Employee Name</th>
+                                        <th mat-sort-header="leaveType">Leave Type</th>
+                                        <th mat-sort-header="from">From</th>
+                                        <th mat-sort-header="to">To</th>
+                                        <th mat-sort-header="noOfDays">No of days</th>
+                                        <th mat-sort-header="reason">Reason</th>
+                                        <th mat-sort-header="status">Status</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of staffLeave">
+                                        <td>
+                                            <div class="form-check check-tables">
+                                                <input class="form-check-input" type="checkbox" value="something">
+                                            </div>
+                                        </td>
+                                        <td class="profile-image"><a [routerLink]="routes.profile"><img width="28" height="28" [src]="data.img" class="rounded-circle m-r-5" alt=""> {{data.employeeName}}</a></td>
+                                        <td>{{data.leaveType}}</td>
+                                        <td>{{data.from}}</td>
+                                        <td>{{data.to}}</td>
+                                        <td>{{data.noOfDays}}</td>
+                                        <td>{{data.reason}}</td>
+                                        <td>
+                                            <div class="dropdown action-label">
+                                                <a [ngClass]="{'status-green': data.status === 'Approved', 'status-orange' : data.status === 'Pending','status-pink' : data.status === 'Declined','status-purple' : data.status === 'New' }" class="custom-badge dropdown-toggle" href="javascript:void(0);" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    {{data.status}}
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-end status-staff">
+                                                    <a class="dropdown-item" href="javascript:;">New</a>
+                                                    <a class="dropdown-item" href="javascript:;">Pending</a>
+                                                    <a class="dropdown-item" href="javascript:;">Approved</a>
+                                                    <a class="dropdown-item" href="javascript:;">Declined</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-end">
+                                            <div class="dropdown dropdown-action">
+                                                <a href="javascript:void(0);" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item" [routerLink]="routes.editLeave"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+                                                    <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_patient"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="table_footer">
+                                <div class="col-sm-12 col-md-5">
+                                  <div class="dataTables_info">
+                                    Showing {{ serialNumberArray[0] }} to
+                                    {{ serialNumberArray[serialNumberArray.length - 1] }} of
+                                    {{ totalData }} entries
+                                  </div>
+                                </div>
+                
+                                <div class="col-sm-12 col-md-7">
+                                  <div class="pagination_section">
+                                    <ul class="pagination">
+                                      <li
+                                        class="page-item"
+                                        [ngClass]="{
+                                          disabled: currentPage === 1
+                                        }"
+                                      >
+                                        <a
+                                          (click)="getMoreData('previous')"
+                                          class="page-link"
+                                          href="javascript:void(0);"
+                                          tabindex="-1"
+                                          >Previous</a
+                                        >
+                                      </li>
+                
+                                      <ng-container
+                                        *ngFor="let item of pageNumberArray; let i = index"
+                                      >
+                                        <li
+                                          class="page-item"
+                                          [class.active]="item === currentPage"
+                                          [ngClass]="
+                                            (pageNumberArray[currentPage - 2] > item &&
+                                              item !== 1 &&
+                                              pageNumberArray.length > 6) ||
+                                            (pageNumberArray[currentPage] < item &&
+                                              item !== 1 &&
+                                              pageNumberArray.length > 6 &&
+                                              pageNumberArray.length !== item)
+                                              ? 'hide-page-no'
+                                              : 'show-page-no'
+                                          "
+                                        >
+                                          <a
+                                            (click)="moveToPage(item)"
+                                            class="page-link"
+                                            href="javascript:void(0);"
+                                          >
+                                            {{ item }}
+                                          </a>
+                                        </li>
+                                        <li
+                                          class="page-item"
+                                          *ngIf="
+                                            i === 0 &&
+                                            pageNumberArray.length > 6 &&
+                                            currentPage > 2
+                                          "
+                                          [hidden]="currentPage === 1"
+                                          (click)="moveToPage(currentPage - 2)"
+                                          (keyup.enter)="moveToPage(currentPage - 2)"
+                                          tabindex="0"
+                                        >
+                                          <a class="page-link" href="javascript:void(0);">
+                                            ...
+                                          </a>
+                                        </li>
+                                        <li
+                                          *ngIf="
+                                            i === pageNumberArray.length - 2 &&
+                                            pageNumberArray.length > 6
+                                          "
+                                          [hidden]="
+                                            currentPage >=
+                                              pageNumberArray[pageNumberArray.length - 2] ||
+                                            totalData <
+                                              serialNumberArray[serialNumberArray.length - 1]
+                                          "
+                                          class="page-item"
+                                          (click)="moveToPage(currentPage + 2)"(keyup.enter)="moveToPage(currentPage + 2)" 
+                                          tabindex="0" 
+                                        >
+                                          <a class="page-link" href="javascript:void(0);">
+                                            ...
+                                          </a>
+                                        </li>
+                                      </ng-container>
+                
+                                      <li
+                                        class="page-item"
+                                        [ngClass]="{
+                                          disabled:
+                                            currentPage ===
+                                              pageNumberArray[pageNumberArray.length - 1] ||
+                                              staffLeave.length === 0
+                                        }"
+                                      >
+                                        <a
+                                          (click)="getMoreData('next')"
+                                          class="page-link"
+                                          href="javascript:void(0);"
+                                          >Next
+                                        </a>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                </div>							
+            </div>					
+        </div>
+    </div>
+</div>
+ 
