@@ -5,7 +5,7 @@ export class Medecin {
   lastName!: string;
   email!: string;
   phone !: number;
-  address!: string;
+  adress!: string;
   password!: string;
   confirmPassword!: string;
   specialite!: string;

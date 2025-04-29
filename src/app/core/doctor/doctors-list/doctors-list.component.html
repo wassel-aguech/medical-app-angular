@@ -29,8 +29,8 @@
                     <h3>Doctors List</h3>
                     <div class="doctor-search-blk">
                       <div class="top-nav-search table-search-blk">
-                        <input class="form-control" placeholder="Search here" [(ngModel)]="searchDataValue"
-                          (ngModelChange)="searchData(searchDataValue)">
+                        <input type="search" class="form-control" placeholder="Search here" [(ngModel)]="searchN"
+                          name="searchN">
                         <a class="btn"><img src="assets/img/icons/search-normal.svg" alt=""></a>
                       </div>
                       <div class="add-group">
@@ -73,30 +73,42 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let data of listmedecin">
-                    <td>
-                      <div class="form-check check-tables">
-                        <input class="form-check-input" type="checkbox" value="something">
-                      </div>
-                    </td>
-                    <td class="profile-image"><a [routerLink]="routes.profile"><img width="28" height="28"
-                          [src]="data.image" class="rounded-circle m-r-5" alt=""> {{data.firstName}}</a></td>
-                    <td>{{data.specialite}}</td>
-                    <td>{{data.email}}</td>
-                    <td>{{data.phone}}</td>
-                    <td>{{data.address}}</td>
-                    <td class="text-end">
-                      <div class="dropdown dropdown-action">
-                        <a href="javascript:void(0);" class="action-icon dropdown-toggle" data-bs-toggle="dropdown"
-                          aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
-                        <div class="dropdown-menu dropdown-menu-end">
-                          <a class="dropdown-item" [routerLink]="routes.editDoctor"><i
-                              class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
-                          <a class="dropdown-item" href="javascript:void(0);" (click)="deleteMedecin(data.id)"><i class="fa fa-trash-alt m-r-5" ></i> Delete</a>
+
+                  @for( data of listmedecin.slice().reverse() ; track $index){
+
+                  <tr class="search" *ngIf="(data.firstName.includes(searchN?.toString())) || searchN == null">
+
+                      <td>
+                        <div class="form-check check-tables">
+                          <input class="form-check-input" type="checkbox" value="something">
                         </div>
-                      </div>
-                    </td>
+                      </td>
+                      <td class="profile-image"><a [routerLink]="routes.profile"><img width="28" height="28"
+                            [src]="data.image" class="rounded-circle m-r-5" alt=""> {{data.firstName}}</a></td>
+                      <td>{{data.specialite}}</td>
+                      <td>{{data.email}}</td>
+                      <td>{{data.phone}}</td>
+                      <td>{{data.adress}}</td>
+                      <td class="text-end">
+                        <div class="dropdown dropdown-action">
+                          <a href="javascript:void(0);" class="action-icon dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                          <div class="dropdown-menu dropdown-menu-end">
+                            <a class="dropdown-item" (click)="gotoupdatemadecin(data.id)"><i
+                                class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
+                            <a class="dropdown-item" href="javascript:void(0);" (click)="deleteMedecin(data.id)"><i
+                                class="fa fa-trash-alt m-r-5"></i> Delete</a>
+                          </div>
+                        </div>
+                      </td>
+                    <!-- </div> -->
                   </tr>
+
+                }@empty{
+                  <h1 class="text-center text-danger"> No dta founded</h1>
+                  }
+
+
                 </tbody>
               </table>
               <div class="table_footer">

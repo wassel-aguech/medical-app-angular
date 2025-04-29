@@ -67,7 +67,7 @@
                 <div class="col-12 col-md-6 col-xl-6">
                   <div class="form-group local-forms">
                     <label for="designation">Adresse <span class="login-danger">*</span></label>
-                    <input class="form-control" formControlName="address" type="text" placeholder="">
+                    <input class="form-control" formControlName="adress" type="text" placeholder="">
                   </div>
                 </div>
                 <div class="col-12 col-md-6 col-xl-6">
@@ -131,7 +131,7 @@
                 <div class="col-12">
                   <div class="doctor-submit text-end">
                     <button class="btn btn-primary submit-form me-2"  (click)="addMedecin()" >Submit</button>
-                    <button type="submit" class="btn btn-primary cancel-form">Cancel</button>
+                    <button class="btn btn-primary cancel-form"       (click)="gotoDoctorsList()">Cancel</button>
                   </div>
                 </div>
               </div>

@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environment/environment';
 import { Medecin } from '../models/medecin';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -34,10 +34,12 @@ deleteMedecin( id : any) {
 
 }
 
-updateMedecin(id: number, medecin: Medecin): Observable<Medecin> {
-  return this.http.put<Medecin>(`${this.baseUrl}/updateMedecin/${id}`, medecin);
-}
 
+updateMedecin(medecin: any): Observable<any> {
+
+
+  return this.http.put(`${this.baseUrl}/updatemedecin`, medecin);
+}
 
 
   uploadMedecinImage(IdMedecin: number, image: File ): Observable<Medecin> {

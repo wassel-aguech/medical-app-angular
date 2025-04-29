@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { routes } from 'src/app/shared/routes/routes';
 interface data {
   value: string ;
@@ -15,7 +16,75 @@ export class EditPatientComponent {
   public deleteIcon  = true;
   public selectedValue! : string  ;
   date = new FormControl(new Date());
+
+
+  constructor(private route : ActivatedRoute){}
+
+
+  ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+
+  }
+
+
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   deleteIconFunc(){
     this.deleteIcon = !this.deleteIcon
   }

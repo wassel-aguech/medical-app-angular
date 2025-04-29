@@ -46,7 +46,7 @@ export class RegisterComponent {
       sexe : new FormControl ('',Validators.required),
       adress : new FormControl ('',[Validators.required,Validators.minLength(3)]),
       phone : new FormControl ('',[Validators.required,Validators.minLength(3)]),
-      image : new FormControl ('',[Validators.required,Validators.minLength(3)]),
+      image : new FormControl ('',[Validators.required]),
 
 
 

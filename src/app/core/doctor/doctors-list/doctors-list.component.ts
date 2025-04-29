@@ -7,6 +7,7 @@ import { pageSelection, apiResultFormat, doctorlist } from 'src/app/shared/model
 import { MedecinService } from 'src/app/shared/services/medecin.service';
 import { Medecin } from 'src/app/shared/models/medecin';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -35,7 +36,12 @@ export class DoctorsListComponent implements OnInit{
   public totalPages = 0;
   listmedecin: Medecin[] = [];
 
-  constructor(public data : DataService ,private  medecinService : MedecinService) {
+  searchN : any
+
+  constructor( public   data : DataService ,
+               private  medecinService : MedecinService,
+               private  router: Router
+              ) {
 
   }
   ngOnInit() {
@@ -47,7 +53,7 @@ export class DoctorsListComponent implements OnInit{
     this.serialNumberArray = [];
 
     this.medecinService.getAllMedecins().subscribe((data: Medecin[]) => {
-      this.totalData = data.length; 
+      this.totalData = data.length;
       console.log(this.listmedecin);
 
       data.map((res: Medecin, index: number) => {
@@ -174,6 +180,18 @@ export class DoctorsListComponent implements OnInit{
         }
       })
     }
+
+
+
+
+
+  }
+
+
+
+  gotoupdatemadecin(id: number) {
+    this.router.navigate(["doctor/edit-doctor",id])
+
   }
 
 
@@ -192,3 +210,5 @@ export class DoctorsListComponent implements OnInit{
 
 
 }
+
+

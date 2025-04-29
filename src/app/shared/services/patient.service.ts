@@ -18,12 +18,12 @@ export class PatientService {
 
 
   getAllPatient() : Observable<Patient[]>{
-    return this.http.get<Patient[]>(`${this.baseUrl}/getAllMedecins`)
+    return this.http.get<Patient[]>(`${this.baseUrl}/getallpatients`)
 
   }
 
   getPatientByid( id : any) : Observable<Patient>{
-    return this.http.get<Patient>(`${this.baseUrl}/patient/${id}`)
+    return this.http.get<Patient>(`${this.baseUrl}/getPatientById/${id}`)
 
   }
 
@@ -34,7 +34,7 @@ export class PatientService {
   }
 
   deletePatient( id : any) {
-    return this.http.delete(`${this.baseUrl}/deleteMedecinById/${id}`)
+    return this.http.delete(`${this.baseUrl}/deletePatient/${id}`)
 
   }
 

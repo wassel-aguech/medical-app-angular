@@ -19,6 +19,20 @@ const routes: Routes = [
           (m) => m.AddPatientModule
         ),
     },
+
+
+
+
+
+    {
+      path: 'edit-patient/:id',
+      loadChildren: () =>
+        import('./edit-patient/edit-patient.module').then(
+          (m) => m.EditPatientModule
+        ),
+    },
+
+
     {
       path: 'edit-patient',
       loadChildren: () =>
@@ -26,6 +40,12 @@ const routes: Routes = [
           (m) => m.EditPatientModule
         ),
     },
+
+
+
+
+
+
     {
       path: 'patient-profile',
       loadChildren: () =>
@@ -41,7 +61,7 @@ const routes: Routes = [
         ),
     },
   ]}
- 
+
 ];
 
 @NgModule({

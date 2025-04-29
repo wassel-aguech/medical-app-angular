@@ -58,7 +58,7 @@ export class AddDoctorComponent implements OnInit {
       lastName        : new FormControl('', Validators.required),
       password        : new FormControl('', Validators.required),
       confirmPassword : new FormControl('', Validators.required),
-      address         : new FormControl('', Validators.required),
+      adress         : new FormControl('', Validators.required),
       email           : new FormControl('', Validators.required),
       phone           : new FormControl('', Validators.required),
       specialite      : new FormControl('', Validators.required),
@@ -76,21 +76,28 @@ export class AddDoctorComponent implements OnInit {
 
   addMedecin(){
 
-    this.medecin.firstName  = this.medecinForm.value.firstName
-    this.medecin.lastName   = this.medecinForm.value.lastName
-    this.medecin.password   = this.medecinForm.value.password
+    this.medecin.firstName       = this.medecinForm.value.firstName
+    this.medecin.lastName        = this.medecinForm.value.lastName
+    this.medecin.password        = this.medecinForm.value.password
     this.medecin.confirmPassword = this.medecinForm.value.confirmPassword
-    this.medecin.image     = this.medecinForm.value.image
-    this.medecin.email      = this.medecinForm.value.email
-    this.medecin.address     = this.medecinForm.value.adress
-    this.medecin.phone      = this.medecinForm.value.phone
-    this.medecin.specialite = this.medecinForm.value.specialite
+    this.medecin.image           = this.medecinForm.value.image
+    this.medecin.email           = this.medecinForm.value.email
+    this.medecin.adress         = this.medecinForm.value.adress
+    this.medecin.phone           = this.medecinForm.value.phone
+    this.medecin.specialite      = this.medecinForm.value.specialite
 
     console.log(" info medecin " , this.medecin)
 
     this.medecinservice.addMedecin(this.medecin).subscribe(
       (data : any)=>{
         console.log("data medecin" , data)
+
+
+        this.medecinservice.uploadMedecinImage(data.id, this.image).subscribe(
+          val =>  {} , error => { alert('oups')} , () => {
+
+          });
+
 
         this.toastr.success('Medecin ajouté avec succès', 'Succès')
 
@@ -140,9 +147,10 @@ export class AddDoctorComponent implements OnInit {
 
 
 
+gotoDoctorsList() {
+    this.router.navigate(['doctor/doctors-list']);
 
-
-
+}
 
 
 

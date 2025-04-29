@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { routes } from 'src/app/shared/routes/routes';
 import { MatTableDataSource } from "@angular/material/table";
 import { pageSelection, apiResultFormat, patientsList } from 'src/app/shared/models/models';
 import { Sort } from '@angular/material/sort';
 import { DataService } from 'src/app/shared/data/data.service';
+import { Patient } from 'src/app/shared/models/patient';
+import { PatientService } from 'src/app/shared/services/patient.service';
+import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-patients-list',
@@ -13,8 +17,8 @@ import { DataService } from 'src/app/shared/data/data.service';
 })
 export class PatientsListComponent implements OnInit {
   public routes = routes;
-  public patientsList: Array<patientsList> = [];
-  dataSource!: MatTableDataSource<patientsList>;
+  public patientsList: Array<Patient> = [];
+  dataSource!: MatTableDataSource<Patient>;
 
   public showFilter = false;
   public searchDataValue = '';
@@ -30,30 +34,35 @@ export class PatientsListComponent implements OnInit {
   public pageSelection: Array<pageSelection> = [];
   public totalPages = 0;
 
-  constructor(public data : DataService){
+    lispatient: Patient[] = [];
+
+
+  constructor(public data : DataService ,private patientservice : PatientService){
 
   }
   ngOnInit() {
     this.getTableData();
   }
-  private getTableData(): void {
-    this.patientsList = [];
-    this.serialNumberArray = [];
 
-    this.data.getPatientsList().subscribe((data: apiResultFormat) => {
-      this.totalData = data.totalData;
-      data.data.map((res: patientsList, index: number) => {
-        const serialNumber = index + 1;
-        if (index >= this.skip && serialNumber <= this.limit) {
-          
-          this.patientsList.push(res);
-          this.serialNumberArray.push(serialNumber);
-        }
-      });
-      this.dataSource = new MatTableDataSource<patientsList>(this.patientsList);
-      this.calculateTotalPages(this.totalData, this.pageSize);
-    });
-  }
+   private getTableData(): void {
+     this.lispatient = [];
+     this.serialNumberArray = [];
+
+     this.patientservice.getAllPatient().subscribe((data: Patient[]) => {
+       this.totalData = data.length;
+       console.log(this.lispatient);
+
+       data.map((res: Patient, index: number) => {
+         const serialNumber = index + 1;
+         if (index >= this.skip && serialNumber <= this.limit) {
+           this.lispatient.push(res);
+           this.serialNumberArray.push(serialNumber);
+         }
+       });
+       this.dataSource = new MatTableDataSource<Patient>(this.lispatient);
+       this.calculateTotalPages(this.totalData, this.pageSize);
+     });
+   }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public searchData(value: any): void {
     this.dataSource.filter = value.trim().toLowerCase();
@@ -126,4 +135,56 @@ export class PatientsListComponent implements OnInit {
       this.pageSelection.push({ skip: skip, limit: limit });
     }
   }
+
+  router = inject(Router)
+
+  gotoupdatePatient(id: number) {
+    this.router.navigate(["patient/edit-patient",id])
+
+  }
+
+
+
+
+
+
+
+  deletePatient(id:number)
+  {
+    if(id!=undefined && id !=null)
+    {
+      Swal.fire({
+        title: 'Êtes-vous sûr?',
+        text: 'Vous ne pourrez pas récupérer entite medecin!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Oui, supprimez-la!',
+        cancelButtonText: 'Non, gardez-la'
+      }).then((result : any) => {
+        if (result.value) {
+         this.patientservice.deletePatient(id)
+          .subscribe(res=>{
+          })
+          this.getTableData();
+        Swal.fire(
+          'Supprimé!',
+          'Votre medecin entite a été supprimée.',
+          'success'
+        )
+
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Annulé',
+          'Votre niveau est en sécurité 🙂',
+          'error'
+        )
+        }
+      })
+    }
+  }
+
+
+
+
+
 }
