@@ -224,6 +224,96 @@ export class DataService {
             },
           ],
         },
+
+
+
+
+
+        {
+          menuValue: 'Gestion Doctor',
+          hasSubRoute: true,
+          showSubRoute: false,
+          base: 'dashboard',
+          route:'dashboard',
+          img: 'assets/img/icons/menu-icon-01.svg',
+          subMenus: [
+
+            {
+              menuValue: 'Doctor Dashboard',
+              route: routes.doctorDashboard,
+              base: routes.doctorDashboard,
+            },
+            {
+              menuValue: 'Doctor Profile',
+              route: routes.doctorProfile,
+              base: routes.doctorProfile,
+            },
+
+            {
+              menuValue: 'Chat',
+              route: routes.chat,
+              base: routes.chat,
+            },
+
+
+
+          ],
+        },
+
+        {
+          menuValue: 'Gestion Patient',
+          hasSubRoute: true,
+          showSubRoute: false,
+          base: 'dashboard',
+          route:'dashboard',
+          img: 'assets/img/icons/menu-icon-01.svg',
+          subMenus: [
+
+            {
+              menuValue: 'Patient Dashboard',
+              route: routes.patientDashboard,
+              base: routes.patientDashboard,
+            },
+
+            {
+              menuValue: 'Patients Profile',
+              route: routes.patientProfile,
+              base: routes.patientProfile,
+            },
+
+            {
+              menuValue: 'Chat',
+              route: routes.chat,
+              base: routes.chat,
+            },
+
+          ],
+        },
+
+
+        {
+          menuValue: 'Chat',
+          route: routes.chat,
+          hasSubRoute: false,
+          showSubRoute: false,
+          base: 'chat',
+          img: 'assets/img/icons/menu-icon-10.svg',
+          subMenus: [],
+        },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         {
           menuValue: 'Doctors',
           hasSubRoute: true,
@@ -446,15 +536,7 @@ export class DataService {
             },
           ],
         },
-        {
-          menuValue: 'Chat',
-          route: routes.chat,
-          hasSubRoute: false,
-          showSubRoute: false,
-          base: 'chat',
-          img: 'assets/img/icons/menu-icon-10.svg',
-          subMenus: [],
-        },
+
         {
           menuValue: 'Call',
           hasSubRoute: true,
@@ -772,7 +854,7 @@ export class DataService {
             },
           ],
         },
-        
+
       ],
     },
   ];

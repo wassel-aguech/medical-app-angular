@@ -21,6 +21,8 @@ import { AuthInterceptor } from './shared/services/auth.interceptor';
     BrowserAnimationsModule,
     SharedModule,
 
+    
+
     ToastrModule.forRoot({
       positionClass: 'toast-top-right',
       timeOut: 3000,

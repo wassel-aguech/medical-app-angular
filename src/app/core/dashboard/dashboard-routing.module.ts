@@ -31,6 +31,10 @@ const routes: Routes = [
           (m) => m.PatientDashboardModule
         ),
     },
+
+
+
+
   ]}
 ];
 

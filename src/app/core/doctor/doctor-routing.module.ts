@@ -43,6 +43,20 @@ const routes: Routes = [
           (m) => m.DoctorProfileModule
         ),
     },
+
+
+    {
+      path: 'doctor-profile/:id',
+      loadChildren: () =>
+        import('./doctor-profile/doctor-profile.module').then(
+          (m) => m.DoctorProfileModule
+        ),
+    },
+
+
+
+
+
     {
       path: 'doctor-setting',
       loadChildren: () =>

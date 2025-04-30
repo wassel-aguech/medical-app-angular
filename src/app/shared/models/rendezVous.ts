@@ -1,9 +1,12 @@
 export class RendezVous{
 
   id! : number;
-  date! : Date;
   motif! : String;
+  dateEnvoie! : Date;
   dateDemande! : Date;
   dateRendezVous! : Date;;
   statusRendezVous!: String;
+
+  patiendid! : number;
+  medecinid! : number;
 }

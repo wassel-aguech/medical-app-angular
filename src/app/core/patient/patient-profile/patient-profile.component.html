@@ -1,6 +1,6 @@
 <div class="page-wrapper">
     <div class="content">
-    
+
         <!-- Page Header -->
         <div class="page-header">
             <div class="row">
@@ -41,7 +41,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="names-profiles">
-                                                    <h4>Smith Bruklin</h4>
+                                                    <h4> {{patient.firstName}}  {{patient.lastName}}   </h4>
                                                     <h5>Engineer</h5>
                                                 </div>
                                             </div>
@@ -70,7 +70,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>								
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                                         <ul class="list-space">
                                             <li>
                                                 <h4>Gender</h4>
-                                                <span>Male</span>
+                                                <span>{{patient.sexe}}</span>
                                             </li>
                                             <li>
                                                 <h4>Operation Done</h4>
@@ -169,25 +169,25 @@
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="detail-personal">
                                                     <h2>Full Name</h2>
-                                                    <h3>Smith Bruklin</h3>
+                                                    <h3>{{patient.firstName}} {{patient.lastName}} </h3>
                                                 </div>
                                             </div>
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="detail-personal">
                                                     <h2>Mobile </h2>
-                                                    <h3>264-625-2583</h3>
+                                                    <h3>{{patient.phone}} </h3>
                                                 </div>
                                             </div>
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="detail-personal">
                                                     <h2>Email</h2>
-                                                    <h3>smith&#64;email.com</h3>
+                                                    <h3>{{patient.email}} </h3>
                                                 </div>
                                             </div>
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="detail-personal">
                                                     <h2>Location</h2>
-                                                    <h3>USA</h3>
+                                                    <h3>{{patient.adress}} </h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -251,4 +251,3 @@
         </div>
     </div>
 </div>
- 

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DoctorProfileComponent } from './core/doctor/doctor-profile/doctor-profile.component';
 // import { AuthGuard } from './shared/gaurd/auth.guard';
 
 const routes: Routes = [
@@ -30,6 +31,13 @@ const routes: Routes = [
     redirectTo: 'error/error404',
     pathMatch: 'full',
   },
+
+
+
+
+
+
+
 ];
 
 @NgModule({
