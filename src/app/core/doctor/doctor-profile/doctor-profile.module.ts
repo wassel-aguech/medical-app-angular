@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DoctorProfileRoutingModule } from './doctor-profile-routing.module';
 import { DoctorProfileComponent } from './doctor-profile.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { DoctorProfileComponent } from './doctor-profile.component';
   ],
   imports: [
     CommonModule,
-    DoctorProfileRoutingModule
+    DoctorProfileRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class DoctorProfileModule { }

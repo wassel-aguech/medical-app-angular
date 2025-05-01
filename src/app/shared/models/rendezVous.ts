@@ -1,3 +1,5 @@
+import { Medecin } from "./medecin";
+
 export class RendezVous{
 
   id! : number;
@@ -5,8 +7,10 @@ export class RendezVous{
   dateEnvoie! : Date;
   dateDemande! : Date;
   dateRendezVous! : Date;;
-  statusRendezVous!: String;
+  status!: String;
+
 
   patiendid! : number;
   medecinid! : number;
+  medecinName! : String;
 }

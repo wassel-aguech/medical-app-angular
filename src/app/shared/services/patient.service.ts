@@ -50,4 +50,10 @@ export class PatientService {
 
     return this.http.post<Patient>(`${this.baseUrl}/uploadImage/${IdPatient}`, formData);
   }
+
+
+
+
+
+  
 }

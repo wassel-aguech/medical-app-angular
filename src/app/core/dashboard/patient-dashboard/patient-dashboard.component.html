@@ -20,7 +20,7 @@
                 <div class="col-md-6">
                     <div class="morning-user">
                         <h2>Good Morning, <span> {{patient.firstName}} {{patient.lastName}} </span></h2>
-                        <p>Have a nice day at work</p>
+                        <p>I hope you are well today. {{patient.firstName}}</p>
                     </div>
                 </div>
                 <div class="col-md-6 position-blk">
@@ -34,7 +34,7 @@
 
 
         <div class="container mt-4">
-          <h2 class="mb-4">👨‍⚕️ Liste des Médecins</h2>
+          <h2 class="mb-4">👨‍⚕️ Médecins Disponible</h2>
 
           <table class="table table-striped table-bordered shadow">
             <thead class="table-primary">
@@ -65,12 +65,61 @@
                     Voir Profil
                   </button>
                 </td>
-
-
               </tr>
             </tbody>
           </table>
         </div>
+
+
+        <!-- Liste des rendez-vous -->
+<div class="container mt-4">
+  <h2 class="mb-4">🗓️  RendezVous </h2>
+
+  <table class="table table-striped table-bordered shadow text-center">
+    <thead class="table-primary">
+      <tr>
+        <th>Date Demande</th>
+        <th>Date Rendez-Vous</th>
+        <th>Motif</th>
+        <th>Statut</th>
+        <th>Médecin</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (rdv of rendezVousList.slice().reverse(); track rdv.id) {
+        <tr>
+          <td>{{ rdv.dateDemande | date: 'dd/MM/yyyy' }}</td>
+          <td>
+            {{ rdv.dateRendezVous ? (rdv.dateRendezVous | date: 'dd/MM/yyyy') : '—' }}
+          </td>
+          <td>{{ rdv.motif }}</td>
+          <td>
+            <span
+              class="badge text-white px-2 py-1 rounded"
+              [ngClass]="{
+                'bg-warning': rdv.status === 'EN_ATTENTE',
+                'bg-success': rdv.status === 'ACCEPTE',
+                'bg-danger': rdv.status === 'REFUSE'
+              }"
+            >
+              {{ rdv.status }}
+            </span>
+          </td>
+          <td>{{ rdv.medecinName }}</td>
+        </tr>
+      }
+      @empty {
+        <tr>
+          <td colspan="5" class="text-danger text-center">
+            Aucun rendez-vous trouvé.
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>
+
+
 
 
 

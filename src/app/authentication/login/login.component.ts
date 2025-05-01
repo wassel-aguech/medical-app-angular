@@ -70,6 +70,7 @@ export class LoginComponent implements OnInit {
       },
       error: (error) => {
         console.error('Login error:', error);
+        this.toastr.error("  error login  verify your password or email")
       }
     });
   }

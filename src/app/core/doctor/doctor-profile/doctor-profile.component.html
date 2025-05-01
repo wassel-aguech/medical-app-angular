@@ -64,7 +64,9 @@
                                         </div>
                                         <div class="col-lg-4 col-md-4 d-flex align-items-center">
                                             <div class="follow-btn-group">
-                                                <button type="submit" class="btn btn-info follow-btns">Demande RendezVous</button>
+                                                <button  class="btn btn-info follow-btns"
+                                                data-bs-toggle="modal" data-bs-target="#addrendezvous"
+                                                >Demande RendezVous</button>
                                                 <button type="submit" class="btn btn-info message-btns">Message</button>
                                             </div>
                                         </div>
@@ -310,3 +312,62 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!--  modal demande rendezvous-->
+  <div class="modal fade" id="addrendezvous" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Rendez Vous</h5>
+          <button type="button" #closemodal class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form *ngIf="renderVousForm" [formGroup]="renderVousForm">
+
+
+            <div class="mb-3">
+              <label for="firstName" class="form-label">DateDemande : </label>
+              <input type="date" formControlName="dateDemande" name="dateDemande" id="dateDemande" class="form-control" placeholder="dateDemande">
+            </div>
+
+            <div class="mb-3">
+              <label for="firstName" class="form-label">DateRendezvou : </label>
+              <input type="date" formControlName="dateRendezVous" name="dateRendezVous" id="dateRendezVous" class="form-control" placeholder="dateRendezVous">
+            </div>
+
+
+
+            <div class="mb-3">
+              <label for="password" class="form-label">Motif:</label>
+              <textarea formControlName="motif" name="motif" id="motif" class="form-control" placeholder="motif">
+              </textarea>
+            </div>
+            <button (click)="demandeRendezVous()" class="btn btn-success w-100">ADD</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
