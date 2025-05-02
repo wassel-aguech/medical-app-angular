@@ -44,16 +44,16 @@ export class PatientService {
 
 
 
-  uploadBlogImage(IdPatient: number, image: File ): Observable<Patient> {
+  uploadPatientImage(idPatient: number, image: File ): Observable<Patient> {
     const formData: FormData = new FormData();
     formData.append('image', image);
 
-    return this.http.post<Patient>(`${this.baseUrl}/uploadImage/${IdPatient}`, formData);
+    return this.http.post<Patient>(`${this.baseUrl}/uploadImage/${idPatient}`, formData);
   }
 
 
 
 
 
-  
+
 }

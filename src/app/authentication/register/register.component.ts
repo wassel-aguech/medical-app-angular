@@ -92,10 +92,12 @@ export class RegisterComponent {
       next: (response) => {
         console.log(" SUCCESFULLY REGISTRATION  😎")
 
+        console.log("  id patient" ,response)
 
 
 
-        this.patientService.uploadBlogImage(response.id, this.image).subscribe(
+
+        this.patientService.uploadPatientImage(response.id, this.image).subscribe(
           val =>  {} , error => { alert('oups')} , () => {
 
           });

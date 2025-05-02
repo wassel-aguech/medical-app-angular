@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { Patient } from '../models/patient';
 import {jwtDecode} from 'jwt-decode';
 import { Authenticationresponse } from '../models/Authenticationresponse';
+import { Responsep } from '../models/response';
 
 
 
@@ -28,8 +29,8 @@ export class AuthService {
     return this.http.post<AuthenticatorResponse>(`${this.baseUrl}/authenticate`,authenticationrequest);
   }
 
-  registerPation(Patien : Patient): Observable<any> {
-    return this.http.post<any>(`${this.baseUrl}/registerpatient`, Patien);
+  registerPation(Patien : Patient): Observable<Responsep> {
+    return this.http.post<Responsep>(`${this.baseUrl}/registerpatient`, Patien);
   }
 
 
