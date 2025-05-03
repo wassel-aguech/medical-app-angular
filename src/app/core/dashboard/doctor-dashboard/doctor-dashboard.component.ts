@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Medecin } from 'src/app/shared/models/medecin';
 import { routes } from 'src/app/shared/routes/routes';
+import { DisponibiliteService } from 'src/app/shared/services/disponibilite.service';
 import { MedecinService } from 'src/app/shared/services/medecin.service';
 import { RendezvousService } from 'src/app/shared/services/rendezvous.service';
 
@@ -17,9 +18,12 @@ export class DoctorDashboardComponent implements OnInit {
   userId: any;
   medecin :  Medecin = new Medecin();
   listrendezVousMedecin: any[] = [];
+  listdisponibilites: any[] = [];
 
 
-  constructor(private medecinservice : MedecinService , private rendezVousService : RendezvousService){}
+  constructor(private medecinservice : MedecinService , private rendezVousService : RendezvousService,
+    private disponibiliteService: DisponibiliteService
+  ){}
 
 
 
@@ -36,6 +40,11 @@ export class DoctorDashboardComponent implements OnInit {
       }
     });
 
+
+
+    this.getMedecin();
+    this.loadDisponibilites()
+
   }
 
 
@@ -43,7 +52,7 @@ export class DoctorDashboardComponent implements OnInit {
     getMedecin() {
       this.medecinservice.getMedecinByid(this.userId).subscribe((data: Medecin) => {
         this.medecin = data;
-        console.log(" patient  data est ", this.medecin);
+        console.log(" medecin  data est ", this.medecin);
       });
     }
 
@@ -72,6 +81,20 @@ export class DoctorDashboardComponent implements OnInit {
         }
       });
     }
+
+
+    loadDisponibilites(): void {
+      this.disponibiliteService.getDisponibilitesByMedecinId(this.userId).subscribe(
+        (data) => {this.listdisponibilites = data,
+          console.log("list des disponibilites est ", this.listdisponibilites)
+        },
+        (error) => console.error('Erreur lors du chargement des disponibilités', error)
+      );
+    }
+
+
+
+
 
 
 

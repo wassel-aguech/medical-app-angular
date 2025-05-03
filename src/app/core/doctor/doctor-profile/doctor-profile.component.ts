@@ -16,17 +16,19 @@ import { RendezvousService } from 'src/app/shared/services/rendezvous.service';
 })
 export class DoctorProfileComponent implements OnInit {
 
-  public routes = routes;
-  medecinservice = inject(MedecinService)
-  toastr = inject(ToastrService)
-  route = inject(ActivatedRoute)
+  public routes    = routes;
+  medecinservice   = inject(MedecinService)
+  toastr           = inject(ToastrService)
+  route            = inject(ActivatedRoute)
   redezvousservice = inject(RendezvousService)
 
-  medecin : Medecin = new Medecin();
-  userId: any;
-  medecinId : any
-  renderVousForm: FormGroup;
-  renderVous : RendezVous = new RendezVous
+  medecin          : Medecin= new Medecin();
+  userId           : any;
+  medecinId        : any
+  renderVousForm   : FormGroup;
+  renderVous       : RendezVous = new RendezVous
+  role             :any
+
 
 
 
@@ -43,6 +45,9 @@ export class DoctorProfileComponent implements OnInit {
 
      this.medecinId =  this.route.snapshot.params['id']
      console.log(" medecin id est" , this.medecinId)
+
+
+     this.getMedecin();
 
   }
 
@@ -62,8 +67,15 @@ export class DoctorProfileComponent implements OnInit {
    }
 
 
-
   getMedecin() {
+
+    this.role = localStorage.getItem('role');
+    if(this.role == 'medecin'){
+      this.userId = localStorage.getItem('userId');
+    }else{
+      this.userId = this.medecinId
+    }
+
     this.medecinservice.getMedecinByid(this.userId).subscribe((data: Medecin) => {
       this.medecin = data;
       console.log(" medecin  data est ", this.medecin);

@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DataService } from 'src/app/shared/data/data.service';
 import { pageSelection, apiResultFormat, schedule } from 'src/app/shared/models/models';
 import { routes } from 'src/app/shared/routes/routes';
+import { DisponibiliteService } from 'src/app/shared/services/disponibilite.service';
 
 @Component({
     selector: 'app-schedule',
@@ -30,31 +31,123 @@ export class ScheduleComponent implements OnInit{
   public pageNumberArray: Array<number> = [];
   public pageSelection: Array<pageSelection> = [];
   public totalPages = 0;
+  listdisponibilites: any[] = [];
+  medecinId: any 
 
-  constructor(public data : DataService){
+
+
+
+  constructor(private disponibiliteService: DisponibiliteService , public data : DataService) {}
+
+  ngOnInit(): void {
+    this.medecinId = localStorage.getItem('userId');
+
+    this.loadDisponibilites();
+    // this.getTableData();
 
   }
-  ngOnInit() {
-    this.getTableData();
-  }
-  private getTableData(): void {
-    this.schedule = [];
-    this.serialNumberArray = [];
 
-    this.data.getSchedule().subscribe((data: apiResultFormat) => {
-      this.totalData = data.totalData;
-      data.data.map((res: schedule, index: number) => {
-        const serialNumber = index + 1;
-        if (index >= this.skip && serialNumber <= this.limit) {
+  loadDisponibilites(): void {
+    this.disponibiliteService.getDisponibilitesByMedecinId(this.medecinId).subscribe(
+      (data) => this.listdisponibilites = data,
+      (error) => console.error('Erreur lors du chargement des disponibilités', error)
+    );
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // private getTableData(): void {
+  //   this.schedule = [];
+  //   this.serialNumberArray = [];
+
+  //   this.data.getSchedule().subscribe((data: apiResultFormat) => {
+  //     this.totalData = data.totalData;
+  //     data.data.map((res: schedule, index: number) => {
+  //       const serialNumber = index + 1;
+  //       if (index >= this.skip && serialNumber <= this.limit) {
          
-          this.schedule.push(res);
-          this.serialNumberArray.push(serialNumber);
-        }
-      });
-      this.dataSource = new MatTableDataSource<schedule>(this.schedule);
-      this.calculateTotalPages(this.totalData, this.pageSize);
-    });
-  }
+  //         this.schedule.push(res);
+  //         this.serialNumberArray.push(serialNumber);
+  //       }
+  //     });
+  //     this.dataSource = new MatTableDataSource<schedule>(this.schedule);
+  //     this.calculateTotalPages(this.totalData, this.pageSize);
+  //   });
+  // }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public searchData(value: any): void {
     this.dataSource.filter = value.trim().toLowerCase();
@@ -84,13 +177,13 @@ export class ScheduleComponent implements OnInit{
       this.pageIndex = this.currentPage - 1;
       this.limit += this.pageSize;
       this.skip = this.pageSize * this.pageIndex;
-      this.getTableData();
+      // this.getTableData();
     } else if (event == 'previous') {
       this.currentPage--;
       this.pageIndex = this.currentPage - 1;
       this.limit -= this.pageSize;
       this.skip = this.pageSize * this.pageIndex;
-      this.getTableData();
+      // this.getTableData();
     }
   }
 
@@ -103,7 +196,7 @@ export class ScheduleComponent implements OnInit{
     } else if (pageNumber < this.currentPage) {
       this.pageIndex = pageNumber + 1;
     }
-    this.getTableData();
+    // this.getTableData();
   }
 
   public PageSize(): void {
@@ -111,7 +204,7 @@ export class ScheduleComponent implements OnInit{
     this.limit = this.pageSize;
     this.skip = 0;
     this.currentPage = 1;
-    this.getTableData();
+    // this.getTableData();
   }
 
   private calculateTotalPages(totalData: number, pageSize: number): void {

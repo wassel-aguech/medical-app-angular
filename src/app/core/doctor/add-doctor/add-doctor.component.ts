@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { elementAt } from 'rxjs';
 import { Medecin } from 'src/app/shared/models/medecin';
 import { routes } from 'src/app/shared/routes/routes';
 import { MedecinService } from 'src/app/shared/services/medecin.service';
@@ -64,6 +65,7 @@ export class AddDoctorComponent implements OnInit {
       specialite      : new FormControl('', Validators.required),
       image           : new FormControl('', Validators.required),
       status          : new FormControl('', Validators.required),
+      etat            : new FormControl('', Validators.required),
 
 
     });
@@ -82,9 +84,10 @@ export class AddDoctorComponent implements OnInit {
     this.medecin.confirmPassword = this.medecinForm.value.confirmPassword
     this.medecin.image           = this.medecinForm.value.image
     this.medecin.email           = this.medecinForm.value.email
-    this.medecin.adress         = this.medecinForm.value.adress
+    this.medecin.adress          = this.medecinForm.value.adress
     this.medecin.phone           = this.medecinForm.value.phone
     this.medecin.specialite      = this.medecinForm.value.specialite
+    this.medecin.etat            = this.medecinForm.value.etat
 
     console.log(" info medecin " , this.medecin)
 

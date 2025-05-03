@@ -3,8 +3,10 @@ import { Sort } from '@angular/material/sort';
 import { DataService } from 'src/app/shared/data/data.service';
 import { patientProfile } from 'src/app/shared/models/models';
 import { Patient } from 'src/app/shared/models/patient';
+import { RendezVous } from 'src/app/shared/models/rendezVous';
 import { routes } from 'src/app/shared/routes/routes';
 import { PatientService } from 'src/app/shared/services/patient.service';
+import { RendezvousService } from 'src/app/shared/services/rendezvous.service';
 
 @Component({
     selector: 'app-patient-profile',
@@ -18,11 +20,11 @@ public patientProfile: Array<patientProfile> = [];
 
 patientservice = inject(PatientService)
 patient : Patient = new Patient();
-userId: string | null = null;
+userId: any;
 
+rendezVousList: RendezVous[] = [];
 
-
-constructor(public data : DataService)
+constructor(public data : DataService , private rendezVousService : RendezvousService )
 {
   this.patientProfile = this.data.patientProfile;
 }
@@ -31,8 +33,24 @@ constructor(public data : DataService)
 ngOnInit(): void {
 
   this.userId = localStorage.getItem('userId');
+
+
+
+
+  this.rendezVousService.getRendezVousValidesByPatientId(this.userId)
+  .subscribe(data => {
+    this.rendezVousList = data;
+  });
+
+
+
+
   this.getPatient()
+
 }
+
+
+
 
 
 getPatient() {

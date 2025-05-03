@@ -7,10 +7,11 @@ export class RendezVous{
   dateEnvoie! : Date;
   dateDemande! : Date;
   dateRendezVous! : Date;;
-  status!: String;
+  statut!: String;
 
 
   patiendid! : number;
   medecinid! : number;
   medecinName! : String;
+  patientName! : String;
 }

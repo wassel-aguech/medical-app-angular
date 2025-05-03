@@ -37,4 +37,9 @@ export class RendezvousService {
   }
 
 
+  getRendezVousValidesByPatientId(id: number): Observable<RendezVous[]> {
+    return this.http.get<RendezVous[]>(`${this.baseUrl}/valide/patient/${id}`);
+  }
+
+
 }

@@ -11,6 +11,7 @@ export class Medecin {
   specialite!: string;
   status!: string;
   image : string | null = null;
+  etat!: string;
 
 
 }

@@ -48,18 +48,22 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let medecin of medecins">
-                <td>{{ medecin.firstName }}</td>
+              <tr *ngFor="let medecin of medecins.slice().reverse(); let i = index">
+                <td> <img [src]="medecin.image" style="width: 40px; height: 40px; border-radius: 50%;" alt=""> &nbsp; {{ medecin.firstName }} {{ medecin.lastName }}</td>
                 <td>{{ medecin.specialite }}</td>
                 <td>{{ medecin.email }}</td>
                 <td>{{ medecin.phone }}</td>
                 <td>
                   <span
                     class="badge"
-                    [ngClass]="medecin.status ? 'bg-success' : 'bg-secondary'">
-                    {{ medecin.status ? 'Connecté' : 'Déconnecté' }}
+                    [ngClass]="{
+                      'bg-success': medecin.etat === 'ACTIVE',
+                      'bg-danger': medecin.etat === 'INACTIVE'
+                    }">
+                    {{ medecin.etat === 'ACTIVE' ? 'Active' : 'Inactive' }}
                   </span>
                 </td>
+                
                 <td>
                   <button class="btn btn-info btn-sm" (click)="gotoProfiledoctor(medecin.id)">
                     Voir Profil
@@ -93,16 +97,13 @@
             {{ rdv.dateRendezVous ? (rdv.dateRendezVous | date: 'dd/MM/yyyy') : '—' }}
           </td>
           <td>{{ rdv.motif }}</td>
-          <td>
-            <span
-              class="badge text-white px-2 py-1 rounded"
-              [ngClass]="{
-                'bg-warning': rdv.status === 'EN_ATTENTE',
-                'bg-success': rdv.status === 'ACCEPTE',
-                'bg-danger': rdv.status === 'REFUSE'
-              }"
-            >
-              {{ rdv.status }}
+          <td class="py-2 px-4">
+            <span class="badge" [ngClass]="{
+              'bg-warning': rdv.statut === 'EN_ATTENTE',
+              'bg-success': rdv.statut === 'VALIDE',
+              'bg-danger': rdv.statut === 'REFUSE'
+            }">
+              {{ rdv.statut }}
             </span>
           </td>
           <td>{{ rdv.medecinName }}</td>
