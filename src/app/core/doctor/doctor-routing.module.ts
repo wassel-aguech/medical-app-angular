@@ -64,6 +64,14 @@ const routes: Routes = [
           (m) => m.DoctorSettingModule
         ),
     },
+
+    {
+      path: 'doctor-setting/:id',
+      loadChildren: () =>
+        import('./doctor-setting/doctor-setting.module').then(
+          (m) => m.DoctorSettingModule
+        ),
+    },
   ]
 }
 ];

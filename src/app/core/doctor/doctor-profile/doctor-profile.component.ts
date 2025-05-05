@@ -1,10 +1,12 @@
 import { Component, inject, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Disponibilite } from 'src/app/shared/models/disponibilite';
 import { Medecin } from 'src/app/shared/models/medecin';
 import { RendezVous } from 'src/app/shared/models/rendezVous';
 import { routes } from 'src/app/shared/routes/routes';
+import { DisponibiliteService } from 'src/app/shared/services/disponibilite.service';
 import { MedecinService } from 'src/app/shared/services/medecin.service';
 import { RendezvousService } from 'src/app/shared/services/rendezvous.service';
 
@@ -15,12 +17,14 @@ import { RendezvousService } from 'src/app/shared/services/rendezvous.service';
     standalone: false
 })
 export class DoctorProfileComponent implements OnInit {
-
+  listdisponibilites: Disponibilite[] = [];
   public routes    = routes;
   medecinservice   = inject(MedecinService)
   toastr           = inject(ToastrService)
   route            = inject(ActivatedRoute)
+  router            = inject(Router)
   redezvousservice = inject(RendezvousService)
+  disponibiliteService = inject(DisponibiliteService)
 
   medecin          : Medecin= new Medecin();
   userId           : any;
@@ -48,6 +52,7 @@ export class DoctorProfileComponent implements OnInit {
 
 
      this.getMedecin();
+     this.loadDisponibilites()
 
   }
 
@@ -110,6 +115,31 @@ export class DoctorProfileComponent implements OnInit {
     )
    }
 
+
+
+
+
+
+   loadDisponibilites(): void {
+    this.role = localStorage.getItem('role');
+    if(this.role == 'medecin'){
+      this.userId = localStorage.getItem('userId');
+    }else{
+      this.userId = this.medecinId
+    }
+
+    this.disponibiliteService.getDisponibilitesByMedecinId(this.userId).subscribe(
+      (data) => {this.listdisponibilites = data,
+        console.log("list des disponibilites est ", this.listdisponibilites)
+      },
+      (error) => console.error('Erreur lors du chargement des disponibilités', error)
+    );
+  }
+
+
+  goToSettings() {
+    this.router.navigate(['/doctor/doctor-setting', this.userId]);
+  }
 
 
 }

@@ -198,7 +198,7 @@
                                                 <a [routerLink]="routes.doctorProfile" class="active"><span class="set-about-icon me-2"><img src="assets/img/icons/menu-icon-02.svg" alt=""></span>About me</a>
                                             </li>
                                             <li>
-                                                <a [routerLink]="routes.doctorSetting"><span class="set-about-icon me-2"><img src="assets/img/icons/menu-icon-16.svg" alt=""></span>Settings</a>
+                                                <a (click)="goToSettings()"><span class="set-about-icon me-2"><img src="assets/img/icons/menu-icon-16.svg" alt=""></span>Settings</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -235,38 +235,31 @@
                                         <p>Worked as Professor and Head of the department ; Community medicine Department at Sterline Hospital, Rajkot, Gujarat from 2003-2015</p>
                                     </div>
                                     <div class="hello-park mb-2">
-                                        <h5>Education</h5>
+                                        <h5>Horaire du Travaille</h5>
                                         <div class="table-responsive">
                                             <table class="table mb-0 border-0 custom-table profile-table">
                                                 <thead>
-                                                    <th>Year</th>
-                                                    <th>Degree</th>
-                                                    <th>Institute</th>
-                                                    <th>Result</th>
+                                                    <th>Jour</th>
+                                                    <th>heure Debut</th>
+                                                    <th>Heure Fin</th>
+                                                    <th>disponible</th>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>2002-2005</td>
-                                                        <td>M.D. of Medicine</td>
-                                                        <td>University of Wyoming	</td>
+                                                    <tr *ngFor="let dispo of listdisponibilites">
+                                                        <td> {{dispo.jour}} </td>
+                                                        <td> {{dispo.heureDebut}}</td>
+                                                        <td> {{dispo.heureFin}}	</td>
                                                         <td>
-                                                            <button class="custom-badge status-green ">Distinction</button>
+                                                            <button class="custom-badge status-green ">Disponible</button>
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>2005-2014</td>
-                                                        <td>MBBS</td>
-                                                        <td>Netherland Medical College	</td>
-                                                        <td>
-                                                            <button class="custom-badge status-green ">Distinction</button>
-                                                        </td>
-                                                    </tr>
+
                                                 </tbody>
                                             </table>
                                         </div>
                                     </div>
                                     <div class="hello-park mb-2">
-                                        <h5>Experience</h5>
+                                        <h5>Rendezvous Aujourd'hui</h5>
                                         <div class="table-responsive">
                                             <table class="table mb-0 border-0 custom-table profile-table">
                                                 <thead>
@@ -296,13 +289,7 @@
                                             </table>
                                         </div>
                                     </div>
-                                    <div class="hello-park">
-                                        <h5>Conferences, Cources & Workshop Attended</h5>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p>
-                                        <p class="mb-0">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur</p>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>

@@ -1,6 +1,6 @@
 <div class="page-wrapper">
     <div class="content">
-    
+
         <!-- Page Header -->
         <div class="page-header">
             <div class="row">
@@ -25,13 +25,13 @@
                                 </div>
                                 <div class="doctor-profile-head">
                                     <div class="profile-bg-img">
-                                        <img  src="assets/img/profile-bg.jpg"  alt="Profile">
+                                        <img  [src]="medecin.image" style="width: 1340px; height: 318px;"  alt="Profile">
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4">
                                             <div class="profile-user-box">
                                                 <div class="profile-user-img">
-                                                    <img  src="assets/img/profile-user.jpg"  alt="Profile">
+                                                    <img  [src]="medecin.image"  alt="Profile">
                                                     <div class="form-group doctor-up-files profile-edit-icon mb-0">
                                                         <div class="uplod d-flex">
                                                             <label class="file-upload profile-upbtn mb-0">
@@ -70,7 +70,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>								
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -201,35 +201,35 @@
                                         </ul>
                                     </div>
                                     <div class="setting-form-blk">
-                                        <form>
+                                        <form  [formGroup]="medecinForm" >
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-heading">
                                                         <h4>Account Setting</h4>
                                                     </div>
                                                 </div>
-                                                <div class="col-12 col-sm-12">  
+                                                <div class="col-12 col-sm-12">
                                                     <div class="form-group local-forms">
                                                         <label for="username">Username </label>
-                                                        <input class="form-control" type="text" value="brucewillis@29" >
+                                                        <input class="form-control" formControlName="firstName" type="text" value="brucewillis@29" >
                                                     </div>
                                                 </div>
-                                                <div class="col-12 col-sm-12">  
+                                                <div class="col-12 col-sm-12">
                                                     <div class="form-group local-forms">
                                                          <label  for="mobile" >Mobile </label>
-                                                        <input class="form-control" type="text" value="+1 23 456890" >
+                                                        <input formControlName="phone" class="form-control" type="text" value="+1 23 456890" >
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-12">
                                                     <div class="form-group local-forms">
                                                         <label for="email" >Email </label>
-                                                        <input class="form-control" type="email" value="brucewillis@info.com" >
+                                                        <input formControlName="email" class="form-control" type="email" value="brucewillis@info.com" >
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-12">
                                                     <div class="form-group local-forms">
                                                         <label for="address">Address  <span class="login-danger">*</span></label>
-                                                        <textarea class="form-control" rows="3" cols="30">101, Elanxa Apartments, 340 N Madison Avenue</textarea>
+                                                        <textarea formControlName="adress" class="form-control" rows="3" cols="30">101, Elanxa Apartments, 340 N Madison Avenue</textarea>
                                                     </div>
                                                 </div>
                                             </div>
