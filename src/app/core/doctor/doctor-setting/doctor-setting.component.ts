@@ -91,7 +91,7 @@ export class DoctorSettingComponent {
         this.medecinservice.updateMedecin(updateMedecin).subscribe({
           next: (response) => {
             this.toastr.info('Medecin updated avec succès', 'Succès')
-            this.router.navigate(['doctor/doctors-profile']);
+            this.router.navigate(['doctor/doctor-profile', this.userId]);
 
         },
         error: (error) => {
@@ -99,5 +99,9 @@ export class DoctorSettingComponent {
 
         }
       });
+      }
+
+      goprofile(){
+        this.router.navigate(['doctor/doctor-profile']);
       }
 }

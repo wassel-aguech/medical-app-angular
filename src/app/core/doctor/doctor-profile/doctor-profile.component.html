@@ -41,7 +41,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="names-profiles">
-                                                    <h4>Dr. Bruce Willis</h4>
+                                                    <h4> {{medecin.firstName}} {{medecin.lastName}} </h4>
                                                     <h5>Senior Doctor</h5>
                                                 </div>
                                             </div>
@@ -206,26 +206,26 @@
                                         <div class="row">
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="detail-personal">
-                                                    <h2>Full Name</h2>
+                                                    <h2> {{medecin.firstName}} {{medecin.lastName}} </h2>
                                                     <h3>Dr.Bruce Willis</h3>
                                                 </div>
                                             </div>
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="detail-personal">
                                                     <h2>Mobile </h2>
-                                                    <h3>264-625-2583</h3>
+                                                    <h3> {{medecin.phone}} </h3>
                                                 </div>
                                             </div>
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="detail-personal">
                                                     <h2>Email</h2>
-                                                    <h3>bruce&#64;email.com</h3>
+                                                    <h3> {{medecin.email}} </h3>
                                                 </div>
                                             </div>
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="detail-personal">
                                                     <h2>Location</h2>
-                                                    <h3>Los Angeles</h3>
+                                                    <h3> {{medecin.adress}} </h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -263,28 +263,25 @@
                                         <div class="table-responsive">
                                             <table class="table mb-0 border-0 custom-table profile-table">
                                                 <thead>
-                                                    <th>Year</th>
-                                                    <th>Position</th>
-                                                    <th>Hospital</th>
-                                                    <th>Feedback</th>
+                                                    <th>#ID</th>
+                                                    <th>Nom Patient</th>
+                                                    <th>Motif</th>
+                                                    <th>Status</th>
+
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <td>2002-2005</td>
-                                                        <td>Senior doctor	</td>
-                                                        <td>Midtown Medical Clinic	</td>
-                                                        <td>
-                                                            <button class="custom-badge status-orange ">Good</button>
+                                                    <tr *ngFor="let rendezvous of listrendezVous">
+                                                        <td> {{rendezvous.id}} </td>
+                                                        <td> {{rendezvous.patientName}} 	</td>
+                                                        <td> {{rendezvous.motif}} 		</td>
+                                                        <td [ngClass]="{
+                                                          'status-en-attente': rendezvous.statut === 'EN_ATTENTE',
+                                                          'status-valide': rendezvous.statut === 'VALIDE'
+                                                        }">
+                                                          {{ rendezvous.statut }}
                                                         </td>
                                                     </tr>
-                                                    <tr>
-                                                        <td>2005-2014</td>
-                                                        <td>Associate Prof.	</td>
-                                                        <td>Netherland Medical College	</td>
-                                                        <td>
-                                                            <button class="custom-badge status-green ">Excellence</button>
-                                                        </td>
-                                                    </tr>
+                                               
                                                 </tbody>
                                             </table>
                                         </div>

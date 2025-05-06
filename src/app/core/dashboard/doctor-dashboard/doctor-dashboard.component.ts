@@ -1,8 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { Subscription } from 'rxjs';
 import { Medecin } from 'src/app/shared/models/medecin';
 import { routes } from 'src/app/shared/routes/routes';
 import { DisponibiliteService } from 'src/app/shared/services/disponibilite.service';
 import { MedecinService } from 'src/app/shared/services/medecin.service';
+import { NotificationService } from 'src/app/shared/services/notification.service';
 import { RendezvousService } from 'src/app/shared/services/rendezvous.service';
 
 
@@ -20,9 +23,14 @@ export class DoctorDashboardComponent implements OnInit {
   listrendezVousMedecin: any[] = [];
   listdisponibilites: any[] = [];
 
+  notificationsCount: number = 0;
+  notifications: any[] = [];
+  private subscription!: Subscription;
+
 
   constructor(private medecinservice : MedecinService , private rendezVousService : RendezvousService,
-    private disponibiliteService: DisponibiliteService
+    private disponibiliteService: DisponibiliteService ,
+    private toastr: ToastrService ,private notificationService: NotificationService
   ){}
 
 
@@ -45,7 +53,23 @@ export class DoctorDashboardComponent implements OnInit {
     this.getMedecin();
     this.loadDisponibilites()
 
+
+
+    this.notificationService.connect(this.userId).subscribe({
+      next: (msg: string) => {
+        this.notifications.push(msg);
+        console.log('Notification reçue :', msg);
+      },
+      error: (err) => {
+        console.error('Erreur SSE :', err);
+      }
+    });
+
+
+
   }
+
+
 
 
 

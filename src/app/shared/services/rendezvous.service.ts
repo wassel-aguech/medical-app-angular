@@ -42,4 +42,8 @@ export class RendezvousService {
   }
 
 
+  getRendezVousToday(medecinId: number): Observable<RendezVous[]> {
+    return this.http.get<RendezVous[]>(`${this.baseUrl}/rendezvoustoday/${medecinId}`);
+  }
+
 }

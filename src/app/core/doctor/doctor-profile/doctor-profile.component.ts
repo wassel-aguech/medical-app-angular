@@ -22,6 +22,7 @@ export class DoctorProfileComponent implements OnInit {
   medecinservice   = inject(MedecinService)
   toastr           = inject(ToastrService)
   route            = inject(ActivatedRoute)
+  rendezvousService = inject(RendezvousService)
   router            = inject(Router)
   redezvousservice = inject(RendezvousService)
   disponibiliteService = inject(DisponibiliteService)
@@ -32,6 +33,8 @@ export class DoctorProfileComponent implements OnInit {
   renderVousForm   : FormGroup;
   renderVous       : RendezVous = new RendezVous
   role             :any
+  listrendezVous   : RendezVous[] = []
+
 
 
 
@@ -49,6 +52,10 @@ export class DoctorProfileComponent implements OnInit {
 
      this.medecinId =  this.route.snapshot.params['id']
      console.log(" medecin id est" , this.medecinId)
+
+
+
+
 
 
      this.getMedecin();
@@ -142,4 +149,24 @@ export class DoctorProfileComponent implements OnInit {
   }
 
 
-}
+
+
+  getrendezvoustoday(){
+    this.rendezvousService.getRendezVousToday(this.medecinId).subscribe(
+      (data) => {
+        this.listrendezVous = data;  // Stocke les rendez-vous dans la variable
+      },
+      (error) => {
+        console.error('Erreur lors de la récupération des rendez-vous', error);
+      }
+    );
+  }
+
+
+
+
+
+  
+  }
+
+
