@@ -1,13 +1,18 @@
 import { Injectable, NgZone } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EventSourcePolyfill } from 'event-source-polyfill';
+import { environment } from 'src/environment/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NotificationService {
 
-  constructor(private ngZone: NgZone) {}
+
+    baseUrl = environment.baseUrl+ "/notifications"
+
+  constructor(private ngZone: NgZone , private  http : HttpClient) {}
 
   connect(medecinId: number): Observable<string> {
     return new Observable<string>(observer => {
@@ -40,5 +45,16 @@ export class NotificationService {
         eventSource.close();
       };
     });
+  }
+
+
+
+  markAsRead(id: number): Observable<void> {
+    return this.http.put<void>(`${this.baseUrl}/${id}/read`, {});
+  }
+
+
+  getAllNotificationsByMedecin(medecinId: number): Observable<Notification[]> {
+    return this.http.get<Notification[]>(`${this.baseUrl}/all/${medecinId}`);
   }
 }

@@ -22,6 +22,7 @@ export class DoctorDashboardComponent implements OnInit {
   medecin :  Medecin = new Medecin();
   listrendezVousMedecin: any[] = [];
   listdisponibilites: any[] = [];
+  allnotifications: any[] = [];
 
   notificationsCount: number = 0;
   notifications: any[] = [];
@@ -55,18 +56,53 @@ export class DoctorDashboardComponent implements OnInit {
 
 
 
+    // this.notificationService.connect(this.userId).subscribe({
+    //   next: (msg: string) => {
+    //     this.notifications.push(msg);
+    //     console.log('Notification reçue :', msg);
+    //   },
+    //   error: (err) => {
+    //     console.error('Erreur SSE :', err);
+    //   }
+    // });
     this.notificationService.connect(this.userId).subscribe({
       next: (msg: string) => {
-        this.notifications.push(msg);
-        console.log('Notification reçue :', msg);
+        const newNotif = {
+          id: Date.now(), // ou un ID temporaire
+          message: msg,
+          lue: false,
+          dateEnvoi: new Date()
+        };
+        this.allnotifications.unshift(newNotif);
+        this.updateNotificationsCount();
       },
-      error: (err) => {
-        console.error('Erreur SSE :', err);
-      }
+      error: (err) => console.error('Erreur SSE :', err)
     });
 
 
+    this.notificationService.getAllNotificationsByMedecin(this.userId).subscribe(data => {
+      this.allnotifications = data;
+    });
 
+
+  }
+
+
+  get unreadCount(): number {
+    return this.notifications.filter(n => !n.read).length;
+  }
+
+
+
+  markAsRead(notif: any) {
+    this.notificationService.markAsRead(notif.id).subscribe(() => {
+      notif.lue = true;
+      this.updateNotificationsCount();
+    });
+  }
+
+  updateNotificationsCount() {
+    this.notificationsCount = this.allnotifications.filter(n => !n.lue).length;
   }
 
 
