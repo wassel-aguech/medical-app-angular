@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Subscription } from 'rxjs';
 import { Medecin } from 'src/app/shared/models/medecin';
@@ -31,7 +32,7 @@ export class DoctorDashboardComponent implements OnInit {
 
   constructor(private medecinservice : MedecinService , private rendezVousService : RendezvousService,
     private disponibiliteService: DisponibiliteService ,
-    private toastr: ToastrService ,private notificationService: NotificationService
+    private toastr: ToastrService ,private notificationService: NotificationService , private router: Router
   ){}
 
 
@@ -43,6 +44,7 @@ export class DoctorDashboardComponent implements OnInit {
     this.rendezVousService.getRendezVousByMedecinId(this.userId).subscribe({
       next: (data) => {
         this.listrendezVousMedecin = data;
+        console.log("list des rendez-vous est ", this.listrendezVousMedecin);
       },
       error: (err) => {
         console.error('Erreur de récupération des rendez-vous :', err);
@@ -55,16 +57,6 @@ export class DoctorDashboardComponent implements OnInit {
     this.loadDisponibilites()
 
 
-
-    // this.notificationService.connect(this.userId).subscribe({
-    //   next: (msg: string) => {
-    //     this.notifications.push(msg);
-    //     console.log('Notification reçue :', msg);
-    //   },
-    //   error: (err) => {
-    //     console.error('Erreur SSE :', err);
-    //   }
-    // });
     this.notificationService.connect(this.userId).subscribe({
       next: (msg: string) => {
         const newNotif = {
@@ -154,6 +146,10 @@ export class DoctorDashboardComponent implements OnInit {
 
 
 
+
+
+  gotoProfilePatient(patientid : any) {
+    this.router.navigate(['patient/patient-profile',2]);}
 
 
 

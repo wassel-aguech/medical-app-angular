@@ -67,7 +67,10 @@
                                                 <button  class="btn btn-info follow-btns"
                                                 data-bs-toggle="modal" data-bs-target="#addrendezvous"
                                                 >Demande RendezVous</button>
-                                                <button type="submit" class="btn btn-info message-btns">Message</button>
+                                                <button
+                                                (click)="goToChat(medecin.id)" class="btn btn-info message-btns">Message
+                                                </button>
+
                                             </div>
                                         </div>
                                     </div>
@@ -281,7 +284,7 @@
                                                           {{ rendezvous.statut }}
                                                         </td>
                                                     </tr>
-                                               
+
                                                 </tbody>
                                             </table>
                                         </div>

@@ -144,6 +144,7 @@
                 <th class="py-3 px-4 text-left">Date de Demande</th>
                 <th class="py-3 px-4 text-left">Date Rendez-vous</th>
                 <th class="py-3 px-4 text-left">Motif</th>
+                <th class="py-3 px-4 text-left">Profile</th>
                 <th class="py-3 px-4 text-left">Statut</th>
               </tr>
             </thead>
@@ -158,6 +159,9 @@
                 <td class="py-2 px-4">{{ rdv.dateDemande | date: 'dd/MM/yyyy' }}</td>
                 <td class="py-2 px-4">{{ rdv.dateRendezVous | date: 'dd/MM/yyyy' }}</td>
                 <td class="py-2 px-4">{{ rdv.motif }}</td>
+                <td>
+                  <button class="btn btn-sm btn-primary"  (click)="gotoProfilePatient(2)"> profile </button>
+                </td>
                 <td class="py-2 px-4">
                   <span class="badge" [ngClass]="{
                     'bg-warning': rdv.statut === 'EN_ATTENTE',

@@ -60,11 +60,25 @@ const routes: Routes = [
         loadChildren: () =>
           import('./payroll/payroll.module').then((m) => m.PayrollModule),
       },
+
+      // {
+      //   path: 'chat',
+      //   loadChildren: () =>
+      //     import('./chat/chat.module').then((m) => m.ChatModule),
+      // },
+
       {
-        path: 'chat',
+        path: 'chat/patient/:doctorId',
         loadChildren: () =>
           import('./chat/chat.module').then((m) => m.ChatModule),
       },
+      {
+        path: 'chat/doctor/:patientId',
+        loadChildren: () =>
+          import('./chat/chat.module').then((m) => m.ChatModule),
+      },
+
+
       {
         path: 'calls',
         loadChildren: () =>

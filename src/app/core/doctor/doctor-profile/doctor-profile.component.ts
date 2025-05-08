@@ -163,10 +163,14 @@ export class DoctorProfileComponent implements OnInit {
   }
 
 
+  goToChat(id:any) {
+    this.router.navigate(['/chat/patient/', this.userId]);
+
+  }
 
 
 
-  
+
   }
 
 

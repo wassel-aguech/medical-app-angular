@@ -33,7 +33,7 @@ const routes: Routes = [
     },
 
 
-    
+
 
     {
       path: 'edit-patient',
@@ -55,6 +55,15 @@ const routes: Routes = [
           (m) => m.PatientProfileModule
         ),
     },
+
+    {
+      path: 'patient-profile/:id',
+      loadChildren: () =>
+        import('./patient-profile/patient-profile.module').then(
+          (m) => m.PatientProfileModule
+        ),
+    },
+
     {
       path: 'patient-setting',
       loadChildren: () =>

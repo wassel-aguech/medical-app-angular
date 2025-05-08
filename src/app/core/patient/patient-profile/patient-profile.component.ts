@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Sort } from '@angular/material/sort';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from 'src/app/shared/data/data.service';
 import { patientProfile } from 'src/app/shared/models/models';
 import { Patient } from 'src/app/shared/models/patient';
@@ -21,10 +22,15 @@ public patientProfile: Array<patientProfile> = [];
 patientservice = inject(PatientService)
 patient : Patient = new Patient();
 userId: any;
+patientId: any
+role: any;
 
 rendezVousList: RendezVous[] = [];
 
-constructor(public data : DataService , private rendezVousService : RendezvousService )
+constructor(public data : DataService ,
+   private rendezVousService : RendezvousService ,
+   private route : ActivatedRoute,
+  private router : Router)
 {
   this.patientProfile = this.data.patientProfile;
 }
@@ -33,6 +39,8 @@ constructor(public data : DataService , private rendezVousService : RendezvousSe
 ngOnInit(): void {
 
   this.userId = localStorage.getItem('userId');
+
+  this.patientId =  this.route.snapshot.params['id']
 
 
 
@@ -54,10 +62,25 @@ ngOnInit(): void {
 
 
 getPatient() {
+
+
+  this.role = localStorage.getItem('role');
+  if(this.role == 'patient'){
+    this.userId = localStorage.getItem('userId');
+  }else{
+    this.userId = this.patientId
+  }
+
+
   this.patientservice.getPatientByid(this.userId).subscribe((data: Patient) => {
     this.patient = data;
     console.log(" patient  data est ", this.patient);
   });
+}
+
+
+openChatWithPatient() {
+  this.router.navigate(['/chat/doctor', this.patientId]);
 }
 
 
