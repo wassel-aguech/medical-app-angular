@@ -10,3 +10,38 @@
   .first{
     background-color: greenyellow;
   }
+
+
+
+  .medical-card {
+  background: linear-gradient(to bottom right, #f8fbff, #e6f2ff); /* Bleu très clair */
+  border-left: 5px solid #007bff; /* Bord bleu */
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.medical-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.2);
+}
+
+.medical-card .card-title {
+  color: #007bff;
+}
+
+.medical-card .card-text {
+  color: #333;
+}
+
+.badge.bg-warning {
+  background-color: #ffc107 !important;
+  color: #212529;
+}
+
+.badge.bg-success {
+  background-color: #28a745 !important;
+}
+
+.badge.bg-danger {
+  background-color: #dc3545 !important;
+}

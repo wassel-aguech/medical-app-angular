@@ -1,60 +1,3 @@
-// import { Component } from '@angular/core';
-// import { ActivatedRoute } from '@angular/router';
-// import { ChatMessage } from 'src/app/shared/models/chatmessege';
-// import { routes } from 'src/app/shared/routes/routes';
-// import { ChatService } from 'src/app/shared/services/chat.service';
-
-// @Component({
-//     selector: 'app-chat',
-//     templateUrl: './chat.component.html',
-//     styleUrls: ['./chat.component.scss'],
-//     standalone: false
-// })
-// export class ChatComponent {
-//   public routes = routes;
-
-
-//   messages: ChatMessage[] = [];
-//   newMessage = '';
-//   currentUser = 'Patient A'; // à ajuster selon l'utilisateur connecté
-//   receiver = 'Dr. B'; // à ajuster dynamiquement selon le profil du médecin
-//   doctorId: string = '';
-//   private messageSubscription: any;
-
-//   constructor(private chatService: ChatService, private route: ActivatedRoute) {}
-
-//   ngOnInit(): void {
-//     // Récupérer l'ID du médecin depuis l'URL
-//     this.doctorId = this.route.snapshot.paramMap.get('doctorId')!;
-//     console.log('Médecin sélectionné ID:', this.doctorId);
-
-//     // S'abonner aux messages du service
-//     this.messageSubscription = this.chatService.messages$.subscribe((msgs: ChatMessage[]) => {
-//       this.messages = msgs;
-//     });
-//   }
-
-//   ngOnDestroy(): void {
-//     // Se désabonner lorsque le composant est détruit
-//     if (this.messageSubscription) {
-//       this.messageSubscription.unsubscribe();
-//     }
-//   }
-
-//   send(): void {
-//     if (this.newMessage.trim()) {
-//       const message: ChatMessage = {
-//         sender: this.currentUser,
-//         receiver: this.receiver,
-//         content: this.newMessage,
-//         timestamp: new Date(),
-//       };
-//       // Envoyer le message au service
-//       this.chatService.sendMessage(message);
-//       this.newMessage = '';
-//     }
-//   }
-// }
 
 
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
@@ -122,18 +65,6 @@ export class ChatComponent implements OnInit, OnDestroy {
     }
   }
 
-  // send(): void {
-  //   if (this.newMessage.trim()) {
-  //     const message: ChatMessage = {
-  //       sender: this.currentUser,
-  //       receiver: this.receiver,
-  //       content: this.newMessage,
-  //       timestamp: new Date(),
-  //     };
-  //     this.chatService.sendMessage(message);
-  //     this.newMessage = '';
-  //   }
-  // }
 
   send(): void {
     if (this.newMessage.trim()) {

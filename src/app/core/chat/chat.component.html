@@ -1,75 +1,39 @@
-<!--
 
- <div class="container py-4">
-  <div class="card shadow rounded chat-card">
-    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-      <h5 class="mb-0">💬 Discussion avec {{ receiver }}</h5>
-    </div>
 
-    <div class="card-body overflow-auto" id="chatBox" style="max-height: 400px;">
-      <div *ngFor="let msg of messages" class="mb-3">
-        <div [ngClass]="{'text-end': msg.sender === currentUser, 'text-start': msg.sender !== currentUser}">
-          <div
-            [ngClass]="{
-              'bg-primary text-white': msg.sender === currentUser,
-              'bg-light border': msg.sender !== currentUser
-            }"
-            class="d-inline-block p-3 rounded shadow-sm"
-            style="max-width: 75%;"
-          >
-            <div class="fw-semibold">{{ msg.sender }}</div>
-            <div class="mt-1">{{ msg.content }}</div>
-            <div class="text-muted small text-end mt-2">{{ msg.timestamp | date: 'shortTime' }}</div>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="card-footer bg-light border-top">
-      <form (ngSubmit)="send()" class="d-flex align-items-center gap-2">
-        <input
-          [(ngModel)]="newMessage"
-          name="message"
-          type="text"
-          class="form-control"
-          placeholder="Écrire un message..."
-          required
-        />
-        <button type="submit" class="btn btn-primary px-4">
-          <i class="bi bi-send-fill"></i>
-        </button>
-      </form>
-    </div>
-  </div>
-</div> -->
-
-<div class="container py-4">
-  <div class="card shadow rounded chat-card">
+ <div class="container py-5 mt-5">
+  <div class="card shadow-lg rounded-4 border-0 bg-white">
     <!-- Header -->
-    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+    <div class="bg-primary text-white px-4 py-3 rounded-top-4 d-flex justify-content-between align-items-center">
       <h5 class="mb-0">💬 Discussion</h5>
     </div>
 
     <!-- Messages -->
-    <div class="card-body overflow-auto" id="chatBox" style="max-height: 400px;" #chatBox>
-      <div *ngFor="let msg of messages" class="row mb-3">
+    <div class="px-4 py-3 overflow-auto" id="chatBox" style="height: 400px;" #chatBox>
+      <div *ngFor="let msg of messages" class="mb-3">
         <div
-          class="col-12 d-flex"
+          class="d-flex"
           [ngClass]="{
-            'justify-content-start': msg.senderRole === 'patient',
-            'justify-content-end': msg.senderRole === 'medecin'
+            'justify-content-end': msg.senderRole === 'patient',
+            'justify-content-start': msg.senderRole === 'medecin'
           }"
         >
           <div
+            class="chat-bubble p-3 rounded-4 shadow-sm animate__animated animate__fadeIn"
             [ngClass]="{
-              'bg-info text-dark': msg.senderRole === 'patient',
-              'bg-success text-white': msg.senderRole === 'medecin'
+              'patient-bubble': msg.senderRole === 'patient',
+              'medecin-bubble': msg.senderRole === 'medecin'
             }"
-            class="p-3 rounded shadow-sm"
-            style="max-width: 75%;"
+            [style.backgroundColor]="msg.senderRole === 'patient' ? '#d6eaff' : '#d0f5dc'"
+            [style.color]="msg.senderRole === 'patient' ? '#0c2d57' : '#0b3d2e'"
           >
-            <div class="fw-semibold mb-1">{{ msg.sender }}</div>
+            <!-- Afficher le nom de l'expéditeur -->
+            <div class="fw-bold mb-1">{{ msg.sender }}</div>
+
+            <!-- Afficher le contenu du message -->
             <div>{{ msg.content }}</div>
+
+            <!-- Afficher la date -->
             <div class="text-muted small text-end mt-2">
               {{ msg.timestamp | date: 'shortTime' }}
             </div>
@@ -79,18 +43,19 @@
     </div>
 
     <!-- Input -->
-    <div class="card-footer bg-light border-top">
+    <div class="bg-white px-4 py-3 border-top">
       <form (ngSubmit)="send()" class="d-flex align-items-center gap-2">
         <input
           [(ngModel)]="newMessage"
           name="message"
           type="text"
-          class="form-control"
+          class="form-control rounded-pill px-4"
           placeholder="Écrire un message..."
           required
+          [ngClass]="{'shadow-sm': newMessage.trim()}"
         />
-        <button type="submit" class="btn btn-primary px-4">
-          <i class="bi bi-send-fill"></i>
+        <button type="submit" class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+          <i class="bi bi-send-fill fs-5"></i>
         </button>
       </form>
     </div>

@@ -1,19 +1,37 @@
-// .chat-card {
-//   max-width: 700px;
-//   margin: 0 auto;
-//   height: 80vh;
-//   display: flex;
-//   flex-direction: column;
-// }
+/* Chat bubble styles for patient */
+.patient-bubble {
+  background-color: #d6eaff !important;
+  color: #0c2d57 !important;
+  border: 1px solid #c2d9f7;
+  animation: slideInPatient 0.3s ease-out;
+}
 
-// .chat-body {
-//   flex: 1;
-//   padding: 1rem;
-//   background-color: #f8f9fa;
-//   border-radius: 0 0 0.25rem 0.25rem;
-//   overflow-y: auto;
-// }
+/* Chat bubble styles for doctor */
+.medecin-bubble {
+  background-color: #d0f5dc !important;
+  color: #0b3d2e !important;
+  border: 1px solid #b7e8bb;
+  animation: slideInMedecin 0.3s ease-out;
+}
 
-// .chat-bubble {
-//   max-width: 70%;
-// }
+@keyframes slideInPatient {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInMedecin {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
