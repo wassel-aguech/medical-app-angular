@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { EventSourcePolyfill } from 'event-source-polyfill';
 import { environment } from 'src/environment/environment';
 import { HttpClient } from '@angular/common/http';
+import { Notification } from '../models/notification';
 
 @Injectable({
   providedIn: 'root'
@@ -14,38 +15,38 @@ export class NotificationService {
 
   constructor(private ngZone: NgZone , private  http : HttpClient) {}
 
-  connect(medecinId: number): Observable<string> {
-    return new Observable<string>(observer => {
-      const eventSource = new EventSourcePolyfill(
-        `http://localhost:8080/api/v1/notifications/notifications/${medecinId}`,
-        {
-          headers: {
-            // Si authentification est requise :
-            // Authorization: `Bearer ${your_token}`
-          },
-          heartbeatTimeout: 60000,
-          withCredentials: true
-        }
-      );
 
-      eventSource.onmessage = (event : any) => {
-        this.ngZone.run(() => {
-          observer.next(event.data);
-        });
-      };
+  connect(destinataireId: number): Observable<Notification> {
+  return new Observable<Notification>(observer => {
+    const eventSource = new EventSourcePolyfill(
+      `http://localhost:8080/api/v1/notifications/notifications/${destinataireId}`,
+      {
+        headers: {},
+        heartbeatTimeout: 60000,
+        withCredentials: true
+      }
+    );
 
-      eventSource.onerror = (error : any) => {
-        this.ngZone.run(() => {
-          observer.error(error);
-        });
-        eventSource.close();
-      };
+    eventSource.onmessage = (event: any) => {
+      this.ngZone.run(() => {
+        const notification: Notification = JSON.parse(event.data);
+        observer.next(notification);
+      });
+    };
 
-      return () => {
-        eventSource.close();
-      };
-    });
-  }
+    eventSource.onerror = (error: any) => {
+      this.ngZone.run(() => {
+        observer.error(error);
+      });
+      eventSource.close();
+    };
+
+    return () => {
+      eventSource.close();
+    };
+  });
+}
+
 
 
 
@@ -58,3 +59,42 @@ export class NotificationService {
     return this.http.get<Notification[]>(`${this.baseUrl}/all/${medecinId}`);
   }
 }
+
+
+
+
+
+
+
+// connect(medecinId: number): Observable<string> {
+  //   return new Observable<string>(observer => {
+  //     const eventSource = new EventSourcePolyfill(
+  //       `http://localhost:8080/api/v1/notifications/notifications/${medecinId}`,
+  //       {
+  //         headers: {
+  //           // Si authentification est requise :
+  //           // Authorization: `Bearer ${your_token}`
+  //         },
+  //         heartbeatTimeout: 60000,
+  //         withCredentials: true
+  //       }
+  //     );
+
+  //     eventSource.onmessage = (event : any) => {
+  //       this.ngZone.run(() => {
+  //         observer.next(event.data);
+  //       });
+  //     };
+
+  //     eventSource.onerror = (error : any) => {
+  //       this.ngZone.run(() => {
+  //         observer.error(error);
+  //       });
+  //       eventSource.close();
+  //     };
+
+  //     return () => {
+  //       eventSource.close();
+  //     };
+  //   });
+  // }

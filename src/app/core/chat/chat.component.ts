@@ -32,30 +32,51 @@ export class ChatComponent implements OnInit, OnDestroy {
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit(): void {
-    // Déterminer dynamiquement le rôle et l'ID du destinataire à partir de l'URL
-    this.route.url.subscribe((segments: UrlSegment[]) => {
-      if (segments.length >= 2) {
-        this.role = segments[1].path;
+  // ngOnInit(): void {
+  //   // Déterminer dynamiquement le rôle et l'ID du destinataire à partir de l'URL
+  //   this.route.url.subscribe((segments: UrlSegment[]) => {
+  //     if (segments.length >= 2) {
+  //       this.role = segments[1].path;
 
-        if (this.role === 'patient') {
-          this.receiverId = this.route.snapshot.paramMap.get('doctorId')!;
-          this.currentUser = localStorage.getItem('patientName') || 'Patient';
-          this.receiver = 'Dr. ' + this.receiverId; // Remplace si tu as mieux
-        } else if (this.role === 'medecin') {
-          this.receiverId = this.route.snapshot.paramMap.get('patientId')!;
-          this.currentUser = localStorage.getItem('doctorName') || 'Médecin';
-          this.receiver = 'Patient ' + this.receiverId;
-        }
+  //       if (this.role === 'patient') {
+  //         this.receiverId = this.route.snapshot.params['doctorId'];
+  //         this.currentUser = localStorage.getItem('patientName') || 'Patient';
+  //         this.receiver = 'Dr. ' + this.receiverId;
+  //       } else if (this.role === 'medecin') {
+  //         this.receiverId = this.route.snapshot.params['patientId'];
+  //         this.currentUser = localStorage.getItem('doctorName') || 'Médecin';
+  //         this.receiver = 'Patient ' + this.receiverId;
+  //       }
 
-        console.log('Role:', this.role, '| CurrentUser:', this.currentUser, '| ReceiverId:', this.receiverId);
+  //       console.log('Role:', this.role, '| CurrentUser:', this.currentUser, '| ReceiverId:', this.receiverId);
+  //     }
+  //   });
+
+  ngOnInit() {
+            this.role = localStorage.getItem('role') || ''
+
+
+      if (this.role === 'patient') {
+        this.receiverId = this.route.snapshot.params['doctorId'];
+        this.currentUser = localStorage.getItem('patientName') || 'Patient';
+        this.receiver = 'Dr. ' + this.receiverId;
+      } else if (this.role === 'medecin') {
+        this.receiverId = this.route.snapshot.params['patientId'];
+        this.currentUser = localStorage.getItem('doctorName') || 'Médecin';
+        this.receiver = 'Patient ' + this.receiverId;
       }
-    });
+      console.log('Role:', this.role, '| CurrentUser:', this.currentUser, '| ReceiverId:', this.receiverId);
+
+
 
     this.messageSubscription = this.chatService.messages$.subscribe((msgs: ChatMessage[]) => {
       this.messages = msgs;
       this.scrollToBottom();
     });
+
+
+      console.log('ngOnInit exécuté');
+
 
   }
 
@@ -73,6 +94,7 @@ export class ChatComponent implements OnInit, OnDestroy {
         receiver: this.receiver,
         content: this.newMessage,
         timestamp: new Date(),
+        receiverId : Number(this.receiverId),
         senderRole: this.getUserRole(),
       };
 

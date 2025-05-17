@@ -65,21 +65,34 @@
 
 <!-- notification-->
 
-<!--
-
-<div class="dropdown">
-  <button class="btn btn-light position-relative" data-bs-toggle="dropdown">
-    <i class="fas fa-bell fa-lg"></i>
-    <span *ngIf="notifications.length > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-      {{ notifications.length }}
-    </span>
-  </button>
-  <ul class="dropdown-menu dropdown-menu-end shadow">
-    <li *ngFor="let notif of notifications">
-      <a class="dropdown-item">{{ notif }}</a>
+<!-- SECTION : Notifications de message -->
+<div class="notifications-section">
+  <h3>📩 Notifications de Messages</h3>
+  <div *ngIf="messageNotifications.length === 0">Aucune notification de message</div>
+  <ul>
+    <li *ngFor="let notif of messageNotifications">
+      <strong>{{ notif.dateEnvoi | date:'short' }}</strong> - {{ notif.message }}
     </li>
   </ul>
-</div> -->
+</div>
+
+<hr>
+
+<!-- Badge des messages -->
+<div class="notification-icon-container position-relative me-3">
+  <button class="btn btn-light position-relative">
+    💬
+    <span class="badge bg-primary rounded-circle position-absolute top-0 start-100 translate-middle">
+      {{ getUnreadMessagesCount() }}
+    </span>
+  </button>
+</div>
+
+
+
+
+
+<!-- fin notification -->
 
 
 
@@ -102,12 +115,15 @@
                       <div class="dropdown">
                         <button class="btn btn-light position-relative" data-bs-toggle="dropdown">
                           <i class="fas fa-bell fa-lg"></i>
-                          <span *ngIf="notificationsCount > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                          <!-- <span *ngIf="notificationsCount > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
                             {{ notificationsCount }}
-                          </span>
+                          </span> -->
+                          <span class="badge bg-success rounded-circle position-absolute top-0 start-100 translate-middle">
+                             {{ getUnreadRendezvousCount() }}
+                           </span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end shadow">
-                          <li *ngFor="let notif of allnotifications">
+                          <li *ngFor="let notif of rendezvousNotifications">
                             <a class="dropdown-item d-flex justify-content-between align-items-center">
                               {{ notif.message }}
                               <button *ngIf="!notif.lue" class="btn btn-sm btn-outline-success ms-2"
