@@ -9,4 +9,6 @@ export class Patient {
   adress!: string;
   sexe!: string
   image! : string ;
+  cin! : number
+
 }

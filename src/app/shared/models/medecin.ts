@@ -12,6 +12,7 @@ export class Medecin {
   status!: string;
   image : string | null = null;
   etat!: string;
+  cin! : number
 
 
 }

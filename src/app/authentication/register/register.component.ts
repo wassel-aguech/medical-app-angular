@@ -47,6 +47,8 @@ export class RegisterComponent {
       adress : new FormControl ('',[Validators.required,Validators.minLength(3)]),
       phone : new FormControl ('',[Validators.required,Validators.minLength(3)]),
       image : new FormControl ('',[Validators.required]),
+      cin : new FormControl ('',[Validators.required]),
+
 
 
 
@@ -85,6 +87,7 @@ export class RegisterComponent {
     this.registersPatient.adress          = this.patientForm.value.adress;
     this.registersPatient.sexe             = this.patientForm.value.sexe;
     this.registersPatient.image            = this.patientForm.value.image;
+    this.registersPatient.cin              = this.patientForm.value.cin;
 
 
     this.authservice.registerPation(this.registersPatient).subscribe({

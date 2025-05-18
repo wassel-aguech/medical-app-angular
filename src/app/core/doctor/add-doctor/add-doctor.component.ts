@@ -66,6 +66,7 @@ export class AddDoctorComponent implements OnInit {
       image           : new FormControl('', Validators.required),
       status          : new FormControl('', Validators.required),
       etat            : new FormControl('', Validators.required),
+      cin             : new FormControl('', Validators.required),
 
 
     });
@@ -88,6 +89,7 @@ export class AddDoctorComponent implements OnInit {
     this.medecin.phone           = this.medecinForm.value.phone
     this.medecin.specialite      = this.medecinForm.value.specialite
     this.medecin.etat            = this.medecinForm.value.etat
+    this.medecin.cin             = this.medecinForm.value.cin
 
     console.log(" info medecin " , this.medecin)
 
