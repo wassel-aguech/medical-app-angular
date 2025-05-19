@@ -40,6 +40,12 @@ export class DoctorDashboardComponent implements OnInit {
   ){}
 
 
+  isDropdownOpen = false;
+
+toggleDropdown() {
+  this.isDropdownOpen = !this.isDropdownOpen;
+}
+
 
   // ngOnInit(): void {
   //   this.userId = localStorage.getItem('userId');

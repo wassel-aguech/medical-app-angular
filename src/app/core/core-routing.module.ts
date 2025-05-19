@@ -24,11 +24,7 @@ const routes: Routes = [
         loadChildren: () =>
           import('./patient/patient.module').then((m) => m.PatientModule),
       },
-      {
-        path: 'staff',
-        loadChildren: () =>
-          import('./staff/staff.module').then((m) => m.StaffModule),
-      },
+
       {
         path: 'appointments',
         loadChildren: () =>
@@ -55,11 +51,7 @@ const routes: Routes = [
         loadChildren: () =>
           import('./accounts/accounts.module').then((m) => m.AccountsModule),
       },
-      {
-        path: 'payroll',
-        loadChildren: () =>
-          import('./payroll/payroll.module').then((m) => m.PayrollModule),
-      },
+
 
       // {
       //   path: 'chat',
@@ -80,20 +72,11 @@ const routes: Routes = [
 
 
       {
-        path: 'calls',
-        loadChildren: () =>
-          import('./calls/calls.module').then((m) => m.CallsModule),
-      },
-      {
         path: 'email',
         loadChildren: () =>
           import('./email/email.module').then((m) => m.EmailModule),
       },
-      {
-        path: 'blogs',
-        loadChildren: () =>
-          import('./blogs/blogs.module').then((m) => m.BlogsModule),
-      },
+
       {
         path: 'assets',
         loadChildren: () =>
@@ -111,11 +94,7 @@ const routes: Routes = [
         loadChildren: () =>
           import('./reports/reports.module').then((m) => m.ReportsModule),
       },
-      {
-        path: 'invoice',
-        loadChildren: () =>
-          import('./invoice/invoice.module').then((m) => m.InvoiceModule),
-      },
+
       {
         path: 'settings',
         loadChildren: () =>
@@ -128,38 +107,13 @@ const routes: Routes = [
             (m) => m.ComponentsModule
           ),
       },
-      {
-        path: 'forms',
-        loadChildren: () =>
-          import('./forms/forms.module').then((m) => m.FormsModule),
-      },
-      {
-        path: 'tables',
-        loadChildren: () =>
-          import('./tables/tables.module').then((m) => m.TablesModule),
-      },
+
       {
         path: 'profile',
         loadChildren: () =>
           import('./profile/profile.module').then((m) => m.ProfileModule),
       },
-      {
-        path: 'gallery',
-        loadChildren: () =>
-          import('./gallery/gallery.module').then((m) => m.GalleryModule),
-      },
-      {
-        path: 'blank-page',
-        loadChildren: () =>
-          import('./blank-page/blank-page.module').then(
-            (m) => m.BlankPageModule
-          ),
-      },
-      {
-        path: 'calendar',
-        loadChildren: () =>
-          import('./calendar/calendar.module').then((m) => m.CalendarModule),
-      },
+   
       {
         path: 'edit-profile',
         loadChildren: () =>

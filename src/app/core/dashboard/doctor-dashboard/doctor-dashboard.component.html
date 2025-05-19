@@ -1,264 +1,225 @@
 <div class="page-wrapper">
-    <div class="content">
+  <div class="content">
 
-        <!-- Page Header -->
-        <div class="page-header">
-            <div class="row">
-                <div class="col-sm-12">
-                    <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a [routerLink]="routes.adminDashboard">Dashboard </a></li>
-                        <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
-                        <li class="breadcrumb-item active">Doctor Dashboard</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- Page Header -->
+    <div class="page-header">
+      <div class="row">
+        <div class="col-sm-12">
+          <ul class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="routes.adminDashboard">Dashboard </a></li>
+            <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
+            <li class="breadcrumb-item active">Doctor Dashboard</li>
+          </ul>
         </div>
-        <!-- /Page Header -->
+      </div>
+    </div>
+    <!-- /Page Header -->
 
-        <div class="good-morning-blk">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="morning-user">
-                        <h2>Good Morning, <span> {{medecin.firstName}}  {{medecin.lastName}} </span></h2>
-                        <p>Have a nice day at work</p>
-                    </div>
-                </div>
-                <div class="col-md-6 position-blk">
-                    <div class="morning-img">
-                        <img src="assets/img/morning-img-02.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-<!--   horaire du travaille -->
-   <!-- Titre avec icône -->
-   <div class="container mx-auto p-4">
-
-<h4 class="mb-3">
-  <i class="fas fa-clock text-primary"></i> Horaire du travail
-</h4>
-
-<!-- Tableau des disponibilités -->
-<table class="table table-bordered">
-  <thead class="table-light">
-    <tr>
-      <th>Jour</th>
-      <th>Heure Début</th>
-      <th>Heure Fin</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let dispo of listdisponibilites">
-      <td>{{ dispo.jour }}</td>
-      <td>{{ dispo.heureDebut }}</td>
-      <td>{{ dispo.heureFin }}</td>
-    </tr>
-  </tbody>
-</table>
-   </div>
-
-
-
-
-
-<!-- notification-->
-
-<!-- SECTION : Notifications de message -->
-<div class="notifications-section">
-  <h3>📩 Notifications de Messages</h3>
-  <div *ngIf="messageNotifications.length === 0">Aucune notification de message</div>
-  <ul>
-    <li *ngFor="let notif of messageNotifications">
-      <strong>{{ notif.dateEnvoi | date:'short' }}</strong> - {{ notif.message }}
-    </li>
-  </ul>
-</div>
-
-<hr>
-
-<!-- Badge des messages -->
-<div class="notification-icon-container position-relative me-3">
-  <button class="btn btn-light position-relative">
-    💬
-    <span class="badge bg-primary rounded-circle position-absolute top-0 start-100 translate-middle">
-      {{ getUnreadMessagesCount() }}
-    </span>
-  </button>
-</div>
-
-
-
-
-
-<!-- fin notification -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="container mx-auto p-4">
-          <div class="d-flex">
-                      <h2 class="text-2xl font-bold mb-4">  🗓️  Liste Des Demandes des Rendez-vous </h2>
-
-
-                      <div class="dropdown">
-                        <button class="btn btn-light position-relative" data-bs-toggle="dropdown">
-                          <i class="fas fa-bell fa-lg"></i>
-                          <!-- <span *ngIf="notificationsCount > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            {{ notificationsCount }}
-                          </span> -->
-                          <span class="badge bg-success rounded-circle position-absolute top-0 start-100 translate-middle">
-                             {{ getUnreadRendezvousCount() }}
-                           </span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end shadow">
-                          <li *ngFor="let notif of rendezvousNotifications">
-                            <a class="dropdown-item d-flex justify-content-between align-items-center">
-                              {{ notif.message }}
-                              <button *ngIf="!notif.lue" class="btn btn-sm btn-outline-success ms-2"
-                                      (click)="markAsRead(notif)">
-                                Marquer comme lue
-                              </button>
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-
-
-
-             <!-- <div class="dropdown">
-               <button class="btn btn-light position-relative" data-bs-toggle="dropdown">
-                 <i class="fas fa-bell fa-lg"></i>
-                 <span *ngIf="notifications.length > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                   {{ notifications.length }}
-                 </span>
-               </button>
-               <ul class="dropdown-menu dropdown-menu-end shadow">
-                 <li *ngFor="let notif of notifications">
-                   <a class="dropdown-item">{{ notif }}</a>
-                 </li>
-               </ul>
-             </div> -->
+    <div class="good-morning-blk">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="morning-user">
+            <h2>Good Morning, <span> {{medecin.firstName}} {{medecin.lastName}} </span></h2>
+            <p>Have a nice day at work</p>
           </div>
+        </div>
+        <div class="col-md-6 position-blk">
+          <div class="morning-img">
+            <img src="assets/img/morning-img-02.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
 
-          <table class="table-auto w-full border border-gray-700 rounded-lg overflow-hidden">
-            <thead class="bg-gray-800 text-black">
-              <tr>
-                <th class="py-3 px-4 text-left">#</th>
-                <th class="py-3 px-4 text-left">Nom du Patient</th>
-                <th class="py-3 px-4 text-left">Date de Demande</th>
-                <th class="py-3 px-4 text-left">Date Rendez-vous</th>
-                <th class="py-3 px-4 text-left">Motif</th>
-                <th class="py-3 px-4 text-left">Profile</th>
-                <th class="py-3 px-4 text-left">Statut</th>
-              </tr>
-            </thead>
 
-            <tbody>
-              <tr
-                *ngFor="let rdv of listrendezVousMedecin.slice().reverse(); let i = index"
-                class="border-b border-gray-600 hover:bg-gray-100 transition"
-              >
-                <td class="py-2 px-4">{{ i + 1 }}</td>
-                <td class="py-2 px-4">{{ rdv.patientName }}</td>
-                <td class="py-2 px-4">{{ rdv.dateDemande | date: 'dd/MM/yyyy' }}</td>
-                <td class="py-2 px-4">{{ rdv.dateRendezVous | date: 'dd/MM/yyyy' }}</td>
-                <td class="py-2 px-4">{{ rdv.motif }}</td>
-                <td>
-                  <button class="btn btn-sm btn-primary"  (click)="gotoProfilePatient(2)"> profile </button>
-                </td>
-                <td class="py-2 px-4">
-                  <span class="badge" [ngClass]="{
+    <!--   horaire du travaille -->
+    <!-- Titre avec icône -->
+    <div class="container mx-auto p-4">
+
+      <h4 class="mb-3">
+        <i class="fas fa-clock text-primary"></i> Horaire du travail
+      </h4>
+
+      <!-- Tableau des disponibilités -->
+      <table class="table table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th>Jour</th>
+            <th>Heure Début</th>
+            <th>Heure Fin</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dispo of listdisponibilites">
+            <td>{{ dispo.jour }}</td>
+            <td>{{ dispo.heureDebut }}</td>
+            <td>{{ dispo.heureFin }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+
+    <div class="container mx-auto p-4">
+      <div class="d-flex">
+        <h2 class="text-2xl font-bold mb-4"> 🗓️ Liste Des Demandes des Rendez-vous </h2>
+
+
+        <div class="dropdown">
+          <button class="btn btn-light position-relative" data-bs-toggle="dropdown">
+            <i class="fas fa-bell fa-lg"></i>
+
+            <span class="badge bg-success rounded-circle position-absolute top-0 start-100 translate-middle">
+              {{ getUnreadRendezvousCount() }}
+            </span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end shadow">
+            <li *ngFor="let notif of rendezvousNotifications">
+              <a class="dropdown-item d-flex justify-content-between align-items-center">
+                {{ notif.message }}
+                <button *ngIf="!notif.lue" class="btn btn-sm btn-outline-success ms-2" (click)="markAsRead(notif)">
+                  Marquer comme lue
+                </button>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+
+        <!-- notif message -->
+        <div class="dropdown notification-icon-container me-3 ms-3">
+          <button class="btn btn-light position-relative dropdown-toggle" type="button" id="messageDropdown"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            💬
+            <span class="badge bg-primary rounded-circle position-absolute top-0 start-100 translate-middle">
+              {{ getUnreadMessagesCount() }}
+            </span>
+          </button>
+
+          <ul class="dropdown-menu dropdown-menu-end p-2" aria-labelledby="messageDropdown">
+            <h6 class="dropdown-header">📩 Notifications de Messages</h6>
+            <li *ngIf="messageNotifications.length === 0" class="dropdown-item text-muted">
+              Aucune notification de message
+            </li>
+            <li *ngFor="let notif of messageNotifications" class="dropdown-item small">
+              <strong>{{ notif.dateEnvoi | date:'short' }}</strong><br>
+              {{ notif.message }}
+            </li>
+          </ul>
+        </div>
+
+        <!--  end notif message -->
+
+
+      </div>
+
+      <table class="table-auto w-full border border-gray-700 rounded-lg overflow-hidden">
+        <thead class="bg-gray-800 text-black">
+          <tr>
+            <th class="py-3 px-4 text-left">#</th>
+            <th class="py-3 px-4 text-left">Nom du Patient</th>
+            <th class="py-3 px-4 text-left">Date de Demande</th>
+            <th class="py-3 px-4 text-left">Date Rendez-vous</th>
+            <th class="py-3 px-4 text-left">Motif</th>
+            <th class="py-3 px-4 text-left">Profile</th>
+            <th class="py-3 px-4 text-left">Statut</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let rdv of listrendezVousMedecin.slice().reverse(); let i = index"
+            class="border-b border-gray-600 hover:bg-gray-100 transition">
+            <td class="py-2 px-4">{{ i + 1 }}</td>
+            <td class="py-2 px-4">{{ rdv.patientName }}</td>
+            <td class="py-2 px-4">{{ rdv.dateDemande | date: 'dd/MM/yyyy' }}</td>
+            <td class="py-2 px-4">{{ rdv.dateRendezVous | date: 'dd/MM/yyyy' }}</td>
+            <td class="py-2 px-4">{{ rdv.motif }}</td>
+            <td>
+              <button class="btn btn-sm btn-primary" (click)="gotoProfilePatient(2)"> profile </button>
+            </td>
+            <td class="py-2 px-4">
+              <span class="badge" [ngClass]="{
                     'bg-warning': rdv.statut === 'EN_ATTENTE',
                     'bg-success': rdv.statut === 'VALIDE',
                     'bg-danger': rdv.statut === 'REFUSE'
                   }">
-                    {{ rdv.statut }}
-                  </span>
-                </td>
+                {{ rdv.statut }}
+              </span>
+            </td>
 
 
-                <td>
-                  <input class="form-control" type="date" [(ngModel)]="rdv.dateRendezVous" />
-                </td>
-                <td>
-                  <input class="form-control" type="text" [(ngModel)]="rdv.motif" />
-                </td>
-                <td>
-                  <button class="btn btn-success" (click)="accepterDemande(rdv)">Accepter</button>
-                </td>
+            <td>
+              <input class="form-control" type="date" [(ngModel)]="rdv.dateRendezVous" />
+            </td>
+            <td>
+              <input class="form-control" type="text" [(ngModel)]="rdv.motif" />
+            </td>
+            <td>
+              <button class="btn btn-success" (click)="accepterDemande(rdv)">Accepter</button>
+            </td>
 
 
-              </tr>
+          </tr>
 
-              <tr *ngIf="listrendezVousMedecin.length === 0">
-                <td colspan="6" class="text-center text-red-500 py-4">
-                  Aucun demande rendez-vous trouvé.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+          <tr *ngIf="listrendezVousMedecin.length === 0">
+            <td colspan="6" class="text-center text-red-500 py-4">
+              Aucun demande rendez-vous trouvé.
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
 </div>
