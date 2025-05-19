@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { routes } from 'src/app/shared/routes/routes';
 import { SideBarService } from 'src/app/shared/side-bar/side-bar.service';
@@ -9,11 +9,14 @@ import { SideBarService } from 'src/app/shared/side-bar/side-bar.service';
     styleUrls: ['./header.component.scss'],
     standalone: false
 })
-export class HeaderComponent {
+export class HeaderComponent  implements OnInit {
   public routes = routes;
   public openBox = false;
   public miniSidebar  = false;
   public addClass = false;
+
+  role : any
+  name: any
 
   constructor(public router: Router,private sideBar: SideBarService) {
     this.sideBar.toggleSideBar.subscribe((res: string) => {
@@ -23,6 +26,10 @@ export class HeaderComponent {
         this.miniSidebar = false;
       }
     });
+  }
+  ngOnInit(): void {
+    this.role = localStorage.getItem('role')
+    this.name = localStorage.getItem('fullName')
   }
 
   openBoxFunc() {
@@ -41,14 +48,14 @@ export class HeaderComponent {
   }
   public toggleMobileSideBar(): void {
     this.sideBar.switchMobileSideBarPosition();
-    
+
       this.addClass = !this.addClass;
       /* eslint no-var: off */
       var root = document.getElementsByTagName( 'html' )[0];
       /* eslint no-var: off */
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       var sidebar:any = document.getElementById('sidebar')
-  
+
       if (this.addClass) {
         root.classList.add('menu-opened');
         sidebar.classList.add('opened');

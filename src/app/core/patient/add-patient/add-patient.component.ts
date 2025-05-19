@@ -103,7 +103,7 @@ export class AddPatientComponent {
 
         this.toastr.success('patient ajouté avec succès', 'Succès')
 
-        this.router.navigate(['patient/patient-list']);
+        this.router.navigate(['patient/patients-list']);
 
 
       },(error)=>{
@@ -150,7 +150,7 @@ export class AddPatientComponent {
 
 
 gotoPatientList() {
-    this.router.navigate(['patient/patient-list']);
+    this.router.navigate(['patient/patients-list']);
 
 }
 
