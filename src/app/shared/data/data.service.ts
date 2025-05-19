@@ -663,7 +663,7 @@ export class DataService {
         //   ],
         // },
         {
-          menuValue: 'Assets',
+          menuValue: 'Chatbot',
           route: routes.assetsList,
           hasSubRoute: false,
           showSubRoute: false,
