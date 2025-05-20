@@ -18,10 +18,10 @@
           <div class="loginbox">
             <div class="login-right">
               <div class="login-right-wrap">
-                <div class="account-logo">
-                  <a [routerLink]="routes.adminDashboard"><img src="assets/img/login-logo.png" alt="" /></a>
+                <div class="account-logo text-center">
+                  <a [routerLink]="routes.adminDashboard"><img src="assets/img/logoh.png"  width="80%" height="170px" alt="" /></a>
                 </div>
-                <h2>Login</h2>
+                <h2>Se Connecter</h2>
                 <!-- Form -->
                 <form [formGroup]="loginForm">
                   <div class="form-group">
@@ -31,24 +31,24 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="Password">Password <span class="login-danger">*</span></label>
+                    <label for="Password">Mot De Passe <span class="login-danger">*</span></label>
                     <input class="form-control pass-input"  id="password" name="password" type="password" formControlName="password" />
 
                   </div>
 
                   <div class="forgotpass">
                     <div class="remember-me">
-                      <label class="custom_check mr-2 mb-0 d-inline-flex remember-me">
+                      <!-- <label class="custom_check mr-2 mb-0 d-inline-flex remember-me">
                         Remember me
                         <input type="checkbox" name="radio" />
                         <span class="checkmark"></span>
-                      </label>
+                      </label> -->
                     </div>
-                    <a [routerLink]="routes.forgotPassword">Forgot Password?</a>
+                    <a [routerLink]="routes.forgotPassword">Mot De Passe Oublier ?</a>
                   </div>
                   <div class="form-group login-btn">
                     <button [disabled]="loginForm.invalid" (click)="login()" class="btn btn-primary btn-block" type="submit">
-                      Login
+                      Connecter
                     </button>
                   </div>
                 </form>
@@ -56,8 +56,8 @@
 
                 <div class="next-sign">
                   <p class="account-subtitle">
-                    Need an account?
-                    <a [routerLink]="routes.register">Sign Up</a>
+                    Cree Un Nouveau Account?
+                    <a [routerLink]="routes.register">Register</a>
                   </p>
 
                   <!-- Social Login -->
