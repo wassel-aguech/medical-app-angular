@@ -8,7 +8,7 @@
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a [routerLink]="routes.doctorsList">Doctors </a></li>
                         <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
-                        <li class="breadcrumb-item active">Doctors Profile</li>
+                        <li class="breadcrumb-item active">Docteurs Profile</li>
                     </ul>
                 </div>
             </div>
@@ -66,7 +66,7 @@
                                             <div class="follow-btn-group">
                                                 <button  class="btn btn-info follow-btns"
                                                 data-bs-toggle="modal" data-bs-target="#addrendezvous"
-                                                >Demande RendezVous</button>
+                                                >Demander Rendez Vous</button>
                                                 <button
                                                 (click)="goToChat(medecin.id)" class="btn btn-info message-btns">Message
                                                 </button>
@@ -85,21 +85,21 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="heading-detail ">
-                                        <h4 class="mb-3">About me</h4>
-                                        <p>Hello I am Dr. Bruce Willis a Gynaecologist in Sanjivni Hospital Surat. I love to work with all my hospital staff and seniour doctors.</p>
+                                        <h4 class="mb-3">A propos de moi</h4>
+                                        <p>Bonjour, je suis le Dr Bruce Willis, gynécologue à l'hôpital Sanjivni de Surat. J'aime travailler avec tout le personnel de l'hôpital ainsi qu'avec les médecins seniors.</p>
                                     </div>
                                     <div class="about-me-list">
                                         <ul class="list-space">
                                             <li>
-                                                <h4>Gender</h4>
-                                                <span>Female</span>
+                                                <h4>Genre</h4>
+                                                <span>Féminin</span>
                                             </li>
                                             <li>
-                                                <h4>Operation Done</h4>
+                                                <h4> Opération effectuée</h4>
                                                 <span>30+</span>
                                             </li>
                                             <li>
-                                                <h4>Designation</h4>
+                                                <h4>Désignation</h4>
                                                 <span>Sr. Doctor</span>
                                             </li>
                                         </ul>
@@ -111,7 +111,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="heading-detail">
-                                        <h4>Skills:</h4>
+                                        <h4>Compétences:</h4>
                                     </div>
                                     <div class="skill-blk">
                                         <div class="skill-statistics">
@@ -143,7 +143,7 @@
                                         </div>
                                         <div class="skill-statistics">
                                             <div class="skills-head">
-                                                <h5>Patient Visit </h5>
+                                                <h5>Visite du patient </h5>
                                                 <p>90%</p>
                                             </div>
                                             <div class="progress mb-0"  >
@@ -166,7 +166,7 @@
                                         </div>
                                         <div class="views-personal">
                                             <h4>Proffesionals</h4>
-                                            <h5>Certified Skin Treatment</h5>
+                                            <h5>Soin dermatologique certifié</h5>
                                         </div>
                                     </div>
                                     <div class="personal-activity">
@@ -174,8 +174,8 @@
                                             <img src="assets/img/icons/medal-02.svg" alt="">
                                         </div>
                                         <div class="views-personal">
-                                            <h4>Certified</h4>
-                                            <h5>Cold Laser Operation</h5>
+                                            <h4>Certifié</h4>
+                                            <h5>Opération au laser froid</h5>
                                         </div>
                                     </div>
                                     <div class="personal-activity mb-0">
@@ -183,8 +183,8 @@
                                             <img src="assets/img/icons/medal-03.svg" alt="">
                                         </div>
                                         <div class="views-personal">
-                                            <h4>Medication Laser</h4>
-                                            <h5>Hair Lose Product</h5>
+                                            <h4>Médication par laser</h4>
+                                            <h5>Produit anti-chute de cheveux</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -209,13 +209,13 @@
                                         <div class="row">
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="detail-personal">
-                                                    <h2> {{medecin.firstName}} {{medecin.lastName}} </h2>
-                                                    <h3>Dr.Bruce Willis</h3>
+                                                    <h2>  nom:</h2>
+                                                    <h3>{{medecin.firstName}} {{medecin.lastName}}</h3>
                                                 </div>
                                             </div>
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="detail-personal">
-                                                    <h2>Mobile </h2>
+                                                    <h2>Télephone </h2>
                                                     <h3> {{medecin.phone}} </h3>
                                                 </div>
                                             </div>
@@ -227,15 +227,15 @@
                                             </div>
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="detail-personal">
-                                                    <h2>Location</h2>
+                                                    <h2>Adresse</h2>
                                                     <h3> {{medecin.adress}} </h3>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="hello-park">
-                                        <p>Completed my graduation in Gynaecologist Medicine from the well known and renowned institution of India – SARDAR PATEL MEDICAL COLLEGE, BARODA in 2000-01, which was affiliated to M.S. University. I ranker in University exams from the same university from 1996-01.</p>
-                                        <p>Worked as Professor and Head of the department ; Community medicine Department at Sterline Hospital, Rajkot, Gujarat from 2003-2015</p>
+                                        <p>J'ai terminé mes études en médecine gynécologique à la célèbre et renommée institution indienne  le Sardar Patel Medical College de Baroda en 2000-2001, affiliée à l'Université M.S. J'ai été classé parmi les meilleurs lors des examens universitaires de cette même université entre 1996 et 2001.</p>
+                                        <p>J'ai travaillé comme professeur et chef du département de médecine communautaire à l'hôpital Sterline, Rajkot, Gujarat, de 2003 à 2015.</p>
                                     </div>
                                     <div class="hello-park mb-2">
                                         <h5>Horaire du Travaille</h5>
