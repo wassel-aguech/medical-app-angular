@@ -323,19 +323,8 @@ export class DataService {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
         {
-          menuValue: 'Doctors',
+          menuValue: 'Docteurs',
           hasSubRoute: true,
           showSubRoute: false,
           base: 'doctor',
@@ -344,21 +333,21 @@ export class DataService {
 
           subMenus: [
             {
-              menuValue: 'Doctor List',
+              menuValue: 'Liste des Docteurs',
               route: routes.doctorsList,
               base: routes.doctorsList,
               roles: ['admin'],
 
             },
             {
-              menuValue: 'Add Doctor',
+              menuValue: 'Ajouter Docteur',
               route: routes.addDoctor,
               base: routes.addDoctor,
               roles: ['admin'],
 
             },
             {
-              menuValue: 'Edit Doctor',
+              menuValue: 'Modefier Docteur',
               route: routes.editDoctor,
               base: routes.editDoctor,
               roles: ['admin'],
@@ -383,28 +372,28 @@ export class DataService {
 
           subMenus: [
             {
-              menuValue: 'Patients List',
+              menuValue: 'Liste Des Patients ',
               route: routes.patientsList,
               base: routes.patientsList,
               roles: ['admin'],
 
             },
             {
-              menuValue: 'Add Patients',
+              menuValue: 'Ajouter Patients',
               route: routes.addPatient,
               base: routes.addPatient,
               roles: ['admin'],
 
             },
             {
-              menuValue: 'Edit Patients',
+              menuValue: 'Modifier Patients',
               route: routes.editPatient,
               base: routes.editPatient,
               roles: ['admin'],
 
             },
             {
-              menuValue: 'Patients Profile',
+              menuValue: 'Profile Patients',
               route: routes.patientProfile,
               base: routes.patientProfile,
               roles: ['admin'],

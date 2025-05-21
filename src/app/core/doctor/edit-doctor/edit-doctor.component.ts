@@ -46,6 +46,8 @@ export class EditDoctorComponent  implements OnInit{
      specialite      : new FormControl('', Validators.required),
      image           : new FormControl('', Validators.required),
      status          : new FormControl('', Validators.required),
+     cin          : new FormControl('', Validators.required),
+
 
 
    });
@@ -96,42 +98,6 @@ export class EditDoctorComponent  implements OnInit{
     });
 
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

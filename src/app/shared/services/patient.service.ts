@@ -38,8 +38,8 @@ export class PatientService {
 
   }
 
-  updatePatient(id: number, patient: Patient): Observable<Patient> {
-    return this.http.put<Patient>(`${this.baseUrl}/updateMedecin/${id}`, patient);
+  updatePatient(patient: Patient): Observable<Patient> {
+    return this.http.put<Patient>(`${this.baseUrl}/updatePatient`, patient);
   }
 
 
