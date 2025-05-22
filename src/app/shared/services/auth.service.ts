@@ -45,50 +45,6 @@ export class AuthService {
   }
 
 
-  // setUserToken(authenticationresponse: Authenticationresponse): { id?: number, role?: string, fullName?: string } | null {
-  //   if (!authenticationresponse || !authenticationresponse.accessToken) {
-  //     console.error('Token is missing');
-  //     return null;
-  //   }
-
-  //   localStorage.setItem("accessToken", authenticationresponse.accessToken);
-  //   const token = authenticationresponse.accessToken;
-
-  //   try {
-  //     const decodedToken = jwtDecode(token) as any;
-  //     console.log("Decoded Token:", decodedToken);
-
-  //     let userData: { id?: number, role?: string, fullName?: string } = {};
-
-  //     if (decodedToken.fullname || decodedToken.name) {
-  //       const fullName = decodedToken.fullname || decodedToken.name;
-  //       localStorage.setItem("fullName", fullName);
-  //       userData.fullName = fullName;
-  //     }
-
-  //     if (decodedToken.userId || decodedToken.sub) {
-  //       const userId = decodedToken.userId || decodedToken.sub;
-  //       localStorage.setItem("userId", userId.toString());
-  //       userData.id = parseInt(userId);
-  //     }
-
-  //     if (decodedToken.authorities && decodedToken.authorities.length > 0) {
-  //       const authorities = Array.isArray(decodedToken.authorities)
-  //         ? decodedToken.authorities[0].authority || decodedToken.authorities[0]
-  //         : decodedToken.authorities;
-
-  //       localStorage.setItem("role", authorities);
-  //       userData.role = authorities;
-  //     }
-
-  //     console.log("User Data Stored:", userData);
-  //     return userData;
-
-  //   } catch (error) {
-  //     console.error("Error decoding token:", error);
-  //     return null;
-  //   }
-  // }
 
   setUserToken(authenticationresponse: Authenticationresponse): { id?: number, role?: string, fullName?: string, cin?: string } | null {
   if (!authenticationresponse || !authenticationresponse.accessToken) {
@@ -177,7 +133,12 @@ export class AuthService {
     }
 
 
-
+ isUserAuthenticated():boolean{
+    if (localStorage.getItem ("accessToken")){
+      return true;
+    }
+      return false;
+  }
 
 
 

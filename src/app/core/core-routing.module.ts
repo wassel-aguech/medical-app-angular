@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 // import { AuthGuard } from '../shared/gaurd/auth.guard';
 import { CoreComponent } from './core.component';
+import { authGuard } from '../shared/guards/auth.guard';
+import { adminGuard } from '../shared/guards/admin.guard';
+import { medecinGuard } from '../shared/guards/medecin.guard';
+import { patientGuard } from '../shared/guards/patient.guard';
 
 const routes: Routes = [
   {
@@ -13,16 +17,22 @@ const routes: Routes = [
         path: 'dashboard',
         loadChildren: () =>
           import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+                    canActivate: [authGuard],
+
       },
       {
         path: 'doctor',
         loadChildren: () =>
           import('./doctor/doctor.module').then((m) => m.DoctorModule),
+            canActivate: [authGuard , adminGuard , medecinGuard],
+
       },
       {
         path: 'patient',
         loadChildren: () =>
           import('./patient/patient.module').then((m) => m.PatientModule),
+         canActivate: [authGuard , adminGuard , patientGuard],
+
       },
 
       {
@@ -31,6 +41,8 @@ const routes: Routes = [
           import('./appointments/appointments.module').then(
             (m) => m.AppointmentsModule
           ),
+                      canActivate: [ medecinGuard],
+
       },
       {
         path: 'doctor-schedule',
@@ -38,19 +50,21 @@ const routes: Routes = [
           import('./doctor-schedule/doctor-schedule.module').then(
             (m) => m.DoctorScheduleModule
           ),
+                      canActivate: [medecinGuard],
+
       },
-      {
-        path: 'departments',
-        loadChildren: () =>
-          import('./departments/departments.module').then(
-            (m) => m.DepartmentsModule
-          ),
-      },
-      {
-        path: 'accounts',
-        loadChildren: () =>
-          import('./accounts/accounts.module').then((m) => m.AccountsModule),
-      },
+      // {
+      //   path: 'departments',
+      //   loadChildren: () =>
+      //     import('./departments/departments.module').then(
+      //       (m) => m.DepartmentsModule
+      //     ),
+      // },
+      // {
+      //   path: 'accounts',
+      //   loadChildren: () =>
+      //     import('./accounts/accounts.module').then((m) => m.AccountsModule),
+      // },
 
 
       // {
@@ -82,38 +96,38 @@ const routes: Routes = [
         loadChildren: () =>
           import('./assets/assets.module').then((m) => m.AssetsModule),
       },
-      {
-        path: 'activities',
-        loadChildren: () =>
-          import('./activities/activities.module').then(
-            (m) => m.ActivitiesModule
-          ),
-      },
-      {
-        path: 'reports',
-        loadChildren: () =>
-          import('./reports/reports.module').then((m) => m.ReportsModule),
-      },
+      // {
+      //   path: 'activities',
+      //   loadChildren: () =>
+      //     import('./activities/activities.module').then(
+      //       (m) => m.ActivitiesModule
+      //     ),
+      // },
+      // {
+      //   path: 'reports',
+      //   loadChildren: () =>
+      //     import('./reports/reports.module').then((m) => m.ReportsModule),
+      // },
 
       {
         path: 'settings',
         loadChildren: () =>
           import('./settings/settings.module').then((m) => m.SettingsModule),
       },
-      {
-        path: 'components',
-        loadChildren: () =>
-          import('./components/components.module').then(
-            (m) => m.ComponentsModule
-          ),
-      },
+      // {
+      //   path: 'components',
+      //   loadChildren: () =>
+      //     import('./components/components.module').then(
+      //       (m) => m.ComponentsModule
+      //     ),
+      // },
 
       {
         path: 'profile',
         loadChildren: () =>
           import('./profile/profile.module').then((m) => m.ProfileModule),
       },
-   
+
       {
         path: 'edit-profile',
         loadChildren: () =>

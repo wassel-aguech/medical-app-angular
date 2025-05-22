@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
+import { authGuard } from 'src/app/shared/guards/auth.guard';
+import { adminGuard } from 'src/app/shared/guards/admin.guard';
+import { medecinGuard } from 'src/app/shared/guards/medecin.guard';
+import { patientGuard } from 'src/app/shared/guards/patient.guard';
 
 const routes: Routes = [
   { path: '', component: DashboardComponent,
@@ -16,6 +20,8 @@ const routes: Routes = [
         import('./admin-dashboard/admin-dashboard.module').then(
           (m) => m.AdminDashboardModule
         ),
+                    canActivate: [authGuard , adminGuard],
+
     },
     {
       path: 'doctor-dashboard',
@@ -23,6 +29,8 @@ const routes: Routes = [
         import('./doctor-dashboard/doctor-dashboard.module').then(
           (m) => m.DoctorDashboardModule
         ),
+                    canActivate: [authGuard , medecinGuard],
+
     },
     {
       path: 'patient-dashboard',
@@ -30,6 +38,8 @@ const routes: Routes = [
         import('./patient-dashboard/patient-dashboard.module').then(
           (m) => m.PatientDashboardModule
         ),
+                    canActivate: [authGuard , patientGuard],
+
     },
 
 
