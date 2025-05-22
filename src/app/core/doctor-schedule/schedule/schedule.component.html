@@ -1,35 +1,35 @@
 <div class="page-wrapper">
     <div class="content">
-    
+
         <!-- Page Header -->
         <div class="page-header">
             <div class="row">
                 <div class="col-sm-12">
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a [routerLink]="routes.schedule">Doctor Shedule </a></li>
+                        <li class="breadcrumb-item"><a [routerLink]="routes.schedule">Disponibilité Docteur </a></li>
                         <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
-                        <li class="breadcrumb-item active">Schedule List</li>
+                        <li class="breadcrumb-item active">Liste Disponibilitées</li>
                     </ul>
                 </div>
             </div>
         </div>
         <!-- /Page Header -->
-        
+
         <div class="row">
             <div class="col-sm-12">
-            
+
                 <div class="card card-table show-entire">
                     <div class="card-body">
-                    
+
                         <!-- Table Header -->
                         <div class="page-table-header mb-2">
                             <div class="row align-items-center">
                                 <div class="col">
                                     <div class="doctor-table-blk">
-                                        <h3>Schedule List</h3>
+                                        <h3>Liste Disponibilitées</h3>
                                         <div class="doctor-search-blk">
                                             <div class="top-nav-search table-search-blk">
-                                                    <input  class="form-control" placeholder="Search here" [(ngModel)]="searchDataValue"
+                                                    <input  class="form-control" placeholder="Rechercher isi" [(ngModel)]="searchDataValue"
                                                     (ngModelChange)="searchData(searchDataValue)">
                                                     <a class="btn"><img src="assets/img/icons/search-normal.svg" alt=""></a>
                                             </div>
@@ -45,12 +45,12 @@
                                     <a href="javascript:;" class=" me-2"><img src="assets/img/icons/pdf-icon-02.svg" alt=""></a>
                                     <a href="javascript:;" class=" me-2"><img src="assets/img/icons/pdf-icon-03.svg" alt=""></a>
                                     <a href="javascript:;" ><img src="assets/img/icons/pdf-icon-04.svg" alt=""></a>
-                                    
+
                                 </div>
                             </div>
                         </div>
                         <!-- /Table Header -->
-                        
+
                         <div class="table-responsive">
                             <table matSort  class="table border-0 custom-table comman-table datatable mb-0">
                                 <thead>
@@ -80,19 +80,19 @@
                                         <td>
                                           <span class="badge badge-success">Disponible</span>
                                         </td>
-                                      
+
                                     </tr>
                                 </tbody>
                             </table>
                             <div class="table_footer">
                                 <div class="col-sm-12 col-md-5">
                                   <div class="dataTables_info">
-                                    Showing {{ serialNumberArray[0] }} to
+                                    Affichage {{ serialNumberArray[0] }} to
                                     {{ serialNumberArray[serialNumberArray.length - 1] }} of
-                                    {{ totalData }} entries
+                                    {{ totalData }} entrées
                                   </div>
                                 </div>
-                
+
                                 <div class="col-sm-12 col-md-7">
                                   <div class="pagination_section">
                                     <ul class="pagination">
@@ -107,10 +107,10 @@
                                           class="page-link"
                                           href="javascript:void(0);"
                                           tabindex="-1"
-                                          >Previous</a
+                                          >Précédent</a
                                         >
                                       </li>
-                
+
                                       <ng-container
                                         *ngFor="let item of pageNumberArray; let i = index"
                                       >
@@ -146,7 +146,7 @@
                                           "
                                           [hidden]="currentPage === 1"
                                           (click)="moveToPage(currentPage - 2)"
-                                      (keyup.enter)="moveToPage(currentPage - 2)"  
+                                      (keyup.enter)="moveToPage(currentPage - 2)"
                                       tabindex="0"
                                         >
                                           <a class="page-link" href="javascript:void(0);">
@@ -165,7 +165,7 @@
                                               serialNumberArray[serialNumberArray.length - 1]
                                           "
                                           class="page-item"
-                                          (click)="moveToPage(currentPage + 2)"(keyup.enter)="moveToPage(currentPage + 2)"  
+                                          (click)="moveToPage(currentPage + 2)"(keyup.enter)="moveToPage(currentPage + 2)"
                                           tabindex="0"
                                         >
                                           <a class="page-link" href="javascript:void(0);">
@@ -173,7 +173,7 @@
                                           </a>
                                         </li>
                                       </ng-container>
-                
+
                                       <li
                                         class="page-item"
                                         [ngClass]="{
@@ -187,7 +187,7 @@
                                           (click)="getMoreData('next')"
                                           class="page-link"
                                           href="javascript:void(0);"
-                                          >Next
+                                          >Suivant
                                         </a>
                                       </li>
                                     </ul>
@@ -196,9 +196,8 @@
                               </div>
                         </div>
                     </div>
-                </div>							
-            </div>					
+                </div>
+            </div>
         </div>
     </div>
 </div>
- 

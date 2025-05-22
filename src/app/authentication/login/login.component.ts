@@ -36,8 +36,9 @@ export class LoginComponent implements OnInit {
     role : any;
   ngOnInit(): void {
 
-    // this.role = localStorage.getItem('role');
-    // console.log("Role from localStorage:", this.role);
+
+    this.role = localStorage.getItem('role');
+    console.log("Role from localStorage:", this.role);
 
   }
 
@@ -61,8 +62,19 @@ export class LoginComponent implements OnInit {
 
         this.authService.setUserToken(response);
 
-            this.toastr.success('Login successful!');
-            this.router.navigate(['/dashboard/admin-dashboard']);
+            this.toastr.success('Connexion réussie');
+
+
+         if(this.role == 'admin'){
+          this.router.navigate(['/dashboard/admin-dashboard']);
+
+         }if(this.role == 'medecin'){
+          this.router.navigate(['/dashboard/doctor-dashboard']);
+
+         } if(this.role == 'patient'){
+          this.router.navigate(['/dashboard/patient-dashboard']);
+         }
+
 
 
 

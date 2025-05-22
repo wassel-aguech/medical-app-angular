@@ -8,7 +8,7 @@
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a [routerLink]="routes.patientsList">Patients </a></li>
                         <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
-                        <li class="breadcrumb-item active">Patient Profile</li>
+                        <li class="breadcrumb-item active">Profile Patient</li>
                     </ul>
                 </div>
             </div>
@@ -49,22 +49,22 @@
                                         <div class="col-lg-4 col-md-4 d-flex align-items-center">
                                             <div class="follow-group">
                                                 <div class="doctor-follows">
-                                                    <h5>Followers</h5>
+                                                    <h5>Abonnées</h5>
                                                     <h4>850</h4>
                                                 </div>
                                                 <div class="doctor-follows">
-                                                    <h5>Following</h5>
+                                                    <h5>Abonnement</h5>
                                                     <h4>18K</h4>
                                                 </div>
                                                 <div class="doctor-follows">
-                                                    <h5>Posts</h5>
+                                                    <h5>Articles</h5>
                                                     <h4>250</h4>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 d-flex align-items-center">
                                             <div class="follow-btn-group">
-                                                <button type="submit" class="btn btn-info follow-btns">Follow</button>
+                                                <!-- <button type="submit" class="btn btn-info follow-btns">Abonnée</button> -->
                                                 <button (click)="openChatWithPatient()" class="btn btn-info message-btns">Message</button>
                                             </div>
                                         </div>
@@ -80,21 +80,21 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="heading-detail ">
-                                        <h4 class="mb-3">About me</h4>
-                                        <p>Hello I am Smith Bruklin a Gynaecologist in Sanjivni Hospital Surat. I love to work with all my hospital staff and seniour doctors.</p>
+                                        <h4 class="mb-3">A Propos de moi</h4>
+                                        <p>Bonjour, je suis Smith Bruklin, gynécologue à l'hôpital Sanjeevani de Surat. J'aime travailler avec le personnel hospitalier et les médecins seniors.</p>
                                     </div>
                                     <div class="about-me-list">
                                         <ul class="list-space">
                                             <li>
-                                                <h4>Gender</h4>
+                                                <h4>Genre</h4>
                                                 <span>{{patient.sexe}}</span>
                                             </li>
                                             <li>
-                                                <h4>Operation Done</h4>
+                                                <h4>Opération terminée</h4>
                                                 <span>30+</span>
                                             </li>
                                             <li>
-                                                <h4>Designation</h4>
+                                                <h4>Désignation</h4>
                                                 <span>Engineer</span>
                                             </li>
                                         </ul>
@@ -106,12 +106,12 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="heading-detail">
-                                        <h4>Skills:</h4>
+                                        <h4>Compétences:</h4>
                                     </div>
                                     <div class="skill-blk">
                                         <div class="skill-statistics">
                                             <div class="skills-head">
-                                                <h5>Heart Beat</h5>
+                                                <h5>Battement de cœur</h5>
                                                 <p>45%</p>
                                             </div>
                                             <div class="progress mb-0"  >
@@ -120,7 +120,7 @@
                                         </div>
                                         <div class="skill-statistics">
                                             <div class="skills-head">
-                                                <h5>Haemoglobin</h5>
+                                                <h5>Hémoglobine</h5>
                                                 <p>85%</p>
                                             </div>
                                             <div class="progress mb-0"  >
@@ -129,7 +129,7 @@
                                         </div>
                                         <div class="skill-statistics">
                                             <div class="skills-head">
-                                                <h5>Blood Pressure </h5>
+                                                <h5>Pression artérielle </h5>
                                                 <p>65%</p>
                                             </div>
                                             <div class="progress mb-0"  >
@@ -138,7 +138,7 @@
                                         </div>
                                         <div class="skill-statistics">
                                             <div class="skills-head">
-                                                <h5>Sugar </h5>
+                                                <h5>Sucre </h5>
                                                 <p>90%</p>
                                             </div>
                                             <div class="progress mb-0"  >
@@ -168,13 +168,13 @@
                                         <div class="row">
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="detail-personal">
-                                                    <h2>Full Name</h2>
+                                                    <h2>Nom et prénom</h2>
                                                     <h3>{{patient.firstName}} {{patient.lastName}} </h3>
                                                 </div>
                                             </div>
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="detail-personal">
-                                                    <h2>Mobile </h2>
+                                                    <h2>Telephone </h2>
                                                     <h3>{{patient.phone}} </h3>
                                                 </div>
                                             </div>
@@ -186,21 +186,21 @@
                                             </div>
                                             <div class="col-xl-3 col-md-6">
                                                 <div class="detail-personal">
-                                                    <h2>Location</h2>
+                                                    <h2>Adresse</h2>
                                                     <h3>{{patient.adress}} </h3>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="hello-park">
-                                        <p>Completed my graduation in Gynaecologist Medicine from the well known and renowned institution of India – SARDAR PATEL MEDICAL COLLEGE, BARODA in 2000-01, which was affiliated to M.S. University. I ranker in University exams from the same university from 1996-01.</p>
-                                        <p>Worked as Professor and Head of the department ; Community medicine Department at Sterline Hospital, Rajkot, Gujarat from 2003-2015</p>
+                                        <p>J'ai obtenu mon diplôme de gynécologie au SARDAR PATEL MEDICAL COLLEGE de BARODA, une institution indienne réputée et reconnue, en 2000-2001, affiliée à l'Université de médecine. J'ai été admise aux examens universitaires de cette même université de 1996 à 2001.</p>
+                                        <p>Professeur et chef de service au département de médecine communautaire de l'hôpital Sterline, à Rajkot, dans le Gujarat, de 2003 à 2015.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title ">Medical History</h4>
+                                    <h4 class="card-title ">Antécédents médicaux</h4>
                                 </div>
                                 <div class="card-body p-0 table-dash">
                                     <div class="table-responsive">
@@ -213,8 +213,8 @@
                                                         </div>
                                                     </th>
                                                     <th mat-sort-header="date">Date</th>
-                                                    <th mat-sort-header="doctor">Doctor</th>
-                                                    <th mat-sort-header="treatment">Treatment</th>
+                                                    <th mat-sort-header="doctor">Docteur</th>
+                                                    <th mat-sort-header="treatment">Traitement</th>
                                                     <th mat-sort-header="charges">Status</th>
                                                     <th></th>
                                                 </tr>
@@ -239,8 +239,8 @@
                                                         <div class="dropdown dropdown-action">
                                                             <a href="javascript:void(0);" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
                                                             <div class="dropdown-menu dropdown-menu-end">
-                                                                <a class="dropdown-item" [routerLink]="routes.editAppointment"><i class="fa-solid fa-pen-to-square m-r-5"></i> Edit</a>
-                                                                <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_appointment"><i class="fa fa-trash-alt m-r-5"></i> Delete</a>
+                                                                <a class="dropdown-item" [routerLink]="routes.editAppointment"><i class="fa-solid fa-pen-to-square m-r-5"></i> Modifier</a>
+                                                                <a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#delete_appointment"><i class="fa fa-trash-alt m-r-5"></i> Suprimer</a>
                                                             </div>
                                                         </div>
                                                     </td>

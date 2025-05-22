@@ -200,7 +200,7 @@ export class DataService {
       separateRoute: false,
       menu: [
         {
-          menuValue: 'Dashboard',
+          menuValue: 'Tableau de bord',
           hasSubRoute: true,
           showSubRoute: false,
           base: 'dashboard',
@@ -210,21 +210,21 @@ export class DataService {
 
           subMenus: [
             {
-              menuValue: 'Admin Dashboard',
+              menuValue: 'Tableau de bord Admin',
               route: routes.adminDashboard,
               base: routes.adminDashboard,
               roles: ['admin'],
 
             },
             {
-              menuValue: 'Doctor Dashboard',
+              menuValue: 'Tableau de bord Docteur',
               route: routes.doctorDashboard,
               base: routes.doctorDashboard,
                roles: ['medecin'],
 
             },
             {
-              menuValue: 'Patient Dashboard',
+              menuValue: 'Tableau de bord Patient',
               route: routes.patientDashboard,
               base: routes.patientDashboard,
               roles: ['patient'],
@@ -238,25 +238,25 @@ export class DataService {
 
 
         {
-          menuValue: 'Gestion Doctor',
+          menuValue: 'Gestion Docteur',
           hasSubRoute: true,
           showSubRoute: false,
           base: 'dashboard',
           route:'dashboard',
           img: 'assets/img/icons/menu-icon-01.svg',
-          roles: ['medecin'], // 👈 ici
+          roles: ['medecin'],
 
           subMenus: [
 
             {
-              menuValue: 'Doctor Dashboard',
+              menuValue: 'Tableau de bord Docteur',
               route: routes.doctorDashboard,
               base: routes.doctorDashboard,
-              roles: ['medecin'], // 👈 ici
+              roles: ['medecin'],
 
             },
             {
-              menuValue: 'Doctor Profile',
+              menuValue: 'Docteur Profile',
               route: routes.doctorProfile,
               base: routes.doctorProfile,
               roles: ['medecin'], // 👈 ici
@@ -286,7 +286,7 @@ export class DataService {
           subMenus: [
 
             {
-              menuValue: 'Patient Dashboard',
+              menuValue: 'Tableau de bord Patient',
               route: routes.patientDashboard,
               base: routes.patientDashboard,
               roles: ['patient'],
@@ -329,7 +329,7 @@ export class DataService {
           showSubRoute: false,
           base: 'doctor',
           img: 'assets/img/icons/menu-icon-02.svg',
-          roles: ['admin'], // 👈 ici
+          roles: ['admin'],
 
           subMenus: [
             {
@@ -465,33 +465,33 @@ export class DataService {
         //   ],
         // },
         {
-          menuValue: 'Doctor Schedule',
+          menuValue: 'Disponibilité Docteur',
           hasSubRoute: true,
           showSubRoute: false,
           base: 'doctor-schedule',
           img: 'assets/img/icons/menu-icon-05.svg',
-          roles: ['admin', 'medecin'],
+          roles: ['medecin'],
 
           subMenus: [
             {
-              menuValue: 'Schedule List',
+              menuValue: 'Disponibilité List',
               route: routes.schedule,
               base: routes.schedule,
-              roles: ['admin', 'medecin'],
+              roles: ['medecin'],
 
             },
             {
-              menuValue: 'Book Appointment',
+              menuValue: 'Ajout Disponibilité',
               route: routes.addSchedule,
               base: routes.addSchedule,
-              roles: ['admin', 'medecin'],
+              roles: ['medecin'],
 
             },
             {
-              menuValue: 'Edit Appointment',
+              menuValue: 'Modifier Disponibilité',
               route: routes.editSchedule,
               base: routes.editSchedule,
-              roles: ['admin', 'medecin'],
+              roles: ['medecin'],
 
             },
           ],

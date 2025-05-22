@@ -8,7 +8,7 @@
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a [routerLink]="routes.patientsList">Patients </a></li>
                         <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
-                        <li class="breadcrumb-item active">Patient Profile</li>
+                        <li class="breadcrumb-item active"> Profile patient</li>
                     </ul>
                 </div>
             </div>
@@ -25,13 +25,13 @@
                                 </div>
                                 <div class="doctor-profile-head">
                                     <div class="profile-bg-img">
-                                        <img  src="assets/img/profile-bg.jpg"  alt="Profile">
+                                        <img  [src]="patient.image" style="width: 1340px; height: 318px;"  alt="Profile">
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-4 col-md-4">
                                             <div class="profile-user-box">
                                                 <div class="profile-user-img">
-                                                    <img  src="assets/img/profile-user-01.jpg"  alt="Profile">
+                                                    <img  [src]="patient.image"  alt="Profile">
                                                     <div class="form-group doctor-up-files profile-edit-icon mb-0">
                                                         <div class="uplod d-flex">
                                                             <label class="file-upload profile-upbtn mb-0">
@@ -41,7 +41,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="names-profiles">
-                                                    <h4>Smith Bruklin</h4>
+                                                    <h4> {{patient.firstName}} {{patient.lastName}} </h4>
                                                     <h5>Engineer</h5>
                                                 </div>
                                             </div>
@@ -49,23 +49,23 @@
                                         <div class="col-lg-4 col-md-4 d-flex align-items-center">
                                             <div class="follow-group">
                                                 <div class="doctor-follows">
-                                                    <h5>Followers</h5>
+                                                    <h5>Abonnées</h5>
                                                     <h4>850</h4>
                                                 </div>
                                                 <div class="doctor-follows">
-                                                    <h5>Following</h5>
+                                                    <h5>Abonnement</h5>
                                                     <h4>18K</h4>
                                                 </div>
                                                 <div class="doctor-follows">
-                                                    <h5>Posts</h5>
+                                                    <h5>Articles</h5>
                                                     <h4>250</h4>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 d-flex align-items-center">
                                             <div class="follow-btn-group">
-                                                <button type="submit" class="btn btn-info follow-btns">Follow</button>
-                                                <button type="submit" class="btn btn-info message-btns">Message</button>
+                                                <!-- <button type="submit" class="btn btn-info follow-btns">ABonne</button> -->
+                                                <!-- <button type="submit" class="btn btn-info message-btns">Message</button> -->
                                             </div>
                                         </div>
                                     </div>
@@ -80,21 +80,21 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="heading-detail ">
-                                        <h4 class="mb-3">About me</h4>
-                                        <p>Hello I am Smith Bruklin a Gynaecologist in Sanjivni Hospital Surat. I love to work with all my hospital staff and seniour doctors.</p>
+                                        <h4 class="mb-3">A Propos de moi</h4>
+                                        <p>Bonjour, je suis Smith Bruklin, gynécologue à l'hôpital Sanjeevani de Surat. J'aime travailler avec le personnel hospitalier et les médecins seniors.</p>
                                     </div>
                                     <div class="about-me-list">
                                         <ul class="list-space">
                                             <li>
-                                                <h4>Gender</h4>
+                                                <h4>Genre</h4>
                                                 <span>Male</span>
                                             </li>
                                             <li>
-                                                <h4>Operation Done</h4>
+                                                <h4>Opération terminée</h4>
                                                 <span>30+</span>
                                             </li>
                                             <li>
-                                                <h4>Designation</h4>
+                                                <h4>Désignation</h4>
                                                 <span>Engineer</span>
                                             </li>
                                         </ul>
@@ -111,7 +111,7 @@
                                     <div class="skill-blk">
                                         <div class="skill-statistics">
                                             <div class="skills-head">
-                                                <h5>Heart Beat</h5>
+                                                <h5>Battement de cœur</h5>
                                                 <p>45%</p>
                                             </div>
                                             <div class="progress mb-0"  >
@@ -120,7 +120,7 @@
                                         </div>
                                         <div class="skill-statistics">
                                             <div class="skills-head">
-                                                <h5>Haemoglobin</h5>
+                                                <h5>Hémoglobine</h5>
                                                 <p>85%</p>
                                             </div>
                                             <div class="progress mb-0"  >
@@ -129,7 +129,7 @@
                                         </div>
                                         <div class="skill-statistics">
                                             <div class="skills-head">
-                                                <h5>Blood Pressure </h5>
+                                                <h5>Pression artérielle</h5>
                                                 <p>65%</p>
                                             </div>
                                             <div class="progress mb-0"  >
@@ -138,7 +138,7 @@
                                         </div>
                                         <div class="skill-statistics">
                                             <div class="skills-head">
-                                                <h5>Sugar </h5>
+                                                <h5>Sucre </h5>
                                                 <p>90%</p>
                                             </div>
                                             <div class="progress mb-0"  >
@@ -157,10 +157,10 @@
                                     <div class="tab-content-set">
                                         <ul class="nav">
                                             <li>
-                                                <a [routerLink]="routes.patientProfile" ><span class="set-about-icon me-2"><img src="assets/img/icons/menu-icon-02.svg" alt=""></span>About me</a>
+                                                <a [routerLink]="routes.patientProfile" ><span class="set-about-icon me-2"><img src="assets/img/icons/menu-icon-02.svg" alt=""></span>A Propos de moi</a>
                                             </li>
                                             <li>
-                                                <a [routerLink]="routes.patientSetting" class="active"><span class="set-about-icon me-2"><img src="assets/img/icons/menu-icon-16.svg" alt=""></span>Settings</a>
+                                                <a [routerLink]="routes.patientSetting" class="active"><span class="set-about-icon me-2"><img src="assets/img/icons/menu-icon-16.svg" alt=""></span>Paramétre</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -169,18 +169,18 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-heading">
-                                                        <h4>Account Setting</h4>
+                                                        <h4>Paramètres du compte</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-12">
                                                     <div class="form-group local-forms">
-                                                        <label for="username">Username </label>
+                                                        <label for="username">Nom d'utilisateur </label>
                                                         <input class="form-control" formControlName="firstName" type="text" value="brucewillis@29" >
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-12">
                                                     <div class="form-group local-forms">
-                                                         <label  for="mobile" >Mobile </label>
+                                                         <label  for="mobile" >Telephone </label>
                                                         <input formControlName="phone" class="form-control" type="text" value="+1 23 456890" >
                                                     </div>
                                                 </div>
@@ -192,50 +192,50 @@
                                                 </div>
                                                 <div class="col-12 col-sm-12">
                                                     <div class="form-group local-forms">
-                                                        <label for="address">Address  <span class="login-danger">*</span></label>
+                                                        <label for="address">Addresse  <span class="login-danger">*</span></label>
                                                         <textarea formControlName="adress" class="form-control" rows="3" cols="30">101, Elanxa Apartments, 340 N Madison Avenue</textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-heading">
-                                                    <h4>Security Setting</h4>
+                                                    <h4>Paramètre de sécurité</h4>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12">
                                                 <div class="form-group local-forms">
-                                                    <label for="password" >Current Password </label>
+                                                    <label for="password" >Mot de passe actuel </label>
                                                     <input class="form-control" type="password" value="12345" >
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12">
                                                 <div class="form-group local-forms">
-                                                    <label  for="newpassword">New Password </label>
+                                                    <label  for="newpassword">Nouveau mot de passe</label>
                                                     <input class="form-control" type="password" placeholder="" >
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12">
                                                 <div class="form-group local-forms">
-                                                    <label for="confirmpassword" >Confirm Password </label>
+                                                    <label for="confirmpassword" >Confirmez le mot de passe</label>
                                                     <input class="form-control" type="password" placeholder="" >
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12">
                                                 <div class="profile-check-blk form-group">
                                                     <div class="remember-me">
-                                                        <label class="custom_check mr-2 mb-0 d-inline-flex remember-me"> Profile Visibility For Everyone
+                                                        <label class="custom_check mr-2 mb-0 d-inline-flex remember-me"> Visibilité du profil pour tous
                                                         <input type="checkbox" name="radio" checked>
                                                         <span class="checkmark"></span>
                                                         </label>
                                                     </div>
                                                     <div class="remember-me">
-                                                        <label class="custom_check mr-2 mb-0 d-inline-flex remember-me"> New task notifications
+                                                        <label class="custom_check mr-2 mb-0 d-inline-flex remember-me"> Notifications de nouvelles tâches
                                                         <input type="checkbox" name="radio" checked>
                                                         <span class="checkmark"></span>
                                                         </label>
                                                     </div>
                                                     <div class="remember-me">
-                                                        <label class="custom_check mr-2 mb-0 d-inline-flex remember-me"> New friend request notifications
+                                                        <label class="custom_check mr-2 mb-0 d-inline-flex remember-me"> Notifications de nouvelles demandes d'amis
                                                         <input type="checkbox" name="radio">
                                                         <span class="checkmark"></span>
                                                         </label>
@@ -244,8 +244,8 @@
                                             </div>
                                             <div class="col-12">
                                                 <div class="doctor-submit">
-                                                    <button (click)="updatePatient()" class="btn btn-primary submit-form me-2">Submit</button>
-                                                    <button (click)="goprofile()" class="btn btn-primary cancel-form">Cancel</button>
+                                                    <button (click)="updatePatient()" class="btn btn-primary submit-form me-2">Modifier</button>
+                                                    <button (click)="goprofile()" class="btn btn-primary cancel-form">Annuler</button>
                                                 </div>
                                             </div>
                                             </form>

@@ -6,9 +6,9 @@
             <div class="row">
                 <div class="col-sm-12">
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a [routerLink]="routes.doctorsList">Doctors </a></li>
+                        <li class="breadcrumb-item"><a [routerLink]="routes.doctorsList">Docteurs </a></li>
                         <li class="breadcrumb-item"><i class="feather icon-chevron-right"></i></li>
-                        <li class="breadcrumb-item active">Doctors Profile</li>
+                        <li class="breadcrumb-item active"> Profile Docteur</li>
                     </ul>
                 </div>
             </div>
@@ -41,31 +41,31 @@
                                                     </div>
                                                 </div>
                                                 <div class="names-profiles">
-                                                    <h4>Dr. Bruce Willis</h4>
-                                                    <h5>Senior Doctor</h5>
+                                                    <h4>{{medecin.firstName}} {{medecin.lastName}} </h4>
+                                                    <h5>médecin-chef</h5>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 d-flex align-items-center">
                                             <div class="follow-group">
                                                 <div class="doctor-follows">
-                                                    <h5>Followers</h5>
+                                                    <h5>Abonnés</h5>
                                                     <h4>850</h4>
                                                 </div>
                                                 <div class="doctor-follows">
-                                                    <h5>Following</h5>
+                                                    <h5>Abonnement</h5>
                                                     <h4>18K</h4>
                                                 </div>
                                                 <div class="doctor-follows">
-                                                    <h5>Posts</h5>
+                                                    <h5>Articles</h5>
                                                     <h4>250</h4>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-lg-4 col-md-4 d-flex align-items-center">
                                             <div class="follow-btn-group">
-                                                <button type="submit" class="btn btn-info follow-btns">Follow</button>
-                                                <button type="submit" class="btn btn-info message-btns">Message</button>
+                                                <!-- <button type="submit" class="btn btn-info follow-btns">Abonnée</button> -->
+                                                <!-- <button type="submit" class="btn btn-info message-btns">Message</button> -->
                                             </div>
                                         </div>
                                     </div>
@@ -80,21 +80,21 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="heading-detail ">
-                                        <h4 class="mb-3">About me</h4>
-                                        <p>Hello I am Dr. Bruce Willis a Gynaecologist in Sanjivni Hospital Surat. I love to work with all my hospital staff and seniour doctors.</p>
+                                        <h4 class="mb-3">A Propos de mois</h4>
+                                        <p>Bonjour, je suis le Dr Bruce Willis, gynécologue à l'hôpital Sanjeevani de Surat. J'aime travailler avec le personnel hospitalier et les médecins seniors.</p>
                                     </div>
                                     <div class="about-me-list">
                                         <ul class="list-space">
                                             <li>
-                                                <h4>Gender</h4>
-                                                <span>Female</span>
+                                                <h4>Genre</h4>
+                                                <span>Feménin</span>
                                             </li>
                                             <li>
-                                                <h4>Operation Done</h4>
+                                                <h4>Opération terminée</h4>
                                                 <span>30+</span>
                                             </li>
                                             <li>
-                                                <h4>Designation</h4>
+                                                <h4>Désignation</h4>
                                                 <span>Sr. Doctor</span>
                                             </li>
                                         </ul>
@@ -106,7 +106,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="heading-detail">
-                                        <h4>Skills:</h4>
+                                        <h4>Compétences:</h4>
                                     </div>
                                     <div class="skill-blk">
                                         <div class="skill-statistics">
@@ -120,7 +120,7 @@
                                         </div>
                                         <div class="skill-statistics">
                                             <div class="skills-head">
-                                                <h5>Patient Care</h5>
+                                                <h5>Traitement de Patient</h5>
                                                 <p>85%</p>
                                             </div>
                                             <div class="progress mb-0"  >
@@ -129,7 +129,7 @@
                                         </div>
                                         <div class="skill-statistics">
                                             <div class="skills-head">
-                                                <h5>Endoscopic </h5>
+                                                <h5>Endoscopique </h5>
                                                 <p>65%</p>
                                             </div>
                                             <div class="progress mb-0"  >
@@ -138,7 +138,7 @@
                                         </div>
                                         <div class="skill-statistics">
                                             <div class="skills-head">
-                                                <h5>Patient Visit </h5>
+                                                <h5>Visite du patient</h5>
                                                 <p>90%</p>
                                             </div>
                                             <div class="progress mb-0"  >
@@ -153,15 +153,15 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="heading-detail">
-                                        <h4>Speciality</h4>
+                                        <h4>Specialités</h4>
                                     </div>
                                     <div class="personal-activity">
                                         <div class="personal-icons status-grey">
                                             <img src="assets/img/icons/medal-01.svg" alt="">
                                         </div>
                                         <div class="views-personal">
-                                            <h4>Proffesionals</h4>
-                                            <h5>Certified Skin Treatment</h5>
+                                            <h4>Proffesionelles </h4>
+                                            <h5>Traitement de la peau certifié</h5>
                                         </div>
                                     </div>
                                     <div class="personal-activity">
@@ -169,8 +169,8 @@
                                             <img src="assets/img/icons/medal-02.svg" alt="">
                                         </div>
                                         <div class="views-personal">
-                                            <h4>Certified</h4>
-                                            <h5>Cold Laser Operation</h5>
+                                            <h4>Agréé</h4>
+                                            <h5>Opération au laser froid</h5>
                                         </div>
                                     </div>
                                     <div class="personal-activity mb-0">
@@ -178,8 +178,8 @@
                                             <img src="assets/img/icons/medal-03.svg" alt="">
                                         </div>
                                         <div class="views-personal">
-                                            <h4>Medication Laser</h4>
-                                            <h5>Hair Lose Product</h5>
+                                            <h4>Laser médicamenteux</h4>
+                                            <h5>Produit contre la perte de cheveux</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -193,10 +193,10 @@
                                     <div class="tab-content-set">
                                         <ul class="nav">
                                             <li>
-                                                <a [routerLink]="routes.doctorProfile" ><span class="set-about-icon me-2"><img src="assets/img/icons/menu-icon-02.svg" alt=""></span>About me</a>
+                                                <a [routerLink]="routes.doctorProfile" ><span class="set-about-icon me-2"><img src="assets/img/icons/menu-icon-02.svg" alt=""></span>A Propos de moi</a>
                                             </li>
                                             <li>
-                                                <a [routerLink]="routes.doctorSetting" class="active"><span class="set-about-icon me-2"><img src="assets/img/icons/menu-icon-16.svg" alt=""></span>Settings</a>
+                                                <a [routerLink]="routes.doctorSetting" class="active"><span class="set-about-icon me-2"><img src="assets/img/icons/menu-icon-16.svg" alt=""></span>Paramétre</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -205,18 +205,18 @@
                                             <div class="row">
                                                 <div class="col-12">
                                                     <div class="form-heading">
-                                                        <h4>Account Setting</h4>
+                                                        <h4>Paramètres du compte</h4>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-12">
                                                     <div class="form-group local-forms">
-                                                        <label for="username">Username </label>
+                                                        <label for="username">Nom d'utilisateur </label>
                                                         <input class="form-control" formControlName="firstName" type="text" value="brucewillis@29" >
                                                     </div>
                                                 </div>
                                                 <div class="col-12 col-sm-12">
                                                     <div class="form-group local-forms">
-                                                         <label  for="mobile" >Mobile </label>
+                                                         <label  for="mobile" >Telephone </label>
                                                         <input formControlName="phone" class="form-control" type="text" value="+1 23 456890" >
                                                     </div>
                                                 </div>
@@ -228,50 +228,50 @@
                                                 </div>
                                                 <div class="col-12 col-sm-12">
                                                     <div class="form-group local-forms">
-                                                        <label for="address">Address  <span class="login-danger">*</span></label>
+                                                        <label for="address">Addresse  <span class="login-danger">*</span></label>
                                                         <textarea formControlName="adress" class="form-control" rows="3" cols="30">101, Elanxa Apartments, 340 N Madison Avenue</textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-heading">
-                                                    <h4>Security Setting</h4>
+                                                    <h4>Paramètre de sécurité</h4>
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12">
                                                 <div class="form-group local-forms">
-                                                    <label for="password" >Current Password </label>
+                                                    <label for="password" >Mot de passe actuel</label>
                                                     <input class="form-control" type="password" value="12345" >
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12">
                                                 <div class="form-group local-forms">
-                                                    <label  for="newpassword">New Password </label>
+                                                    <label  for="newpassword">Nouveau mot de passe </label>
                                                     <input class="form-control" type="password" placeholder="" >
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12">
                                                 <div class="form-group local-forms">
-                                                    <label for="confirmpassword" >Confirm Password </label>
+                                                    <label for="confirmpassword" >Confirmez le mot de passe </label>
                                                     <input class="form-control" type="password" placeholder="" >
                                                 </div>
                                             </div>
                                             <div class="col-12 col-sm-12">
                                                 <div class="profile-check-blk form-group">
                                                     <div class="remember-me">
-                                                        <label class="custom_check mr-2 mb-0 d-inline-flex remember-me"> Profile Visibility For Everyone
+                                                        <label class="custom_check mr-2 mb-0 d-inline-flex remember-me"> Visibilité du profil pour tous
                                                         <input type="checkbox" name="radio" checked>
                                                         <span class="checkmark"></span>
                                                         </label>
                                                     </div>
                                                     <div class="remember-me">
-                                                        <label class="custom_check mr-2 mb-0 d-inline-flex remember-me"> New task notifications
+                                                        <label class="custom_check mr-2 mb-0 d-inline-flex remember-me">Notifications de nouvelles tâches
                                                         <input type="checkbox" name="radio" checked>
                                                         <span class="checkmark"></span>
                                                         </label>
                                                     </div>
                                                     <div class="remember-me">
-                                                        <label class="custom_check mr-2 mb-0 d-inline-flex remember-me"> New friend request notifications
+                                                        <label class="custom_check mr-2 mb-0 d-inline-flex remember-me"> Notifications de nouvelles demandes d'amis
                                                         <input type="checkbox" name="radio">
                                                         <span class="checkmark"></span>
                                                         </label>
@@ -280,8 +280,8 @@
                                             </div>
                                             <div class="col-12">
                                                 <div class="doctor-submit">
-                                                    <button (click)="updateMedecin()" class="btn btn-primary submit-form me-2">Submit</button>
-                                                    <button (click)="goprofile()" class="btn btn-primary cancel-form">Cancel</button>
+                                                    <button (click)="updateMedecin()" class="btn btn-primary submit-form me-2">Modifier</button>
+                                                    <button (click)="goprofile()" class="btn btn-primary cancel-form">Annuler</button>
                                                 </div>
                                             </div>
                                             </form>
