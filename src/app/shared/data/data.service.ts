@@ -353,13 +353,13 @@ export class DataService {
               roles: ['admin'],
 
             },
-            {
-              menuValue: 'Doctor Profile',
-              route: routes.doctorProfile,
-              base: routes.doctorProfile,
-              roles: ['admin'],
+            // {
+            //   menuValue: 'Doctor Profile',
+            //   route: routes.doctorProfile,
+            //   base: routes.doctorProfile,
+            //   roles: ['admin'],
 
-            },
+            // },
           ],
         },
         {
@@ -385,20 +385,20 @@ export class DataService {
               roles: ['admin'],
 
             },
-            {
-              menuValue: 'Modifier Patients',
-              route: routes.editPatient,
-              base: routes.editPatient,
-              roles: ['admin'],
+            // {
+            //   menuValue: 'Modifier Patients',
+            //   route: routes.editPatient,
+            //   base: routes.editPatient,
+            //   roles: ['admin'],
 
-            },
-            {
-              menuValue: 'Profile Patients',
-              route: routes.patientProfile,
-              base: routes.patientProfile,
-              roles: ['admin'],
+            // },
+            // {
+            //   menuValue: 'Profile Patients',
+            //   route: routes.patientProfile,
+            //   base: routes.patientProfile,
+            //   roles: ['admin'],
 
-            },
+            // },
           ],
         },
         // {

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { PatientSettingRoutingModule } from './patient-setting-routing.module';
 import { PatientSettingComponent } from './patient-setting.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { PatientSettingComponent } from './patient-setting.component';
   ],
   imports: [
     CommonModule,
-    PatientSettingRoutingModule
+    PatientSettingRoutingModule,
+    ReactiveFormsModule 
   ]
 })
 export class PatientSettingModule { }
