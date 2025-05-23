@@ -17,7 +17,7 @@ export interface ChatResponse {
   providedIn: 'root'
 })
 export class ChatbotService {
-  private baseUrl = 'http://localhost:8000'; // Adresse du backend FastAPI
+  private baseUrl = 'http://localhost:8000'; 
 
   constructor(private http: HttpClient) {}
 
