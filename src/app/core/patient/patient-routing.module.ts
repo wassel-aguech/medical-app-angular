@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PatientComponent } from './patient.component';
+import { authGuard } from 'src/app/shared/guards/auth.guard';
+import { medecinGuard } from 'src/app/shared/guards/medecin.guard';
+import { patientGuard } from 'src/app/shared/guards/patient.guard';
 
 const routes: Routes = [
   { path: '', component: PatientComponent,
@@ -20,10 +23,6 @@ const routes: Routes = [
         ),
     },
 
-
-
-
-
     {
       path: 'edit-patient/:id',
       loadChildren: () =>
@@ -31,9 +30,6 @@ const routes: Routes = [
           (m) => m.EditPatientModule
         ),
     },
-
-
-
 
     {
       path: 'edit-patient',
@@ -43,17 +39,13 @@ const routes: Routes = [
         ),
     },
 
-
-
-
-
-
     {
       path: 'patient-profile',
       loadChildren: () =>
         import('./patient-profile/patient-profile.module').then(
           (m) => m.PatientProfileModule
         ),
+
     },
 
     {
@@ -62,6 +54,8 @@ const routes: Routes = [
         import('./patient-profile/patient-profile.module').then(
           (m) => m.PatientProfileModule
         ),
+
+
     },
 
     {

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DoctorProfileComponent } from './core/doctor/doctor-profile/doctor-profile.component';
-import { InfermiereComponent } from './infermiere/infermiere/infermiere.component';
 // import { AuthGuard } from './shared/gaurd/auth.guard';
 
 const routes: Routes = [
@@ -29,7 +28,7 @@ const routes: Routes = [
   },
 
 
-  
+
   {
     path: '**',
     redirectTo: 'error/error404',

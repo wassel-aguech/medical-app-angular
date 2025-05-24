@@ -11,7 +11,7 @@ const routes: Routes = [
   {
     path: '',
     component: CoreComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [authGuard],
     children: [
       {
         path: 'dashboard',
@@ -24,14 +24,12 @@ const routes: Routes = [
         path: 'doctor',
         loadChildren: () =>
           import('./doctor/doctor.module').then((m) => m.DoctorModule),
-            canActivate: [authGuard , adminGuard , medecinGuard],
 
       },
       {
         path: 'patient',
         loadChildren: () =>
           import('./patient/patient.module').then((m) => m.PatientModule),
-         canActivate: [authGuard , adminGuard , patientGuard],
 
       },
 
