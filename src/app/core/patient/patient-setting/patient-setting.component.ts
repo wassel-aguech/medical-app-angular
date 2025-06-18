@@ -93,7 +93,7 @@ export class PatientSettingComponent {
           this.patientservice.updatePatient(updatePatient).subscribe({
             next: (response) => {
               this.toastr.info('Patient updated avec succès', 'Succès')
-              this.router.navigate(['doctor/doctor-profile', this.userId]);
+              this.router.navigate(['patient/patient-profile', this.userId]);
 
           },
           error: (error) => {
@@ -104,6 +104,6 @@ export class PatientSettingComponent {
         }
 
         goprofile(){
-          this.router.navigate(['doctor/doctor-profile']);
+          this.router.navigate(['patient/patient-profile']);
         }
 }

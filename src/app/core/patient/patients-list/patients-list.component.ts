@@ -155,7 +155,7 @@ export class PatientsListComponent implements OnInit {
     {
       Swal.fire({
         title: 'Êtes-vous sûr?',
-        text: 'Vous ne pourrez pas récupérer entite medecin!',
+        text: 'Vous ne pourrez pas récupérer entite patient!',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Oui, supprimez-la!',
@@ -168,7 +168,7 @@ export class PatientsListComponent implements OnInit {
           this.getTableData();
         Swal.fire(
           'Supprimé!',
-          'Votre medecin entite a été supprimée.',
+          'Votre patient entite a été supprimée.',
           'success'
         )
 

@@ -5,6 +5,7 @@ import { DataService } from 'src/app/shared/data/data.service';
 import { pageSelection, apiResultFormat, schedule } from 'src/app/shared/models/models';
 import { routes } from 'src/app/shared/routes/routes';
 import { DisponibiliteService } from 'src/app/shared/services/disponibilite.service';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-schedule',
@@ -32,7 +33,7 @@ export class ScheduleComponent implements OnInit{
   public pageSelection: Array<pageSelection> = [];
   public totalPages = 0;
   listdisponibilites: any[] = [];
-  medecinId: any 
+  medecinId: any
 
 
 
@@ -55,81 +56,6 @@ export class ScheduleComponent implements OnInit{
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // private getTableData(): void {
   //   this.schedule = [];
   //   this.serialNumberArray = [];
@@ -139,7 +65,7 @@ export class ScheduleComponent implements OnInit{
   //     data.data.map((res: schedule, index: number) => {
   //       const serialNumber = index + 1;
   //       if (index >= this.skip && serialNumber <= this.limit) {
-         
+
   //         this.schedule.push(res);
   //         this.serialNumberArray.push(serialNumber);
   //       }
@@ -165,7 +91,7 @@ export class ScheduleComponent implements OnInit{
         const aValue = (a as any)[sort.active];
          // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const bValue = (b as any)[sort.active];
-        
+
         return (aValue < bValue ? -1 : 1) * (sort.direction === 'asc' ? 1 : -1);
       });
     }
@@ -221,4 +147,62 @@ export class ScheduleComponent implements OnInit{
       this.pageSelection.push({ skip: skip, limit: limit });
     }
   }
+
+
+
+
+
+
+
+
+  deleteDisponibilite(id:number)
+  {
+    if(id!=undefined && id !=null)
+    {
+      Swal.fire({
+        title: 'Êtes-vous sûr?',
+        text: 'Vous ne pourrez pas récupérer entite medecin!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Oui, supprimez-la!',
+        cancelButtonText: 'Non, gardez-la'
+      }).then((result : any) => {
+        if (result.value) {
+         this.disponibiliteService.deleteDisponibilite(id)
+          .subscribe(res=>{
+          })
+          this.loadDisponibilites();
+        Swal.fire(
+          'Supprimé!',
+          'Votre medecin entite a été supprimée.',
+          'success'
+        )
+
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Annulé',
+          'Votre niveau est en sécurité 🙂',
+          'error'
+        )
+        }
+      })
+    }
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 }

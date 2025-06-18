@@ -17,7 +17,7 @@ const routes: Routes = [
         path: 'dashboard',
         loadChildren: () =>
           import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
-                    canActivate: [authGuard],
+                   // canActivate: [authGuard],
 
       },
       {
@@ -39,7 +39,7 @@ const routes: Routes = [
           import('./appointments/appointments.module').then(
             (m) => m.AppointmentsModule
           ),
-                      canActivate: [ medecinGuard],
+                    //  canActivate: [ medecinGuard],
 
       },
       {
@@ -48,7 +48,7 @@ const routes: Routes = [
           import('./doctor-schedule/doctor-schedule.module').then(
             (m) => m.DoctorScheduleModule
           ),
-                      canActivate: [medecinGuard],
+                  //    canActivate: [medecinGuard],
 
       },
       // {
