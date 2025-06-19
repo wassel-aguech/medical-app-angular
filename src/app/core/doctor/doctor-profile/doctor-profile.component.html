@@ -64,7 +64,7 @@
                                         </div>
                                         <div class="col-lg-4 col-md-4 d-flex align-items-center">
                                             <div class="follow-btn-group">
-                                                <button  class="btn btn-info follow-btns"
+                                                <button  *ngIf="role=='patient'" class="btn btn-info follow-btns"
                                                 data-bs-toggle="modal" data-bs-target="#addrendezvous"
                                                 >Demander Rendez Vous</button>
                                                 <button

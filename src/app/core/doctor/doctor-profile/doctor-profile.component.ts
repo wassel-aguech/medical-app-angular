@@ -53,6 +53,9 @@ export class DoctorProfileComponent implements OnInit {
      this.medecinId =  this.route.snapshot.params['id']
      console.log(" medecin id est" , this.medecinId)
 
+     this.role = localStorage.getItem('role');
+     console.log("Role from localStorage:", this.role);
+
 
 
 

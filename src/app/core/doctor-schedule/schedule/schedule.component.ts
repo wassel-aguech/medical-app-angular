@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { DataService } from 'src/app/shared/data/data.service';
 import { pageSelection, apiResultFormat, schedule } from 'src/app/shared/models/models';
 import { routes } from 'src/app/shared/routes/routes';
@@ -38,7 +39,7 @@ export class ScheduleComponent implements OnInit{
 
 
 
-  constructor(private disponibiliteService: DisponibiliteService , public data : DataService) {}
+  constructor(private disponibiliteService: DisponibiliteService , public data : DataService , private router : Router) {}
 
   ngOnInit(): void {
     this.medecinId = localStorage.getItem('userId');
@@ -161,7 +162,7 @@ export class ScheduleComponent implements OnInit{
     {
       Swal.fire({
         title: 'Êtes-vous sûr?',
-        text: 'Vous ne pourrez pas récupérer entite medecin!',
+        text: 'Vous ne pourrez pas récupérer entite disponibilite!',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonText: 'Oui, supprimez-la!',
@@ -174,7 +175,7 @@ export class ScheduleComponent implements OnInit{
           this.loadDisponibilites();
         Swal.fire(
           'Supprimé!',
-          'Votre medecin entite a été supprimée.',
+          'Votre disponibilite entite a été supprimée.',
           'success'
         )
 
@@ -196,8 +197,10 @@ export class ScheduleComponent implements OnInit{
 
 
 
+ gotoupdatedisponibilite(id: number) {
+    this.router.navigate(["doctor-schedule/edit-schedule",id])
 
-
+  }
 
 
 

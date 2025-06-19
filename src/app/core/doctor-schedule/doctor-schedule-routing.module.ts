@@ -17,8 +17,15 @@ const routes: Routes = [
           (m) => m.AddScheduleModule
         ),
     },
-    {
+     {
       path: 'edit-schedule',
+      loadChildren: () =>
+        import('./edit-schedule/edit-schedule.module').then(
+          (m) => m.EditScheduleModule
+        ),
+    },
+    {
+      path: 'edit-schedule/:id',
       loadChildren: () =>
         import('./edit-schedule/edit-schedule.module').then(
           (m) => m.EditScheduleModule

@@ -19,7 +19,7 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <form>
+                        <form [formGroup]="disponibiliteForm">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-heading">
@@ -30,7 +30,7 @@
                                 <div class="col-12 col-md-6 col-xl-4">
                                   <div class="form-group local-forms">
                                       <label for="Available"> Jours  <span class="login-danger">*</span></label>
-                                      <input class="form-control datetimepicker" type="text"  >
+                                      <input class="form-control datetimepicker" type="text" formControlName="jour" placeholder="Sélectionner le jour" required>
 
                                   </div>
                               </div>
@@ -38,7 +38,7 @@
                                   <div class="form-group local-forms">
                                       <label for="Available">De <span class="login-danger">*</span></label>
                                       <div class="time-icon">
-                                        <input type="time" id="heureFin" class="form-control" required>
+                                        <input type="time" id="heureFin" formControlName="heureDebut"  class="form-control" required>
                                     </div>
                                   </div>
                               </div>
@@ -46,14 +46,14 @@
                                 <div class="form-group local-forms">
                                   <label for="heureFin">Jusqu'a <span class="login-danger">*</span></label>
                                   <div class="time-icon">
-                                      <input type="time" id="heureFin" class="form-control" required>
+                                      <input type="time" id="heureFin" formControlName="heureFin"  class="form-control" required>
                                   </div>
                                 </div>
                               </div>
 
                                 <div class="col-12">
                                     <div class="doctor-submit text-end">
-                                        <button type="submit" class="btn btn-primary submit-form me-2">Créer Dsiponibilité</button>
+                                        <button (click)="updateDisponibilite()" class="btn btn-primary submit-form me-2">Modefier disponibilite</button>
                                         <button type="submit" class="btn btn-primary cancel-form">Annuler</button>
                                     </div>
                                 </div>

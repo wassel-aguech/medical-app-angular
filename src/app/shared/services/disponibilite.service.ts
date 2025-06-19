@@ -19,6 +19,11 @@ getAllDisponibilite() : Observable<Disponibilite[]>{
 
 }
 
+getDisponibiliteByid( id : any) : Observable<Disponibilite>{
+  return this.http.get<Disponibilite>(`${this.baseUrl}/getDisponibiliteById/${id}`)
+
+}
+
 
 addDisponibilite(disponibilite : Disponibilite) : Observable<Disponibilite>{
   return this.http.post<Disponibilite>(`${this.baseUrl}/addDisponibilite`,disponibilite)
@@ -33,7 +38,7 @@ deleteDisponibilite( id : any) {
 
 updateDisponibilte(disponibilite: any): Observable<any> {
 
-  return this.http.put(`${this.baseUrl}/updatemedecin`, disponibilite);
+  return this.http.put(`${this.baseUrl}/updateDisponibilite`, disponibilite);
 }
 
 
