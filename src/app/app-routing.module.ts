@@ -29,11 +29,11 @@ const routes: Routes = [
 
 
 
-  {
-    path: '**',
-    redirectTo: 'error/error404',
-    pathMatch: 'full',
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: 'error/error404',
+  //   pathMatch: 'full',
+  // },
 
 
 
